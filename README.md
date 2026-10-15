@@ -60,7 +60,7 @@ held-out test clips they gave word-for-word the same transcripts as the PyTorch 
 (checked 2026-10-15).
 
 **Linux:** [Handy](https://github.com/cjpais/Handy) loads the same GGUF. Copy it into
-`~/.config/com.pais.handy/models/` with its own file name; a name that matches a stock
+`~/.local/share/com.pais.handy/models/` with its own file name; a name that matches a stock
 catalogue file is treated as the stock model.
 
 **Status (2026-10-15): first fine-tune published.** Data collection continues.
