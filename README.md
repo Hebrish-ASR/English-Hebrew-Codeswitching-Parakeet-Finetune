@@ -8,7 +8,7 @@ tomorrow"*. This repo records where the project stands and links to the datasets
 related tools and, once it is released, the model. The working code lives in a separate
 private repository.
 
-> **A real result from the speaker's own test** (2026-10-15):
+> **A real result:** the speaker recorded this in the [demo Space](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) (2026-10-15):
 >
 > | | Transcript |
 > |---|---|
