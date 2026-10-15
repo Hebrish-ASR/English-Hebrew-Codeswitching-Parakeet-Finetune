@@ -106,7 +106,7 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 | 4. Baseline | Done, 2026-10-15 | Stock v2 got 28% of Hebrew term occurrences right across 615 terms |
 | 5. Pilot fine-tune | Done, 2026-10-15 | See "Results". The 0% and 15% English comparison is still to run. |
 | 6. Full fine-tune | Not started | At the mix chosen by the pilot |
-| 7. On-device export | GGUF done, 2026-10-15 | Phone test pending | `.nemo` → int8 → Android dictation app; evaluated after quantisation, not only in PyTorch |
+| 7. On-device export | GGUF done, 2026-10-15 | Q8_0 and Q4_K_M via transcribe.cpp v0.1.3; identical transcripts to PyTorch on 5 test clips. Phone test pending. |
 | 8. Release | Pilot released | The base model is CC-BY-4.0, so fine-tunes are published openly |
 
 ## Results
