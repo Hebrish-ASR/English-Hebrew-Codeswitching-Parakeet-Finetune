@@ -8,6 +8,16 @@ tomorrow"*. This repo records where the project stands and links to the datasets
 related tools and, once it is released, the model. The working code lives in a separate
 private repository.
 
+> **A real result from the speaker's own test** (2026-10-15):
+>
+> | | Transcript |
+> |---|---|
+> | Stock Parakeet v2 | I want to go to the **Micollette** today to buy my groceries. |
+> | **This fine-tune** | I want to go to the **makolet** today to buy my groceries. |
+>
+> *Makolet* (מכולת) is the Israeli corner grocery shop. Stock v2 has never heard the word,
+> so it guesses an English-looking name; the fine-tune writes the word itself.
+
 [![Download GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
 [![Download GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
 [![Get Offline Voice Input on Google Play](https://img.shields.io/badge/Android_app-Offline_Voice_Input-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=dev.notune.transcribe)
