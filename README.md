@@ -79,22 +79,28 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 
 ## Results
 
-The first fine-tune (`pilot-en30`, 2026-10-15) was trained on 77 min of code-switching,
+The first fine-tune, **v1** (run `pilot-en30`, 2026-10-15), was trained on 77 min of code-switching,
 22 min of the speaker's English and 11 min of LibriSpeech replay. It took 19 minutes on one
 GPU.
 
 | Test set | Stock v2 | Fine-tune |
 |---|---|---|
-| Code-switching, held-out test (WER) | 9.5% | **4.4%** |
+| Code-switching, held-out test (WER) | 9.5% | **4.5%** |
 | Hebrew terms **never seen in training**: share correct | 30% | **55%** |
 | Hebrew terms seen in training: share correct | 45% | **73%** |
 | Speaker's plain English (WER) | 2.9% | 2.5% |
-| LibriSpeech test-clean (WER) | 1.2% | 1.3% |
+| LibriSpeech test-clean (WER) | 1.2% | 1.4% |
 | Long form, ~3-minute files (WER) | 7.2% | **4.1%** |
+
+![Word error rate, stock v2 vs v1](figures/wer.png)
+
+![Hebrew terms transcribed correctly, stock v2 vs v1](figures/terms.png)
 
 WER here is lowercase with punctuation removed. English did not get worse. The jump on
 unseen terms suggests the model learned how this speaker's Hebrew maps to the
 romanization, not only the training words.
+
+![How stock v2 handles 615 Hebrew terms](figures/baseline_terms.png)
 
 The baseline also showed which words matter. Stock v2 already gets 165 of 615 terms right
 every time: mostly names, well-known places and words that are already English (Shabbat,
@@ -139,7 +145,7 @@ takes.
 Newest first. One line per milestone.
 
 - **2026-10-15**: Baseline measured and first fine-tune published. Unseen Hebrew terms
-  correct went from 30% to 55%, code-switching WER from 9.5% to 4.4%, with no English
+  correct went from 30% to 55%, code-switching WER from 9.5% to 4.5%, with no English
   regression.
 - **2026-10-15**: Training mix set from the code-switching literature: about 70%
   code-switching and 30% monolingual English.
