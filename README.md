@@ -8,7 +8,8 @@ tomorrow"*. This repo records where the project stands and links to the datasets
 related tools and, once it is released, the model. The working code lives in a separate
 private repository.
 
-**Status (2026-10-15): collecting data.** No model has been trained yet.
+**Status (2026-10-15): first fine-tune published.** Data collection continues.
+Model: [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
 ## The problem
 
@@ -55,7 +56,7 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 | What | Link | Status |
 |---|---|---|
 | Base model | [`nvidia/parakeet-tdt-0.6b-v2`](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) | Upstream |
-| **Fine-tuned model** | Not released yet | Pending. The base model's licence has to be checked before the weights are published. |
+| **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | Pilot, 2026-10-15. CC-BY-4.0, like the base model. |
 | **Training data**: code-switching takes | [`danielrosehill/English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Live, synced on every push |
 | Browser for the training data | [Space: `English-Hebrew-Codeswitching-Browser`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Browser) | Live |
 | Earlier round: code-switched recordings (desktop mic) | [`danielrosehill/English-Hebrew-Mixed-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Mixed-Sentences) | Its sentences were re-read on the phone; its recordings may join training |
@@ -70,11 +71,35 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 | 1. Plan | Done, 2026-10-14 | Read-aloud sentences recorded on the target phone, NeMo fine-tune, on-device export |
 | 2. Capture app | Done, 2026-10-14 | A phone web app in the style of Common Voice: read a sentence, record it, review, next. Takes are pushed to Hugging Face in batches. |
 | 3. Data collection | **In progress** | See "Data so far" |
-| 4. Baseline | Not started | Stock v2 scored on the held-out code-switching test split, in the same int8 runtime the phone uses |
-| 5. Pilot fine-tune | Not started | Checks the pipeline end to end and whether per-term error moves at all |
+| 4. Baseline | Done, 2026-10-15 | Stock v2 got 28% of Hebrew term occurrences right across 615 terms |
+| 5. Pilot fine-tune | Done, 2026-10-15 | See "Results". The 0% and 15% English comparison is still to run. |
 | 6. Full fine-tune | Not started | At the mix chosen by the pilot |
 | 7. On-device export | Not started | `.nemo` → int8 → Android dictation app; evaluated after quantisation, not only in PyTorch |
-| 8. Release | Not started | Weights and evaluation results, if the base model's licence allows |
+| 8. Release | Pilot released | The base model is CC-BY-4.0, so fine-tunes are published openly |
+
+## Results
+
+The first fine-tune (`pilot-en30`, 2026-10-15) was trained on 77 min of code-switching,
+22 min of the speaker's English and 11 min of LibriSpeech replay. It took 19 minutes on one
+GPU.
+
+| Test set | Stock v2 | Fine-tune |
+|---|---|---|
+| Code-switching, held-out test (WER) | 9.5% | **4.4%** |
+| Hebrew terms **never seen in training**: share correct | 30% | **55%** |
+| Hebrew terms seen in training: share correct | 45% | **73%** |
+| Speaker's plain English (WER) | 2.9% | 2.5% |
+| LibriSpeech test-clean (WER) | 1.2% | 1.3% |
+| Long form, ~3-minute files (WER) | 7.2% | **4.1%** |
+
+WER here is lowercase with punctuation removed. English did not get worse. The jump on
+unseen terms suggests the model learned how this speaker's Hebrew maps to the
+romanization, not only the training words.
+
+The baseline also showed which words matter. Stock v2 already gets 165 of 615 terms right
+every time: mostly names, well-known places and words that are already English (Shabbat,
+Pesach, Bamba). It never gets 390 right: Misrad Hapnim, Bituach Leumi, tzaharon, rofe
+mishpacha, Motzei Shabbat, Pikud Haoref. Recording now concentrates on the second group.
 
 ### Data so far (2026-10-15)
 
@@ -113,6 +138,9 @@ takes.
 
 Newest first. One line per milestone.
 
+- **2026-10-15**: Baseline measured and first fine-tune published. Unseen Hebrew terms
+  correct went from 30% to 55%, code-switching WER from 9.5% to 4.4%, with no English
+  regression.
 - **2026-10-15**: Training mix set from the code-switching literature: about 70%
   code-switching and 30% monolingual English.
 - **2026-10-15**: Scope narrowed to code-switching; tech vocabulary dropped. Repo renamed from `Parakeet-V2-Personal-Finetune-Lifecycle`.
