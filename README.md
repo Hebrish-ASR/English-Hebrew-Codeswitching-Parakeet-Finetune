@@ -35,7 +35,7 @@ private repository.
 
 **If unsure, take Q8_0.** It is the closest to full accuracy that still runs on a phone, and
 on desktop CPUs it was also *faster* than Q4_K_M: about 3× realtime against 1.4× on 8 cores.
-Both gave identical transcripts to the `.nemo` on the test clips. Speed on phones has not
+On five held-out test clips, Q8_0 matched the `.nemo` word for word; Q4_K_M differed on one word (v2, 2026-10-15). Speed on phones has not
 been measured yet. ONNX exports for sherpa-onnx apps (Voxtype, Dictus) are not published
 yet.
 
@@ -56,14 +56,14 @@ yet.
    between dictations.
 
 Both GGUFs were converted with transcribe.cpp **v0.1.3**, the version the app links. On five
-held-out test clips they gave word-for-word the same transcripts as the PyTorch model
-(checked 2026-10-15).
+held-out test clips, Q8_0 gave word-for-word the same transcripts as the PyTorch model and
+Q4_K_M differed on one word (v2, checked 2026-10-15).
 
 **Linux:** [Handy](https://github.com/cjpais/Handy) loads the same GGUF. Copy it into
 `~/.local/share/com.pais.handy/models/` with its own file name; a name that matches a stock
 catalogue file is treated as the stock model.
 
-**Status (2026-10-15): first fine-tune published.** Data collection continues.
+**Status (2026-10-15): v2 published** (120 min of code-switching). Data collection continues toward v3 at 180 min.
 Model: [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
 ## The problem
@@ -111,7 +111,7 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 | What | Link | Status |
 |---|---|---|
 | Base model | [`nvidia/parakeet-tdt-0.6b-v2`](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) | Upstream |
-| **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v1 pilot, 2026-10-15: `.nemo` plus GGUF Q8_0 and Q4_K_M. CC-BY-4.0, like the base model. |
+| **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v2, 2026-10-15: `.nemo` plus GGUF Q8_0 and Q4_K_M. CC-BY-4.0, like the base model. v1 is in the repo history. |
 | Android app that loads it | [Offline Voice Input](https://play.google.com/store/apps/details?id=dev.notune.transcribe) ([source](https://github.com/notune/android_transcribe_app)) | Imports the GGUF; works as a voice keyboard and as the system voice input |
 | **Training data**: code-switching takes | [`danielrosehill/English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Live, synced on every push |
 | **Demo**: stock v2 vs the fine-tune, side by side | [Space: `English-Hebrew-Codeswitching-Parakeet-Demo`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) | Live (ZeroGPU) |
@@ -129,29 +129,33 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 | 2. Capture app | Done, 2026-10-14 | A phone web app in the style of Common Voice: read a sentence, record it, review, next. Takes are pushed to Hugging Face in batches. |
 | 3. Data collection | **In progress** | See "Data so far" |
 | 4. Baseline | Done, 2026-10-15 | Stock v2 got 28% of Hebrew term occurrences right across 615 terms |
-| 5. Pilot fine-tune | Done, 2026-10-15 | See "Results". The 0% and 15% English comparison is still to run. |
-| 6. Full fine-tune | Not started | At the mix chosen by the pilot |
-| 7. On-device export | GGUF done, 2026-10-15 | Q8_0 and Q4_K_M via transcribe.cpp v0.1.3; identical transcripts to PyTorch on 5 test clips. Phone test pending. |
-| 8. Release | Pilot released | The base model is CC-BY-4.0, so fine-tunes are published openly |
+| 5. Pilot fine-tune | Done, 2026-10-15 | v1, 77 min of code-switching |
+| 6. Retrains | v2 done, 2026-10-15 | v2 at 120 min, ~28% English. Next: v3 at 180 min, with the 0/15/30% English comparison. |
+| 7. On-device export | GGUF done, 2026-10-15 | v2 re-exported: Q8_0 identical to PyTorch on 5 test clips, Q4_K_M off by one word. Phone test pending. |
+| 8. Release | v2 released | The base model is CC-BY-4.0, so fine-tunes are published openly |
 
 ## Results
 
-The first fine-tune, **v1** (run `pilot-en30`, 2026-10-15), was trained on 77 min of code-switching,
-22 min of the speaker's English and 11 min of LibriSpeech replay. It took 19 minutes on one
-GPU.
+**v2** (run `r2-en30`, 2026-10-15) was trained from stock v2 on 120 min of code-switching,
+29 min of the speaker's English and 17 min of LibriSpeech replay. It took 23 minutes on one
+GPU. Both models were scored on the current test split (121 code-switching clips).
 
-| Test set | Stock v2 | Fine-tune |
+| Test set | Stock v2 | Fine-tune v2 |
 |---|---|---|
-| Code-switching, held-out test (WER) | 9.5% | **4.5%** |
-| Hebrew terms **never seen in training**: share correct | 30% | **55%** |
-| Hebrew terms seen in training: share correct | 45% | **73%** |
-| Speaker's plain English (WER) | 2.9% | 2.5% |
-| LibriSpeech test-clean (WER) | 1.2% | 1.4% |
-| Long form, ~3-minute files (WER) | 7.2% | **4.1%** |
+| Code-switching, held-out test (WER) | 9.9% | **4.8%** |
+| Hebrew terms **never seen in training**: share correct | 29% | **50%** |
+| Hebrew terms seen in training: share correct | 38% | **75%** |
+| Speaker's plain English (WER) | 2.7% | 2.4% |
+| LibriSpeech test-clean (WER) | 1.2% | 1.1% |
+| Long form, ~3-minute files (WER) | 7.8% | **4.5%** |
 
-![Word error rate, stock v2 vs v1](figures/wer.png)
+![Word error rate, stock v2 vs the fine-tune](figures/wer.png)
 
-![Hebrew terms transcribed correctly, stock v2 vs v1](figures/terms.png)
+![Hebrew terms transcribed correctly, stock v2 vs the fine-tune](figures/terms.png)
+
+v1 (77 min, earlier the same day) scored 4.5% code-switching WER and 55% on unseen terms on
+the smaller test split it was evaluated on; the two test splits differ, so those numbers do
+not compare directly with the table.
 
 WER here is lowercase with punctuation removed. English did not get worse. The jump on
 unseen terms suggests the model learned how this speaker's Hebrew maps to the
@@ -164,17 +168,17 @@ every time: mostly names, well-known places and words that are already English (
 Pesach, Bamba). It never gets 390 right: Misrad Hapnim, Bituach Leumi, tzaharon, rofe
 mishpacha, Motzei Shabbat, Pikud Haoref. Recording now concentrates on the second group.
 
-### Data so far (2026-10-15)
+### Data so far (2026-10-15, revision used for v2)
 
 Code-switching takes, from the `metadata.jsonl` files on Hugging Face:
 
 | Split | Clips | Audio | Of which recorded on the phone |
 |---|---|---|---|
-| train | 925 | 82 min | 457 clips, 53 min |
-| test | 85 | 10 min | 55 clips, 8 min |
+| train | 1,248 | 120 min | 88 min |
+| test | 121 | 14 min | |
 
 The rest came from the earlier desktop-mic round. The same split has 26 min of the speaker's
-own monolingual English (24% of the combined audio), but only 4 min of it is plain
+own monolingual English (29 min), but only 6 min of it is plain
 English; the rest is tech and names sentences. So plain English is now a recording
 priority. 529 distinct Hebrew terms appear in
 train, but most only once, so recording is now weighted toward terms with only one or two
@@ -208,6 +212,7 @@ takes.
 
 Newest first. One line per milestone.
 
+- **2026-10-15**: v2 published (120 min of code-switching): code-switching WER 9.9% → 4.8% and unseen Hebrew terms 29% → 50% against stock v2, no English regression. HF now lists it as a fine-tune of v2.
 - **2026-10-15**: Next retrain (v2) set for 120 min of code-switching training audio; 108 min
   so far (90%). Subset script and sentence bank published here; model card has a roadmap.
 - **2026-10-15**: Demo Space live. Published transcripts normalised: 10 rows fixed,
