@@ -8,6 +8,36 @@ tomorrow"*. This repo records where the project stands and links to the datasets
 related tools and, once it is released, the model. The working code lives in a separate
 private repository.
 
+[![Download GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download-GGUF_Q8__0_·_730_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
+[![Download GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
+[![Get Offline Voice Input on Google Play](https://img.shields.io/badge/Android_app-Offline_Voice_Input-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=dev.notune.transcribe)
+[![Try the demo](https://img.shields.io/badge/Try_it-Demo_Space-FF9D00?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo)
+[![Model card](https://img.shields.io/badge/Model-.nemo_·_2.47_GB-555555?style=for-the-badge&logo=nvidia&logoColor=76B900)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
+
+## Use it on Android (5 minutes)
+
+1. Install **Offline Voice Input** ([Google Play](https://play.google.com/store/apps/details?id=dev.notune.transcribe),
+   [source](https://github.com/notune/android_transcribe_app), MIT). It is the one Android
+   voice keyboard found (2026-10-15) that loads arbitrary Parakeet weights, and it runs
+   fully offline.
+2. On the phone, download the **[Q8_0 GGUF](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)** (730 MB, recommended). The
+   **[Q4_K_M GGUF](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)** (475 MB) is for phones short on memory.
+3. In the app, import a model, pick the downloaded `.gguf` and select it.
+4. Use it in either of two ways:
+   - set the app as the system **voice input**; or
+   - use a keyboard whose mic key opens it: SwiftKey, HeliBoard or FlorisBoard. Gboard's
+     mic button cannot hand speech to it.
+5. Set the app's battery optimisation to **Unrestricted**, so Android does not kill it
+   between dictations.
+
+Both GGUFs were converted with transcribe.cpp **v0.1.3**, the version the app links. On five
+held-out test clips they gave word-for-word the same transcripts as the PyTorch model
+(checked 2026-10-15).
+
+**Linux:** [Handy](https://github.com/cjpais/Handy) loads the same GGUF. Copy it into
+`~/.config/com.pais.handy/models/` with its own file name; a name that matches a stock
+catalogue file is treated as the stock model.
+
 **Status (2026-10-15): first fine-tune published.** Data collection continues.
 Model: [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
@@ -56,7 +86,8 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 | What | Link | Status |
 |---|---|---|
 | Base model | [`nvidia/parakeet-tdt-0.6b-v2`](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) | Upstream |
-| **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | Pilot, 2026-10-15. CC-BY-4.0, like the base model. |
+| **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v1 pilot, 2026-10-15: `.nemo` plus GGUF Q8_0 and Q4_K_M. CC-BY-4.0, like the base model. |
+| Android app that loads it | [Offline Voice Input](https://play.google.com/store/apps/details?id=dev.notune.transcribe) ([source](https://github.com/notune/android_transcribe_app)) | Imports the GGUF; works as a voice keyboard and as the system voice input |
 | **Training data**: code-switching takes | [`danielrosehill/English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Live, synced on every push |
 | **Demo**: stock v2 vs the fine-tune, side by side | [Space: `English-Hebrew-Codeswitching-Parakeet-Demo`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) | Live (ZeroGPU) |
 | Browser for the training data | [Space: `English-Hebrew-Codeswitching-Browser`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Browser) | Live |
@@ -75,7 +106,7 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 | 4. Baseline | Done, 2026-10-15 | Stock v2 got 28% of Hebrew term occurrences right across 615 terms |
 | 5. Pilot fine-tune | Done, 2026-10-15 | See "Results". The 0% and 15% English comparison is still to run. |
 | 6. Full fine-tune | Not started | At the mix chosen by the pilot |
-| 7. On-device export | Not started | `.nemo` → int8 → Android dictation app; evaluated after quantisation, not only in PyTorch |
+| 7. On-device export | GGUF done, 2026-10-15 | Phone test pending | `.nemo` → int8 → Android dictation app; evaluated after quantisation, not only in PyTorch |
 | 8. Release | Pilot released | The base model is CC-BY-4.0, so fine-tunes are published openly |
 
 ## Results
