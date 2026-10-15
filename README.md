@@ -18,13 +18,16 @@ private repository.
 > *Makolet* (מכולת) is the Israeli corner grocery shop. Stock v2 has never heard the word,
 > so it guesses an English-looking name; the fine-tune writes the word itself.
 
-[![Download GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
-[![Download GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
+[![Download v2 GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download_v2-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
+[![Download v2 GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download_v2-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
 [![Get Offline Voice Input on Google Play](https://img.shields.io/badge/Android_app-Offline_Voice_Input-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=dev.notune.transcribe)
 [![Try the demo](https://img.shields.io/badge/Try_it-Demo_Space-FF9D00?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo)
 [![Model card](https://img.shields.io/badge/Model-.nemo_·_2.47_GB-555555?style=for-the-badge&logo=nvidia&logoColor=76B900)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
 ### Which file should I download?
+
+All links below are the **latest version, v2** (2026-10-15); they always point to the newest
+release. Earlier versions, with permanent links, are under **Version history**.
 
 | You want to… | Download | Run it with |
 |---|---|---|
@@ -153,9 +156,7 @@ GPU. Both models were scored on the current test split (121 code-switching clips
 
 ![Hebrew terms transcribed correctly, stock v2 vs the fine-tune](figures/terms.png)
 
-v1 (77 min, earlier the same day) scored 4.5% code-switching WER and 55% on unseen terms on
-the smaller test split it was evaluated on; the two test splits differ, so those numbers do
-not compare directly with the table.
+v1 and v2 side by side, on the same test split, are under **Version history** below.
 
 WER here is lowercase with punctuation removed. English did not get worse. The jump on
 unseen terms suggests the model learned how this speaker's Hebrew maps to the
@@ -167,6 +168,36 @@ The baseline also showed which words matter. Stock v2 already gets 165 of 615 te
 every time: mostly names, well-known places and words that are already English (Shabbat,
 Pesach, Bamba). It never gets 390 right: Misrad Hapnim, Bituach Leumi, tzaharon, rofe
 mishpacha, Motzei Shabbat, Pikud Haoref. Recording now concentrates on the second group.
+
+### Version history
+
+Every version is re-scored on the **same** test split as the newest one, so the rows below
+compare like with like. The download links at the top of this page are always the latest version;
+the links in the last row stay pinned to each version's files forever.
+
+![Word error rate by version](figures/versions_wer.png)
+
+![Hebrew terms transcribed correctly, by version](figures/versions_terms.png)
+
+| | Stock v2 | v1 | **v2 (latest)** |
+|---|---|---|---|
+| Released | | 2026-10-15 | 2026-10-15 |
+| Code-switching training audio | | 77 min | 120 min |
+| Code-switching WER | 9.9% | 5.0% | **4.8%** |
+| … phone recordings | 9.4% | 4.7% | **4.3%** |
+| … desktop-mic recordings (30 clips) | 13.8% | **7.1%** | 8.6% |
+| Hebrew terms seen in training, correct | 38% | 67% | **75%** |
+| Hebrew terms never seen in training, correct | 29% | **52%** | 50% |
+| Speaker's plain English WER | 2.7% | 2.5% | **2.4%** |
+| LibriSpeech test-clean WER | 1.2% | 1.4% | **1.1%** |
+| Long-form WER | 7.8% | 4.6% | **4.5%** |
+| Pinned files | | [Q8_0](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/ebc0e7aff1/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf) · [Q4_K_M](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/ebc0e7aff1/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf) · [.nemo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/ebc0e7aff1/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching.nemo) | [Q8_0](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/e1541065f8/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf) · [Q4_K_M](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/e1541065f8/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf) · [.nemo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/e1541065f8/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching.nemo) |
+
+**What v2 changed:** the extra 43 minutes of audio made the model better at Hebrew words it
+has recordings of (67% → 75%) and slightly better on phone dictation. Words it has never
+heard did not improve (52% vs 50% is a 3-hit difference out of 113: noise). The older
+desktop-mic clips got a little worse; that is 30 clips of audio the model is not used on.
+Full per-utterance results: `evals/r2-*.json` in the [model repo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/tree/main/evals).
 
 ### Data so far (2026-10-15, revision used for v2)
 
