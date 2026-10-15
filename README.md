@@ -23,9 +23,32 @@ the model.
 - **In scope:** Hebrew words inside English speech, for one speaker (an English speaker
   living in Jerusalem), on an Android phone.
 - **Out of scope:** tech vocabulary, homophones, disfluency removal and paragraph
-  formatting. Some of the recording sessions also capture tech and plain-English sentences
-  for convenience, and those are published in the main dataset. **The fine-tune is trained
-  only on the code-switching sentences.**
+  formatting. Some recording sessions capture tech sentences too, for convenience; they
+  are published in the main dataset.
+
+## Training mix
+
+Fine-tuning a pretrained model on code-switched speech alone badly damages its English. In
+one study, Whisper-small went from 3.4% to 13.3% WER on LibriSpeech after fine-tuning on
+code-switched data only. The literature consistently finds that mixing monolingual data in
+works better. Mixing in as little as 10% original-domain data has been shown to cut
+forgetting sharply, while too much monolingual data hurts code-switching. The target
+balance, by audio duration:
+
+| Share | Data |
+|---|---|
+| ~70% | Code-switching takes |
+| ~20% | The speaker's own monolingual English, recorded on the same phone |
+| ~10% | Public English replay (LibriSpeech or Common Voice) |
+
+No paper gives a ratio for this exact case (one speaker, English as the main language, one
+or two Hebrew words per sentence), so the pilot compares 0%, 15% and 30% English and keeps
+the best on both test sets: held-out code-switching and general English.
+
+Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
+[Shah et al. 2020](https://arxiv.org/abs/2006.00782),
+[Pekarek Rosin & Siegert 2023](https://arxiv.org/abs/2307.07280),
+[CS ASR systematic review 2025](https://arxiv.org/abs/2507.07741).
 
 ## Links
 
@@ -38,7 +61,7 @@ the model.
 | Earlier round: code-switched recordings (desktop mic) | [`danielrosehill/English-Hebrew-Mixed-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Mixed-Sentences) | Its sentences were re-read on the phone; its recordings may join training |
 | **Hebrew-Latin token classifier**: detects Hebrew words written in Latin letters inside English | [GitHub: `Hebrew-Latin-Token-Classifier`](https://github.com/danielrosehill/Hebrew-Latin-Token-Classifier) | Its lexicon sets the canonical romanized spelling of every Hebrew word in the transcripts |
 | Span review tool for the classifier | [Space: `hebrew-latin-span-review`](https://huggingface.co/spaces/danielrosehill/hebrew-latin-span-review) | Live |
-| All takes from the capture sessions, including out-of-scope categories | [`danielrosehill/Read-Aloud-Voice-Sentences`](https://huggingface.co/datasets/danielrosehill/Read-Aloud-Voice-Sentences) | Live; the code-switching dataset above is its subset |
+| All takes from the capture sessions: code-switching, the speaker's monolingual English, and out-of-scope categories | [`danielrosehill/Read-Aloud-Voice-Sentences`](https://huggingface.co/datasets/danielrosehill/Read-Aloud-Voice-Sentences) | Live; source of the ~20% own-English share. The code-switching dataset above is its subset. |
 
 ## Lifecycle
 
@@ -49,7 +72,7 @@ the model.
 | 3. Data collection | **In progress** | See "Data so far" |
 | 4. Baseline | Not started | Stock v2 scored on the held-out code-switching test split, in the same int8 runtime the phone uses |
 | 5. Pilot fine-tune | Not started | Checks the pipeline end to end and whether per-term error moves at all |
-| 6. Full fine-tune | Not started | |
+| 6. Full fine-tune | Not started | At the mix chosen by the pilot |
 | 7. On-device export | Not started | `.nemo` → int8 → Android dictation app; evaluated after quantisation, not only in PyTorch |
 | 8. Release | Not started | Weights and evaluation results, if the base model's licence allows |
 
@@ -62,7 +85,10 @@ Code-switching takes, from the `metadata.jsonl` files on Hugging Face:
 | train | 925 | 82 min | 457 clips, 53 min |
 | test | 85 | 10 min | 55 clips, 8 min |
 
-The rest came from the earlier desktop-mic round. 529 distinct Hebrew terms appear in
+The rest came from the earlier desktop-mic round. The same split has 26 min of the speaker's
+own monolingual English (24% of the combined audio), but only 4 min of it is plain
+English; the rest is tech and names sentences. So plain English is now a recording
+priority. 529 distinct Hebrew terms appear in
 train, but most only once, so recording is now weighted toward terms with only one or two
 takes.
 
@@ -87,8 +113,9 @@ takes.
 
 Newest first. One line per milestone.
 
-- **2026-10-15**: Scope narrowed to code-switching: the fine-tune trains only on
-  code-switching sentences. Repo renamed from `Parakeet-V2-Personal-Finetune-Lifecycle`.
+- **2026-10-15**: Training mix set from the code-switching literature: about 70%
+  code-switching and 30% monolingual English.
+- **2026-10-15**: Scope narrowed to code-switching; tech vocabulary dropped. Repo renamed from `Parakeet-V2-Personal-Finetune-Lifecycle`.
 - **2026-10-15**: First data check: enough for a pilot. A capture-app button to record more
   sentences for a chosen term.
 - **2026-10-14**: Code-switching subset dataset and its browser Space.
