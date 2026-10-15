@@ -58,6 +58,7 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 | Base model | [`nvidia/parakeet-tdt-0.6b-v2`](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) | Upstream |
 | **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | Pilot, 2026-10-15. CC-BY-4.0, like the base model. |
 | **Training data**: code-switching takes | [`danielrosehill/English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Live, synced on every push |
+| **Demo**: stock v2 vs the fine-tune, side by side | [Space: `English-Hebrew-Codeswitching-Parakeet-Demo`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) | Live (ZeroGPU) |
 | Browser for the training data | [Space: `English-Hebrew-Codeswitching-Browser`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Browser) | Live |
 | Earlier round: code-switched recordings (desktop mic) | [`danielrosehill/English-Hebrew-Mixed-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Mixed-Sentences) | Its sentences were re-read on the phone; its recordings may join training |
 | **Hebrew-Latin token classifier**: detects Hebrew words written in Latin letters inside English | [GitHub: `Hebrew-Latin-Token-Classifier`](https://github.com/danielrosehill/Hebrew-Latin-Token-Classifier) | Its lexicon sets the canonical romanized spelling of every Hebrew word in the transcripts |
@@ -144,6 +145,10 @@ takes.
 
 Newest first. One line per milestone.
 
+- **2026-10-15**: Demo Space live. Published transcripts normalised: 10 rows fixed,
+  including a spelling-rewrite bug that turned "more" into "moreh". 301 missing Israeli-life
+  terms found by a gap review and 868 sentences written for them. Recording now favours
+  the words stock v2 gets wrong.
 - **2026-10-15**: Baseline measured and first fine-tune published. Unseen Hebrew terms
   correct went from 30% to 55%, code-switching WER from 9.5% to 4.5%, with no English
   regression.
