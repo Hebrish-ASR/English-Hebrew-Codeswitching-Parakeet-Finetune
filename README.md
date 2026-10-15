@@ -109,6 +109,21 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 [Pekarek Rosin & Siegert 2023](https://arxiv.org/abs/2307.07280),
 [CS ASR systematic review 2025](https://arxiv.org/abs/2507.07741).
 
+## Training data (v2)
+
+Everything v2 was trained on, by dataset. The training job pins one revision of
+`Read-Aloud-Voice-Sentences` (`3bdaa2a50d52`) and adds public English replay at train time.
+
+| Dataset | Whose | What v2 used from it | Licence |
+|---|---|---|---|
+| [`Read-Aloud-Voice-Sentences`](https://huggingface.co/datasets/danielrosehill/Read-Aloud-Voice-Sentences) | Mine | **The training source.** 1,248 code-switching clips (120.1 min): 754 phone takes (87.6 min), 55 laptop takes (5.7 min) and 439 recordings imported from the desktop-mic round below (26.8 min). Plus 224 clips of my own monolingual English (28.7 min). | CC-BY-4.0 |
+| [`English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Mine | The code-switching phone takes, published on their own. Same audio as above, not extra data. | CC-BY-4.0 |
+| [`English-Hebrew-Mixed-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Mixed-Sentences) | Mine | An earlier desktop-mic round (2025-11-17). 439 of its recordings are imported into `Read-Aloud-Voice-Sentences` with fixed transcripts, and counted there. | MIT |
+| [LibriSpeech](https://huggingface.co/datasets/openslr/librispeech_asr) `train-clean-100` with [LibriSpeech-PC](https://www.openslr.org/145/) transcripts | Public | 17.3 min of English replay, so the model keeps general English. LibriSpeech-PC supplies the cased, punctuated transcripts. `test-clean` (200 utterances) is used only for evaluation. | CC-BY-4.0 |
+
+Evaluation uses the held-out test split of `Read-Aloud-Voice-Sentences` (121 code-switching
+clips, term-disjoint) and is never trained on.
+
 ## Links
 
 | What | Link | Status |
