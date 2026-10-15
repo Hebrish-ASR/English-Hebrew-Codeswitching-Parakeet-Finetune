@@ -180,6 +180,13 @@ priority. 529 distinct Hebrew terms appear in
 train, but most only once, so recording is now weighted toward terms with only one or two
 takes.
 
+## In this repo
+
+| Path | What |
+|---|---|
+| [`scripts/split_subsets.py`](scripts/split_subsets.py) | Builds category subsets (code-switching only, tech only, or any other category) from the main dataset, with the same layout, ids and train/test split. This is how the code-switching and tech datasets are derived. `--metadata-only` counts rows and minutes without downloading audio. |
+| [`sentences/`](sentences/) | The full prompt bank the speaker reads from: `sentences.jsonl` (all 5,667 prompts, with categories, target Hebrew terms, split and source) and `code-switching.csv` (the 2,745 code-switching prompts). Licences per source are in `manifest.json`; most sentences were written by an LLM for this project and are CC-BY-4.0. |
+
 ## Design decisions
 
 - **v2, not v3.** In the speaker's own use, v2 was more accurate than v3 for English
@@ -201,6 +208,8 @@ takes.
 
 Newest first. One line per milestone.
 
+- **2026-10-15**: Next retrain (v2) set for 120 min of code-switching training audio; 108 min
+  so far (90%). Subset script and sentence bank published here; model card has a roadmap.
 - **2026-10-15**: Demo Space live. Published transcripts normalised: 10 rows fixed,
   including a spelling-rewrite bug that turned "more" into "moreh". 301 missing Israeli-life
   terms found by a gap review and 868 sentences written for them. Recording now favours

@@ -1,0 +1,12 @@
+{
+ "built_at": "2026-10-15T09:09:20+00:00",
+ "prompts": 5667,
+ "code_switch": 2745,
+ "licences": {
+  "english-hebrew-mixed-sentences": "MIT (danielrosehill/English-Hebrew-Mixed-Sentences)",
+  "tech-sentences-for-asr-training": "MIT (danielrosehill/Tech-Sentences-For-ASR-Training)",
+  "tatoeba": "CC-BY 2.0 FR, https://tatoeba.org; source id per sentence",
+  "generated": "Written for this dataset (model in `source`), reviewed by a second model; CC-BY-4.0 with the dataset",
+  "enron": "Enron email corpus, FERC public release via CMU / corbt/enron-emails; licence status inferred (public record), never formally granted"
+ }
+}
