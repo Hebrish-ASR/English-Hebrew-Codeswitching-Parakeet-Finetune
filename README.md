@@ -132,6 +132,7 @@ clips, term-disjoint) and is never trained on.
 | **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v2, 2026-10-15: `.nemo` plus GGUF Q8_0 and Q4_K_M. CC-BY-4.0, like the base model. v1 is in the repo history. |
 | Android app that loads it | [Offline Voice Input](https://play.google.com/store/apps/details?id=dev.notune.transcribe) ([source](https://github.com/notune/android_transcribe_app)) | Imports the GGUF; works as a voice keyboard and as the system voice input |
 | **Training data**: code-switching takes | [`danielrosehill/English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Live, synced on every push |
+| **Project page**: every variant, results charts and a blog | [Space: `English-Hebrew-Codeswitching-Parakeet`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet) | Live, 2026-10-16. Also in the [HF collection](https://huggingface.co/collections/danielrosehill/parakeet-v2-english-hebrew-codeswitching-finetune-6ad26d79c70d28a49ed71c78) |
 | **Demo**: stock v2 vs the fine-tune, side by side | [Space: `English-Hebrew-Codeswitching-Parakeet-Demo`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) | Live (ZeroGPU) |
 | **Benchmark**: this model against stock Parakeet and Whisper on a frozen code-switching test set | [Space: `English-Hebrew-Codeswitching-ASR-Leaderboard`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard) ([test set](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-ASR-Benchmark), [runner](https://github.com/danielrosehill/English-Hebrew-Codeswitching-ASR-Benchmark)) | Live, v1 (2026-10-15). Headline metric is Hebrew term recall |
 | Browser for the training data | [Space: `English-Hebrew-Codeswitching-Browser`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Browser) | Live |
@@ -259,6 +260,7 @@ takes.
 
 Newest first. One line per milestone.
 
+- **2026-10-16**: Project page Space live: links to every published format (.nemo, GGUF, ONNX, sherpa-onnx), interactive results charts and a blog, added to the HF collection.
 - **2026-10-16**: Sentence bank grows from 5,752 to 7,697 prompts with five vocabulary packs: Jerusalem and Tel Aviv places, hospitals and health words, everyday code-switching gaps, second-tier towns, moshavim and kibbutzim, Israeli brands and acronyms (El Al, Arkia, Israir), and 2026 election parties, politicians and media names. Exported to `sentences/`.
 - **2026-10-15**: Public benchmark released: a frozen code-switching test set, runner and leaderboard Space. It scores this fine-tune against stock Parakeet and Whisper models.
 - **2026-10-15**: v2 published (120 min of code-switching): code-switching WER 9.9% → 4.8% and unseen Hebrew terms 29% → 50% against stock v2, no English regression. HF now lists it as a fine-tune of v2.
