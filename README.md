@@ -259,6 +259,7 @@ takes.
 
 Newest first. One line per milestone.
 
+- **2026-10-16**: Sentence bank grows from 5,752 to 7,697 prompts with five vocabulary packs: Jerusalem and Tel Aviv places, hospitals and health words, everyday code-switching gaps, second-tier towns, moshavim and kibbutzim, Israeli brands and acronyms (El Al, Arkia, Israir), and 2026 election parties, politicians and media names. Exported to `sentences/`.
 - **2026-10-15**: Public benchmark released: a frozen code-switching test set, runner and leaderboard Space. It scores this fine-tune against stock Parakeet and Whisper models.
 - **2026-10-15**: v2 published (120 min of code-switching): code-switching WER 9.9% → 4.8% and unseen Hebrew terms 29% → 50% against stock v2, no English regression. HF now lists it as a fine-tune of v2.
 - **2026-10-15**: Next retrain (v2) set for 120 min of code-switching training audio; 108 min
