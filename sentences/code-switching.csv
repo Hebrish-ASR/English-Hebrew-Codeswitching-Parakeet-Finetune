@@ -1977,7 +1977,7 @@ p_6f860fd6aa,"The server finally came back up after the disk filled, toda la'el,
 p_6f9aac22b2,Ma pitom would I pay that much? Tell him I'll take it only if he drops the price a bit.,ma pitom,train
 p_6fa069dcbf,"Hi Miri, the sambusak are ready for the Shabbat, and just so you know, the Shabbat elevator in our building stops at every floor, so allow extra time.",sambusak; Shabbat elevator,train
 p_6fa79d1608,"The kids went to the breicha in Sheinfeld this afternoon, and they came back with wet hair and big smiles.",breicha; Sheinfeld,train
-p_6fcd55e98b,Yom Hazikaron comes just before Yom Haatzmaut.,Yom Hazikaron; Yom Haatzmaut,train
+p_6fcd55e98b,Yom Hazikaron comes just before Yom Haatzmaut.,Yom Haatzmaut; Yom Hazikaron,train
 p_6fcfdb5764,"Tell the gveret at the front desk that I'm running late, I'm still stuck in traffic near Sha'arei Tikva.",gveret; Sha'arei Tikva,test
 p_6fd6a09541,I called the iriya to report a problem with the street lights.,iriya,train
 p_6fed2fc807,"Okay, so I need you to look at the search module in the repository. Right now it calls Exa for web lookups and then passes the results to OpenAI for summarising. My mechutan wants a demo tomorrow, so please add a fallback if Exa times out, log every failed request, and don't touch the production config until I've checked it.",mechutan; Exa; OpenAI,test
@@ -3349,7 +3349,7 @@ p_bcf461c694,We live in a mostly Charedi neighborhood.,Charedi,train
 p_bcf5660637,"Dear neighbours, during Shabbat the ma'alit Shabbat stops on every floor automatically, so please be patient and do not press the buttons.",ma'alit shabbat,train
 p_bcfd7190f9,"Yes, ein ba'aya, I can pick up the kids on Thursday and drop them at your place before dinner.",ein ba'aya,train
 p_bd004d205e,"Shavua Tov everyone! I hope you all had a restful Shabbat, and I'll send the updated schedule once I'm at my desk.",Shavua Tov,train
-p_bd0292dc03,"Found a Yemenite place near Machane Yehuda that serves fresh lahoh, and it has Rabanut Yerushalayim, so we can take my parents there on Friday.",lahoh; Rabbanut Yerushalayim; Rabanut; machane,train
+p_bd0292dc03,"Found a Yemenite place near Machane Yehuda that serves fresh lahoh, and it has Rabanut Yerushalayim, so we can take my parents there on Friday.",lahoh; Rabbanut Yerushalayim; machane; Rabanut,train
 p_bd11e6433b,"Dani texted that he's finally getting a weekend off, so he'll leave the bsis on Thursday night and come straight to us.",bsis,train
 p_bd163dc2f7,"Hi Ayelet, quick update: the prototype is almost done, the maskoret for the new hire is sorted, and we should be ready for the demo on Sunday.",maskoret; Ayelet,train
 p_bd2a925a94,Reminder to self: get the tofes yarok filled in at the clinic before I go to renew my licence next week.,tofes yarok,train
