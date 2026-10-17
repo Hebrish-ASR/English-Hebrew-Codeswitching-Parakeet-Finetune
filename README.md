@@ -260,6 +260,7 @@ takes.
 
 Newest first. One line per milestone.
 
+- **2026-10-17**: Sentence bank grows from 9,443 to 9,735 prompts with a medical pack: health-fund admin words, medical terms, hospitals and 58 Israeli drug trade names (Acamol-family, Moxypen, Lorivan…), 292 sentences. Published takes gain a `prompt_origin` column (manual / dataset / generated).
 - **2026-10-17**: Sentence bank grows from 8,325 to 9,443 prompts with a tech pack of 377 terms (cloud-native projects, AI model families, developer tools and libraries), for a planned second fine-tune on tech vocabulary and accent. These sentences are English only, with no code-switching. Exported to `sentences/`.
 - **2026-10-17**: Sentence bank grows from 7,697 to 8,325 prompts with a Jewish observance pack (kashrut and certification bodies, Shabbat, Daf Yomi and Torah study, prayer, holiday prep), weighted to everyday words rather than once-a-year ones. New subset dataset [`General-English-Sentences`](https://huggingface.co/datasets/danielrosehill/General-English-Sentences): plain English takes with no Hebrew, names or tech, for accent-only fine-tuning.
 - **2026-10-16**: Project page Space live: links to every published format (.nemo, GGUF, ONNX, sherpa-onnx), interactive results charts and a blog, added to the HF collection.
