@@ -18,8 +18,8 @@ private repository.
 > *Makolet* (מכולת) is the Israeli corner grocery shop. Stock v2 has never heard the word,
 > so it guesses an English-looking name; the fine-tune writes the word itself.
 
-[![Download v4 GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download_v4-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
-[![Download v4 GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download_v4-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
+[![Download v5 GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download_v5-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
+[![Download v5 GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download_v5-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
 [![Get Offline Voice Input on Google Play](https://img.shields.io/badge/Android_app-Offline_Voice_Input-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=dev.notune.transcribe)
 [![Voice To Hebrish APK v0.6.0 (POC)](https://img.shields.io/badge/Android_APK-Voice_To_Hebrish_v0.6.0_(POC)-2E7D6B?style=for-the-badge&logo=android&logoColor=white)](https://github.com/danielrosehill/Voice-To-Hebrish/releases/download/android-v0.6.0/VoiceToHebrish-v0.6.0.apk)
 [![Voice To Hebrish .deb v0.2.0 (POC)](https://img.shields.io/badge/Ubuntu_.deb-Voice_To_Hebrish_v0.2.0_(POC)-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://github.com/danielrosehill/Voice-To-Hebrish/releases/download/desktop-v0.2.0/voice-to-hebrish_0.2.0-1_amd64.deb)
@@ -29,8 +29,8 @@ private repository.
 
 ### Which file should I download?
 
-All links below are the **latest version, v4** (2026-10-18); they always point to the newest
-release. v4 is not benchmarked yet; the latest measured results are v3's (see **Results**). Earlier versions, with permanent links, are under **Version history**.
+All links below are the **latest version, v5** (2026-10-18); they always point to the newest
+release. v4 and v5 are not benchmarked yet; the latest measured results are v3's (see **Results**). Earlier versions, with permanent links, are under **Version history**.
 
 | You want to… | Download | Run it with |
 |---|---|---|
@@ -72,7 +72,7 @@ so a new fine-tune needs no new APK. It is meant as the companion voice input fo
 **HeliBoard**: HeliBoard's mic key opens it, and you are returned to HeliBoard once the text
 is in. Since v0.6.0, **Try it now** on the app's main screen opens a notepad with a mic button, so you can test it without any keyboard setup. **[Download the APK (v0.6.0)](https://github.com/danielrosehill/Voice-To-Hebrish/releases/download/android-v0.6.0/VoiceToHebrish-v0.6.0.apk)**. Not yet tested on a phone.
 
-**Mac (Apple Silicon):** the [MLX build] (still v3; it is re-exported after the v4 benchmark)(https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx)
+**Mac (Apple Silicon):** the [MLX build] (still v3; it is re-exported after the next benchmark)(https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx)
 runs with `pip install parakeet-mlx` and
 `parakeet-mlx audio.wav --model danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx`,
 or with mlx-audio. On 10 held-out clips the v3 MLX build scored the same WER as the v3 `.nemo`.
@@ -89,7 +89,7 @@ multi-model [Parakeet-Type-Ubuntu](https://github.com/danielrosehill/Parakeet-Ty
 `~/.local/share/com.pais.handy/models/` with its own file name; a name that matches a stock
 catalogue file is treated as the stock model.
 
-**Status (2026-10-18): v4 published** (269 min of code-switching), benchmark pending. Data collection continues toward v5 at 360 min.
+**Status (2026-10-18): v5 published** (294 min of code-switching), benchmark pending. Data collection continues toward v6 at 360 min.
 Model: [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
 ## The problem
@@ -124,9 +124,9 @@ balance, by audio duration:
 | ~10% | Public English replay (LibriSpeech or Common Voice) |
 
 No paper gives a ratio for this exact case (one speaker, English as the main language, one
-or two Hebrew words per sentence). v1 to v4 all used about 30% English without a
-comparison; v4 was a single run at that ratio, and the first to hit the 70/20/10 target
-(70.8% / 19.1% / 10.1%). A comparison of 70/30, 80/20, 90/10 and 100/0 code-switching /
+or two Hebrew words per sentence). v1 to v5 all used about 30% English without a
+comparison; v4 was the first run to hit the 70/20/10 target (70.8% / 19.1% / 10.1%), and v5
+kept it (70.2% / 19.7% / 10.1%). A comparison of 70/30, 80/20, 90/10 and 100/0 code-switching /
 English remains an option for a later version.
 
 Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
@@ -134,28 +134,29 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 [Pekarek Rosin & Siegert 2023](https://arxiv.org/abs/2307.07280),
 [CS ASR systematic review 2025](https://arxiv.org/abs/2507.07741).
 
-## Training data (v4)
+## Training data (v5)
 
-Everything v4 was trained on, by dataset. The training job pins one revision of
-`Read-Aloud-Voice-Sentences` (`4fcca820e0c2`) and adds public English replay at train time.
+Everything v5 was trained on, by dataset. The training job pins one revision of
+`Read-Aloud-Voice-Sentences` (`fcf5aec16449`) and adds public English replay at train time.
 
-| Dataset | Whose | What v4 used from it | Licence |
+| Dataset | Whose | What v5 used from it | Licence |
 |---|---|---|---|
-| [`Read-Aloud-Voice-Sentences`](https://huggingface.co/datasets/danielrosehill/Read-Aloud-Voice-Sentences) | Mine | **The training source.** 2,622 code-switching clips (269.3 min), 242.5 min of them phone takes from the capture app and the rest recordings imported from the desktop-mic round below. Plus 578 clips of my own monolingual English (72.5 min). | CC-BY-4.0 |
+| [`Read-Aloud-Voice-Sentences`](https://huggingface.co/datasets/danielrosehill/Read-Aloud-Voice-Sentences) | Mine | **The training source.** 2,829 code-switching clips (294.2 min), 267.4 min of them phone takes from the capture app and the rest recordings imported from the desktop-mic round below. Plus 652 clips of my own monolingual English (82.6 min). | CC-BY-4.0 |
 | [`English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Mine | The code-switching phone takes, published on their own. Same audio as above, not extra data. | CC-BY-4.0 |
 | [`English-Hebrew-Mixed-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Mixed-Sentences) | Mine | An earlier desktop-mic round (2025-11-17). 439 of its recordings are imported into `Read-Aloud-Voice-Sentences` with fixed transcripts, and counted there. | MIT |
-| [LibriSpeech](https://huggingface.co/datasets/openslr/librispeech_asr) `train-clean-100` with [LibriSpeech-PC](https://www.openslr.org/145/) transcripts | Public | 38.6 min of English replay, so the model keeps general English. LibriSpeech-PC supplies the cased, punctuated transcripts. `test-clean` (200 utterances) is used only for evaluation. | CC-BY-4.0 |
+| [LibriSpeech](https://huggingface.co/datasets/openslr/librispeech_asr) `train-clean-100` with [LibriSpeech-PC](https://www.openslr.org/145/) transcripts | Public | 42.1 min of English replay, so the model keeps general English. LibriSpeech-PC supplies the cased, punctuated transcripts. `test-clean` (200 utterances) is used only for evaluation. | CC-BY-4.0 |
 
-Actual mix by duration: 70.8% code-switching, 19.1% own English, 10.1% replay (v3 was
-73.4 / 16.1 / 10.5). Evaluation uses the held-out test split of `Read-Aloud-Voice-Sentences`
-(288 code-switching clips, 257 held-out terms, term-disjoint) and is never trained on.
+Actual mix by duration: 70.2% code-switching, 19.7% own English, 10.1% replay (v4 was
+70.8 / 19.1 / 10.1). Evaluation uses the held-out test split of `Read-Aloud-Voice-Sentences`
+(311 code-switching clips, 265 held-out terms, term-disjoint) and is never trained on.
 
 ## Links
 
 | What | Link | Status |
 |---|---|---|
 | Base model | [`nvidia/parakeet-tdt-0.6b-v2`](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) | Upstream |
-| **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v4, 2026-10-18 (benchmark pending): `.nemo` plus GGUF Q8_0, Q4_K_M and F16; ONNX fp32/int8 and sherpa-onnx int8 in their own repos (MLX still v3). CC-BY-4.0, like the base model. v1 to v3 are in the repo history. |
+| **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v5, 2026-10-18 (benchmark pending): `.nemo` plus GGUF Q8_0, Q4_K_M and F16; ONNX fp32/int8 and sherpa-onnx int8 in their own repos (MLX still v3). CC-BY-4.0, like the base model. v1 to v4 are in the repo history. |
+| Streaming fine-tune (experimental) | [`danielrosehill/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching) | 2026-10-18, not benchmarked: the same data and recipe as v5 on NVIDIA's streaming `nemotron-speech-streaming-en-0.6b`, to compare a second base model. `.nemo` only; NVIDIA Open Model License |
 | Android app that loads it | [Offline Voice Input](https://play.google.com/store/apps/details?id=dev.notune.transcribe) ([source](https://github.com/notune/android_transcribe_app)) | Imports the GGUF; works as a voice keyboard and as the system voice input |
 | Own POC voice keyboard (Android APK) | [GitHub: `Voice-To-Hebrish` (android/)](https://github.com/danielrosehill/Voice-To-Hebrish/tree/main/android) · [APK v0.6.0](https://github.com/danielrosehill/Voice-To-Hebrish/releases/download/android-v0.6.0/VoiceToHebrish-v0.6.0.apk) | v0.4.0, 2026-10-18. sherpa-onnx int8; updates the model from HF on its own (since v0.3.0); companion IME for HeliBoard |
 | Own POC desktop app (Ubuntu .deb, Windows zip) | [GitHub: `Voice-To-Hebrish` (desktop/)](https://github.com/danielrosehill/Voice-To-Hebrish/tree/main/desktop) · [.deb v0.2.0](https://github.com/danielrosehill/Voice-To-Hebrish/releases/download/desktop-v0.2.0/voice-to-hebrish_0.2.0-1_amd64.deb) · [Windows v0.2.0](https://github.com/danielrosehill/Voice-To-Hebrish/releases/download/desktop-v0.2.0/VoiceToHebrish-v0.2.0-windows-x64.zip) | v0.2.0, 2026-10-18. Qt tray app: hotkey/pedal dictation, Transcribe tab (record or open files), first-run download and update checks |
@@ -178,18 +179,23 @@ Actual mix by duration: 70.8% code-switching, 19.1% own English, 10.1% replay (v
 | 3. Data collection | **In progress** | See "Data so far" |
 | 4. Baseline | Done, 2026-10-15 | Stock v2 got 28% of Hebrew term occurrences right across 615 terms |
 | 5. Pilot fine-tune | Done, 2026-10-15 | v1, 77 min of code-switching |
-| 6. Retrains | v4 done, 2026-10-18 | v2 at 120 min, v3 at 196 min, v4 at 269 min (~30% English each; v4 the first on the 70/20/10 target). v4 benchmark pending. Next: v5 at 360 min. |
-| 7. On-device export | GGUF, ONNX, sherpa-onnx done for v4; MLX at v3 | v4 exported 2026-10-18 (GGUF Q8_0/Q4_K_M/F16, ONNX fp32/int8, sherpa-onnx int8). MLX follows the v4 benchmark. v3 parity check: Q8_0 identical to PyTorch on 5 test clips, Q4_K_M and sherpa-onnx int8 off by one word. Phone test pending. |
-| 8. Release | v4 released, 2026-10-18 | Published before its benchmark. The base model is CC-BY-4.0, so fine-tunes are published openly |
+| 6. Retrains | v5 done, 2026-10-18 | v2 at 120 min, v3 at 196 min, v4 at 269 min, v5 at 294 min (~30% English each; v4 the first on the 70/20/10 target; v5 trained early, before its 360-min checkpoint). v4 and v5 benchmarks pending. Next: v6 at 360 min. |
+| 7. On-device export | GGUF, ONNX, sherpa-onnx done for v5; MLX at v3 | v5 exported 2026-10-18 (GGUF Q8_0/Q4_K_M/F16, ONNX fp32/int8, sherpa-onnx int8). MLX follows the next benchmark. v3 parity check: Q8_0 identical to PyTorch on 5 test clips, Q4_K_M and sherpa-onnx int8 off by one word. Phone test pending. |
+| 8. Release | v5 released, 2026-10-18 | Published before its benchmark, as v4 was. The base model is CC-BY-4.0, so fine-tunes are published openly |
 
 ## Results
 
-**v4** (run `r4-en30`, released 2026-10-18) is **not benchmarked yet**: it was published
-first and evaluated later, so the numbers below are still v3's, the latest measured version.
+**v5** (run `r5-en30`, released 2026-10-18) is **not benchmarked yet**, and neither is v4:
+both were published first and will be evaluated later, so the numbers below are still v3's,
+the latest measured version. v5 was trained from stock v2 on 294 min of code-switching, 83
+min of the speaker's English and 42 min of LibriSpeech replay (20 epochs, best epoch 16, 38
+minutes on one L40S); its only number so far is validation WER, 4.9% raw against 5.0% for v4,
+on different validation sets. It will be scored on its own test split (311 code-switching
+clips, 265 held-out terms).
+
 v4 was trained from stock v2 on 269 min of code-switching, 73 min of the speaker's English
 and 39 min of LibriSpeech replay (20 epochs, best epoch 17, 33 minutes on one L40S). Its
-results will be scored on its own test split (288 code-switching clips, 257 held-out terms)
-and added here.
+results will be scored with v5's, on v5's test split.
 
 **v3** (run `r3-en30`, 2026-10-18) was trained from stock v2 on 196 min of code-switching,
 43 min of the speaker's English and 28 min of LibriSpeech replay. It took 29 minutes on one
@@ -235,8 +241,9 @@ version's files forever.
 
 ![Hebrew terms transcribed correctly, by version](figures/versions_terms.png)
 
-v4 (released 2026-10-18, 269 min of code-switching, HF commit `2e02382e7d`) is not in this
-table yet: its benchmark is pending.
+v4 (269 min of code-switching, HF commit `2e02382e7d`) and v5 (294 min, HF commit
+`5522d9e86e`), both released 2026-10-18, are not in this table yet: their benchmarks are
+pending.
 
 | | Stock v2 | v1 | v2 | **v3 (latest benchmarked)** |
 |---|---|---|---|---|
@@ -260,19 +267,19 @@ audio alone does not help new words. Full per-utterance results: `evals/r3-*.jso
 [model repo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/tree/main/evals);
 the scores are also in the model card's `model-index` metadata.
 
-### Data so far (2026-10-18, revision used for v4)
+### Data so far (2026-10-18, revision used for v5)
 
 Code-switching takes, from the `metadata.jsonl` files on Hugging Face:
 
 | Split | Clips | Audio | Of which from the capture app |
 |---|---|---|---|
-| train | 2,622 | 269 min | 243 min |
-| test | 288 | 33 min | |
+| train | 2,829 | 294 min | 267 min |
+| test | 311 | 36 min | |
 
-The rest came from the earlier desktop-mic round. The same revision has 72.5 min of the
-speaker's own monolingual English: 19.7 min plain English, 36.0 min names, 15.6 min tech and
-1.1 min numbers sentences. The next retrain (v5) is planned at 360 min of code-switching,
-about 91 min (roughly 800 phone takes) from here.
+The rest came from the earlier desktop-mic round. The same revision has 82.6 min of the
+speaker's own monolingual English: 24.0 min plain English, 41.7 min names, 15.6 min tech and
+1.2 min numbers sentences. The next retrain (v6) is planned at 360 min of code-switching,
+about 66 min (roughly 590 phone takes) from here.
 
 ## Open questions and ideas
 
@@ -375,6 +382,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-10-18**: **v5 released** (run `r5-en30`, 294 min of code-switching, up from 269), trained early, before the 360-min checkpoint, and published before its benchmark, like v4. Validation WER 4.9% raw (v4: 5.0%, different validation sets). `.nemo`, GGUF, ONNX and sherpa-onnx refreshed; the apps pick it up from `sherpa-onnx/int8/`. Alongside it, the first **second base model**: the same data and recipe on NVIDIA's streaming [`nemotron-speech-streaming-en-0.6b`](https://huggingface.co/danielrosehill/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching) (validation WER 6.4%, not benchmarked; its point is live, streaming text).
 - **2026-10-18**: The two apps merge into one repo, [Voice To Hebrish](https://github.com/danielrosehill/Voice-To-Hebrish) (a working title, and a gag): Android v0.6.0 adds a no-setup **Try it** notepad and pads takes with silence, and desktop v0.2.0 moves to Qt, adds **Windows**, a Transcribe tab for long-form audio, and an About tab with these benchmarks.
 - **2026-10-18**: Sentence bank grows from 10,277 to 11,163 prompts: more modern Israeli first names and surnames, terms from the current news (election, institutions), and a gap pass over domains not yet covered (driving, weather, banking and tax, family law, insurance, weddings, mourning, elder care, pregnancy, sport, travel, pets, university), plus top-up sentences for 43 thin terms. Written and reviewed by separate Claude subagents.
 - **2026-10-18**: [Codeswitch Dictation](https://github.com/danielrosehill/Voice-To-Hebrish/tree/main/desktop) v0.1.0 (now Voice To Hebrish): a proof-of-concept Ubuntu desktop app (.deb) that runs only this model through sherpa-onnx. It downloads the weights on first run and checks for new versions. It replaces Parakeet-Type-Ubuntu for this model.
