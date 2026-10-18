@@ -374,6 +374,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-10-18**: Sentence bank grows from 10,277 to 11,163 prompts: more modern Israeli first names and surnames, terms from the current news (election, institutions), and a gap pass over domains not yet covered (driving, weather, banking and tax, family law, insurance, weddings, mourning, elder care, pregnancy, sport, travel, pets, university), plus top-up sentences for 43 thin terms. Written and reviewed by separate Claude subagents.
 - **2026-10-18**: [Codeswitch Dictation](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Dictation-Linux) v0.1.0: a proof-of-concept Ubuntu desktop app (.deb) that runs only this model through sherpa-onnx. It downloads the weights on first run and checks for new versions. It replaces Parakeet-Type-Ubuntu for this model.
 - **2026-10-18**: **v4 released** (run `r4-en30`, 269 min of code-switching, up from 196): the first run on the 70/20/10 mix target (70.8% / 19.1% / 10.1%), 20 epochs on one L40S. Published before its benchmark, so no test-set numbers yet; v3's remain the latest measured. `.nemo`, GGUF, ONNX and sherpa-onnx refreshed to v4, as are the demo and project Spaces; MLX stays v3 until the benchmark.
 
