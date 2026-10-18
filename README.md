@@ -18,15 +18,15 @@ private repository.
 > *Makolet* (מכולת) is the Israeli corner grocery shop. Stock v2 has never heard the word,
 > so it guesses an English-looking name; the fine-tune writes the word itself.
 
-[![Download v2 GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download_v2-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
-[![Download v2 GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download_v2-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
+[![Download v3 GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download_v3-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
+[![Download v3 GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download_v3-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
 [![Get Offline Voice Input on Google Play](https://img.shields.io/badge/Android_app-Offline_Voice_Input-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=dev.notune.transcribe)
 [![Try the demo](https://img.shields.io/badge/Try_it-Demo_Space-FF9D00?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo)
 [![Model card](https://img.shields.io/badge/Model-.nemo_·_2.47_GB-555555?style=for-the-badge&logo=nvidia&logoColor=76B900)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
 ### Which file should I download?
 
-All links below are the **latest version, v2** (2026-10-15); they always point to the newest
+All links below are the **latest version, v3** (2026-10-18); they always point to the newest
 release. Earlier versions, with permanent links, are under **Version history**.
 
 | You want to… | Download | Run it with |
@@ -38,7 +38,7 @@ release. Earlier versions, with permanent links, are under **Version history**.
 
 **If unsure, take Q8_0.** It is the closest to full accuracy that still runs on a phone, and
 on desktop CPUs it was also *faster* than Q4_K_M: about 3× realtime against 1.4× on 8 cores.
-On five held-out test clips, Q8_0 matched the `.nemo` word for word; Q4_K_M differed on one word (v2, 2026-10-15). Speed on phones has not
+On five held-out test clips, Q8_0 matched the `.nemo` word for word; Q4_K_M differed on one word (v3, 2026-10-18). Speed on phones has not
 been measured yet. ONNX exports for sherpa-onnx apps (Voxtype, Dictus) are not published
 yet.
 
@@ -60,13 +60,13 @@ yet.
 
 Both GGUFs were converted with transcribe.cpp **v0.1.3**, the version the app links. On five
 held-out test clips, Q8_0 gave word-for-word the same transcripts as the PyTorch model and
-Q4_K_M differed on one word (v2, checked 2026-10-15).
+Q4_K_M differed on one word (v3, checked 2026-10-18).
 
 **Linux:** [Handy](https://github.com/cjpais/Handy) loads the same GGUF. Copy it into
 `~/.local/share/com.pais.handy/models/` with its own file name; a name that matches a stock
 catalogue file is treated as the stock model.
 
-**Status (2026-10-15): v2 published** (120 min of code-switching). Data collection continues toward v3 at 180 min.
+**Status (2026-10-18): v3 published** (196 min of code-switching). Data collection continues toward v4 at 270 min.
 Model: [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
 ## The problem
@@ -101,28 +101,30 @@ balance, by audio duration:
 | ~10% | Public English replay (LibriSpeech or Common Voice) |
 
 No paper gives a ratio for this exact case (one speaker, English as the main language, one
-or two Hebrew words per sentence), so the pilot compares 0%, 15% and 30% English and keeps
-the best on both test sets: held-out code-switching and general English.
+or two Hebrew words per sentence). v1 to v3 all used about 30% English without a
+comparison; v4 is planned to compare 70/30, 80/20, 90/10 and 100/0 code-switching /
+English and keep the best on both test sets: held-out code-switching and general English.
 
 Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 [Shah et al. 2020](https://arxiv.org/abs/2006.00782),
 [Pekarek Rosin & Siegert 2023](https://arxiv.org/abs/2307.07280),
 [CS ASR systematic review 2025](https://arxiv.org/abs/2507.07741).
 
-## Training data (v2)
+## Training data (v3)
 
-Everything v2 was trained on, by dataset. The training job pins one revision of
-`Read-Aloud-Voice-Sentences` (`3bdaa2a50d52`) and adds public English replay at train time.
+Everything v3 was trained on, by dataset. The training job pins one revision of
+`Read-Aloud-Voice-Sentences` (`b47310621f79`) and adds public English replay at train time.
 
-| Dataset | Whose | What v2 used from it | Licence |
+| Dataset | Whose | What v3 used from it | Licence |
 |---|---|---|---|
-| [`Read-Aloud-Voice-Sentences`](https://huggingface.co/datasets/danielrosehill/Read-Aloud-Voice-Sentences) | Mine | **The training source.** 1,248 code-switching clips (120.1 min): 754 phone takes (87.6 min), 55 laptop takes (5.7 min) and 439 recordings imported from the desktop-mic round below (26.8 min). Plus 224 clips of my own monolingual English (28.7 min). | CC-BY-4.0 |
+| [`Read-Aloud-Voice-Sentences`](https://huggingface.co/datasets/danielrosehill/Read-Aloud-Voice-Sentences) | Mine | **The training source.** 1,921 code-switching clips (196.1 min): 1,482 takes from the capture app, mostly on the phone (169.3 min), and 439 recordings imported from the desktop-mic round below (26.8 min). Plus 338 clips of my own monolingual English (42.9 min). | CC-BY-4.0 |
 | [`English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Mine | The code-switching phone takes, published on their own. Same audio as above, not extra data. | CC-BY-4.0 |
 | [`English-Hebrew-Mixed-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Mixed-Sentences) | Mine | An earlier desktop-mic round (2025-11-17). 439 of its recordings are imported into `Read-Aloud-Voice-Sentences` with fixed transcripts, and counted there. | MIT |
-| [LibriSpeech](https://huggingface.co/datasets/openslr/librispeech_asr) `train-clean-100` with [LibriSpeech-PC](https://www.openslr.org/145/) transcripts | Public | 17.3 min of English replay, so the model keeps general English. LibriSpeech-PC supplies the cased, punctuated transcripts. `test-clean` (200 utterances) is used only for evaluation. | CC-BY-4.0 |
+| [LibriSpeech](https://huggingface.co/datasets/openslr/librispeech_asr) `train-clean-100` with [LibriSpeech-PC](https://www.openslr.org/145/) transcripts | Public | 28.1 min of English replay, so the model keeps general English. LibriSpeech-PC supplies the cased, punctuated transcripts. `test-clean` (200 utterances) is used only for evaluation. | CC-BY-4.0 |
 
-Evaluation uses the held-out test split of `Read-Aloud-Voice-Sentences` (121 code-switching
-clips, term-disjoint) and is never trained on.
+Actual mix by duration: 73.4% code-switching, 16.1% own English, 10.5% replay. Evaluation
+uses the held-out test split of `Read-Aloud-Voice-Sentences` (219 code-switching clips,
+term-disjoint) and is never trained on.
 
 ## Links
 
@@ -150,87 +152,91 @@ clips, term-disjoint) and is never trained on.
 | 3. Data collection | **In progress** | See "Data so far" |
 | 4. Baseline | Done, 2026-10-15 | Stock v2 got 28% of Hebrew term occurrences right across 615 terms |
 | 5. Pilot fine-tune | Done, 2026-10-15 | v1, 77 min of code-switching |
-| 6. Retrains | v2 done, 2026-10-15 | v2 at 120 min, ~28% English. Next: v3 at 180 min, with the 0/15/30% English comparison. |
-| 7. On-device export | GGUF done, 2026-10-15 | v2 re-exported: Q8_0 identical to PyTorch on 5 test clips, Q4_K_M off by one word. Phone test pending. |
-| 8. Release | v2 released | The base model is CC-BY-4.0, so fine-tunes are published openly |
+| 6. Retrains | v3 done, 2026-10-18 | v2 at 120 min, v3 at 196 min (~27% English each). Next: v4 at 270 min, with the 70/80/90/100% code-switching comparison. |
+| 7. On-device export | GGUF, ONNX, sherpa-onnx done | v3 exported 2026-10-18: Q8_0 identical to PyTorch on 5 test clips, Q4_K_M and sherpa-onnx int8 off by one word. Phone test pending. |
+| 8. Release | v3 released, 2026-10-18 | The base model is CC-BY-4.0, so fine-tunes are published openly |
 
 ## Results
 
-**v2** (run `r2-en30`, 2026-10-15) was trained from stock v2 on 120 min of code-switching,
-29 min of the speaker's English and 17 min of LibriSpeech replay. It took 23 minutes on one
-GPU. Both models were scored on the current test split (121 code-switching clips).
+**v3** (run `r3-en30`, 2026-10-18) was trained from stock v2 on 196 min of code-switching,
+43 min of the speaker's English and 28 min of LibriSpeech replay. It took 29 minutes on one
+GPU. Both models were scored on the current test split (219 code-switching clips).
 
-| Test set | Stock v2 | Fine-tune v2 |
+| Test set | Stock v2 | Fine-tune v3 |
 |---|---|---|
-| Code-switching, held-out test (WER) | 9.9% | **4.8%** |
-| Hebrew terms **never seen in training**: share correct | 29% | **50%** |
-| Hebrew terms seen in training: share correct | 38% | **75%** |
-| Speaker's plain English (WER) | 2.7% | 2.4% |
-| LibriSpeech test-clean (WER) | 1.2% | 1.1% |
-| Long form, ~3-minute files (WER) | 7.8% | **4.5%** |
+| Code-switching, held-out test (WER) | 10.9% | **5.3%** |
+| Hebrew terms **never seen in training**: share correct | 27% | **48%** |
+| Hebrew terms seen in training: share correct | 29% | **66%** |
+| Speaker's plain English (WER) | 3.5% | **2.9%** |
+| LibriSpeech test-clean (WER) | 1.2% | **1.0%** |
+| Long form, ~3-minute files (WER) | 9.0% | **5.0%** |
 
 ![Word error rate, stock v2 vs the fine-tune](figures/wer.png)
 
 ![Hebrew terms transcribed correctly, stock v2 vs the fine-tune](figures/terms.png)
 
-v1 and v2 side by side, on the same test split, are under **Version history** below.
+Every version side by side, on the same test split, is under **Version history** below. On
+the separate, frozen [public benchmark](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard),
+v3 is first at 67.4% Hebrew term recall (v2 65.7%, Whisper Large V3 45.9%, stock Parakeet
+v2 32.6%).
 
 WER here is lowercase with punctuation removed. English did not get worse. The jump on
 unseen terms suggests the model learned how this speaker's Hebrew maps to the
 romanization, not only the training words.
 
-![How stock v2 handles 615 Hebrew terms](figures/baseline_terms.png)
+![How stock v2 handles the Hebrew terms in the training recordings](figures/baseline_terms.png)
 
-The baseline also showed which words matter. Stock v2 already gets 165 of 615 terms right
-every time: mostly names, well-known places and words that are already English (Shabbat,
-Pesach, Bamba). It never gets 390 right: Misrad Hapnim, Bituach Leumi, tzaharon, rofe
-mishpacha, Motzei Shabbat, Pikud Haoref. Recording now concentrates on the second group.
+The baseline also shows which words matter. Across 1,139 terms in the training recordings,
+stock v2 gets 258 right every time: mostly names, well-known places and words that are
+already English. It never gets 706 right: challah, cheshbonit, sabich, Motzei Shabbat,
+osek patur, tachana merkazit. Recording concentrates on that second group.
 
 ### Version history
 
-Every version is re-scored on the **same** test split as the newest one, so the rows below
-compare like with like. The download links at the top of this page are always the latest version;
-the links in the last row stay pinned to each version's files forever.
+Every version is re-scored on the **same** test split as the newest one (revision
+`b47310621f79`), so the rows below compare like with like. The download links at the top of
+this page are always the latest version; the links in the last row stay pinned to each
+version's files forever.
 
 ![Word error rate by version](figures/versions_wer.png)
 
 ![Hebrew terms transcribed correctly, by version](figures/versions_terms.png)
 
-| | Stock v2 | v1 | **v2 (latest)** |
-|---|---|---|---|
-| Released | | 2026-10-15 | 2026-10-15 |
-| Code-switching training audio | | 77 min | 120 min |
-| Code-switching WER | 9.9% | 5.0% | **4.8%** |
-| … phone recordings | 9.4% | 4.7% | **4.3%** |
-| … desktop-mic recordings (30 clips) | 13.8% | **7.1%** | 8.6% |
-| Hebrew terms seen in training, correct | 38% | 67% | **75%** |
-| Hebrew terms never seen in training, correct | 29% | **52%** | 50% |
-| Speaker's plain English WER | 2.7% | 2.5% | **2.4%** |
-| LibriSpeech test-clean WER | 1.2% | 1.4% | **1.1%** |
-| Long-form WER | 7.8% | 4.6% | **4.5%** |
-| Pinned files | | [Q8_0](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/ebc0e7aff1/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf) · [Q4_K_M](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/ebc0e7aff1/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf) · [.nemo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/ebc0e7aff1/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching.nemo) | [Q8_0](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/e1541065f8/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf) · [Q4_K_M](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/e1541065f8/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf) · [.nemo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/e1541065f8/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching.nemo) |
+| | Stock v2 | v1 | v2 | **v3 (latest)** |
+|---|---|---|---|---|
+| Released | | 2026-10-15 | 2026-10-15 | 2026-10-18 |
+| Code-switching training audio | | 77 min | 120 min | 196 min |
+| Code-switching WER | 10.9% | 6.0% | 5.8% | **5.3%** |
+| … phone recordings | 10.7% | 6.0% | 5.6% | **5.1%** |
+| … desktop-mic recordings (30 clips) | 13.8% | **7.1%** | 8.6% | 8.6% |
+| Hebrew terms seen in training, correct | 29% | 57% | 60% | **66%** |
+| Hebrew terms never seen in training, correct | 27% | 47% | 47% | **48%** |
+| Speaker's plain English WER | 3.5% | 3.2% | **2.6%** | 2.9% |
+| LibriSpeech test-clean WER | 1.2% | 1.4% | 1.1% | **1.0%** |
+| Long-form WER | 9.0% | 5.9% | 5.6% | **5.0%** |
+| Pinned files | | [Q8_0](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/ebc0e7aff1/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf) · [Q4_K_M](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/ebc0e7aff1/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf) · [.nemo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/ebc0e7aff1/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching.nemo) | [Q8_0](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/e1541065f8/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf) · [Q4_K_M](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/e1541065f8/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf) · [.nemo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/e1541065f8/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching.nemo) | [Q8_0](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/728e6f88d4/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf) · [Q4_K_M](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/728e6f88d4/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf) · [.nemo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/728e6f88d4/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching.nemo) |
 
-**What v2 changed:** the extra 43 minutes of audio made the model better at Hebrew words it
-has recordings of (67% → 75%) and slightly better on phone dictation. Words it has never
-heard did not improve (52% vs 50% is a 3-hit difference out of 113: noise). The older
-desktop-mic clips got a little worse; that is 30 clips of audio the model is not used on.
-Full per-utterance results: `evals/r2-*.json` in the [model repo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/tree/main/evals).
+**What v3 changed:** 76 more minutes of code-switched audio lowered code-switching WER from
+5.8% to 5.3% and long-form WER from 5.6% to 5.0%, and Hebrew words with recordings went from
+60% to 66% correct. Words the model has never heard barely moved (47% → 48%, one hit out of
+176). Three versions now show the same thing: more takes of a word help that word, but more
+audio alone does not help new words. Full per-utterance results: `evals/r3-*.json` in the
+[model repo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/tree/main/evals);
+the scores are also in the model card's `model-index` metadata.
 
-### Data so far (2026-10-15, revision used for v2)
+### Data so far (2026-10-18, revision used for v3)
 
 Code-switching takes, from the `metadata.jsonl` files on Hugging Face:
 
-| Split | Clips | Audio | Of which recorded on the phone |
+| Split | Clips | Audio | Of which from the capture app |
 |---|---|---|---|
-| train | 1,248 | 120 min | 88 min |
-| test | 121 | 14 min | |
+| train | 1,921 | 196 min | 169 min |
+| test | 219 | 25 min | |
 
-The rest came from the earlier desktop-mic round. The same split has 26 min of the speaker's
-own monolingual English (29 min), but only 6 min of it is plain
-English; the rest is tech and names sentences. So plain English is now a recording
-priority. 529 distinct Hebrew terms appear in
-train, but most only once, so recording is now weighted toward terms with only one or two
-takes.
+The rest came from the earlier desktop-mic round. The same revision has 43 min of the
+speaker's own monolingual English, 10 min of it plain English and the rest names, tech and
+numbers sentences. 1,000 distinct Hebrew terms appear in the code-switching train rows; 715
+of them have only one or two takes, so recording is weighted toward those.
 
 ## In this repo
 
@@ -260,6 +266,7 @@ takes.
 
 Newest first. One line per milestone.
 
+- **2026-10-18**: **v3 released** (run `r3-en30`, 196 min of code-switching): code-switching WER 5.3% (stock v2 10.9%, v2 5.8%), Hebrew terms with recordings 66% correct (v2 60%), no loss of English. GGUF, ONNX and sherpa-onnx exports refreshed; the model card now carries `model-index` eval metadata. First on the public benchmark at 67.4% term recall.
 - **2026-10-17**: Sentence bank grows from 9,443 to 9,735 prompts with a medical pack: health-fund admin words, medical terms, hospitals and 58 Israeli drug trade names (Acamol-family, Moxypen, Lorivan…), 292 sentences. Published takes gain a `prompt_origin` column (manual / dataset / generated).
 - **2026-10-17**: Sentence bank grows from 8,325 to 9,443 prompts with a tech pack of 377 terms (cloud-native projects, AI model families, developer tools and libraries), for a planned second fine-tune on tech vocabulary and accent. These sentences are English only, with no code-switching. Exported to `sentences/`.
 - **2026-10-17**: Sentence bank grows from 7,697 to 8,325 prompts with a Jewish observance pack (kashrut and certification bodies, Shabbat, Daf Yomi and Torah study, prayer, holiday prep), weighted to everyday words rather than once-a-year ones. New subset dataset [`General-English-Sentences`](https://huggingface.co/datasets/danielrosehill/General-English-Sentences): plain English takes with no Hebrew, names or tech, for accent-only fine-tuning.
