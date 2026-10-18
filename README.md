@@ -21,6 +21,7 @@ private repository.
 [![Download v3 GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download_v3-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
 [![Download v3 GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download_v3-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
 [![Get Offline Voice Input on Google Play](https://img.shields.io/badge/Android_app-Offline_Voice_Input-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=dev.notune.transcribe)
+[![Codeswitch Voice APK (POC)](https://img.shields.io/badge/Android_APK-Codeswitch_Voice_(POC)-2E7D6B?style=for-the-badge&logo=android&logoColor=white)](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android/releases/latest)
 [![Try the demo](https://img.shields.io/badge/Try_it-Demo_Space-FF9D00?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo)
 [![Model card](https://img.shields.io/badge/Model-.nemo_·_2.47_GB-555555?style=for-the-badge&logo=nvidia&logoColor=76B900)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
@@ -61,6 +62,13 @@ yet.
 Both GGUFs were converted with transcribe.cpp **v0.1.3**, the version the app links. On five
 held-out test clips, Q8_0 gave word-for-word the same transcripts as the PyTorch model and
 Q4_K_M differed on one word (v3, checked 2026-10-18).
+
+**Own app (proof of concept, 2026-10-18):** [Codeswitch Voice](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android) is a small voice
+keyboard for testing. It downloads the v3 sherpa-onnx int8 weights (about 660 MB, pinned to
+one HF revision) and runs them on the phone through sherpa-onnx. It is meant as the
+companion voice input for **HeliBoard**: HeliBoard's mic key opens it, and you are returned
+to HeliBoard once the text is in. [APK download](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android/releases/latest). Not yet tested on a
+phone.
 
 **Linux:** [Handy](https://github.com/cjpais/Handy) loads the same GGUF. Copy it into
 `~/.local/share/com.pais.handy/models/` with its own file name; a name that matches a stock
@@ -133,6 +141,7 @@ term-disjoint) and is never trained on.
 | Base model | [`nvidia/parakeet-tdt-0.6b-v2`](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) | Upstream |
 | **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v2, 2026-10-15: `.nemo` plus GGUF Q8_0 and Q4_K_M. CC-BY-4.0, like the base model. v1 is in the repo history. |
 | Android app that loads it | [Offline Voice Input](https://play.google.com/store/apps/details?id=dev.notune.transcribe) ([source](https://github.com/notune/android_transcribe_app)) | Imports the GGUF; works as a voice keyboard and as the system voice input |
+| Own POC voice keyboard (Android APK) | [GitHub: `English-Hebrew-Codeswitching-Voice-Keyboard-Android`](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android) | v0.1.0, 2026-10-18. sherpa-onnx int8 v3, companion IME for HeliBoard |
 | **Training data**: code-switching takes | [`danielrosehill/English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Live, synced on every push |
 | **Project page**: every variant, results charts and a blog | [Space: `English-Hebrew-Codeswitching-Parakeet`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet) | Live, 2026-10-16. Also in the [HF collection](https://huggingface.co/collections/danielrosehill/parakeet-v2-english-hebrew-codeswitching-finetune-6ad26d79c70d28a49ed71c78) |
 | **Demo**: stock v2 vs the fine-tune, side by side | [Space: `English-Hebrew-Codeswitching-Parakeet-Demo`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) | Live (ZeroGPU) |
@@ -266,6 +275,7 @@ of them have only one or two takes, so recording is weighted toward those.
 
 Newest first. One line per milestone.
 
+- **2026-10-18**: [Codeswitch Voice](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android) v0.1.0: a proof-of-concept Android voice keyboard (APK) that runs v3 on-device through sherpa-onnx, as the companion voice input for HeliBoard.
 - **2026-10-18**: **v3 released** (run `r3-en30`, 196 min of code-switching): code-switching WER 5.3% (stock v2 10.9%, v2 5.8%), Hebrew terms with recordings 66% correct (v2 60%), no loss of English. GGUF, ONNX and sherpa-onnx exports refreshed; the model card now carries `model-index` eval metadata. First on the public benchmark at 67.4% term recall.
 - **2026-10-17**: Sentence bank grows from 9,443 to 9,735 prompts with a medical pack: health-fund admin words, medical terms, hospitals and 58 Israeli drug trade names (Acamol-family, Moxypen, Lorivan…), 292 sentences. Published takes gain a `prompt_origin` column (manual / dataset / generated).
 - **2026-10-17**: Sentence bank grows from 8,325 to 9,443 prompts with a tech pack of 377 terms (cloud-native projects, AI model families, developer tools and libraries), for a planned second fine-tune on tech vocabulary and accent. These sentences are English only, with no code-switching. Exported to `sentences/`.
