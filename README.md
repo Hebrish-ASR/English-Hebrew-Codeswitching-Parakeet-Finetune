@@ -40,8 +40,7 @@ release. Earlier versions, with permanent links, are under **Version history**.
 **If unsure, take Q8_0.** It is the closest to full accuracy that still runs on a phone, and
 on desktop CPUs it was also *faster* than Q4_K_M: about 3× realtime against 1.4× on 8 cores.
 On five held-out test clips, Q8_0 matched the `.nemo` word for word; Q4_K_M differed on one word (v3, 2026-10-18). Speed on phones has not
-been measured yet. ONNX exports for sherpa-onnx apps (Voxtype, Dictus) are not published
-yet.
+been measured yet. ONNX, sherpa-onnx and MLX builds are in their own repos (links below).
 
 ## Use it on Android (5 minutes)
 
@@ -69,6 +68,11 @@ one HF revision) and runs them on the phone through sherpa-onnx. It is meant as 
 companion voice input for **HeliBoard**: HeliBoard's mic key opens it, and you are returned
 to HeliBoard once the text is in. [APK download](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android/releases/latest). Not yet tested on a
 phone.
+
+**Mac (Apple Silicon):** the [MLX build](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx)
+runs with `pip install parakeet-mlx` and
+`parakeet-mlx audio.wav --model danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx`,
+or with mlx-audio. On 10 held-out clips it scored the same WER as the `.nemo`.
 
 **Linux:** [Handy](https://github.com/cjpais/Handy) loads the same GGUF. Copy it into
 `~/.local/share/com.pais.handy/models/` with its own file name; a name that matches a stock
@@ -162,7 +166,7 @@ term-disjoint) and is never trained on.
 | 4. Baseline | Done, 2026-10-15 | Stock v2 got 28% of Hebrew term occurrences right across 615 terms |
 | 5. Pilot fine-tune | Done, 2026-10-15 | v1, 77 min of code-switching |
 | 6. Retrains | v3 done, 2026-10-18 | v2 at 120 min, v3 at 196 min (~27% English each). Next: v4 at 270 min, with the 70/80/90/100% code-switching comparison. |
-| 7. On-device export | GGUF, ONNX, sherpa-onnx done | v3 exported 2026-10-18: Q8_0 identical to PyTorch on 5 test clips, Q4_K_M and sherpa-onnx int8 off by one word. Phone test pending. |
+| 7. On-device export | GGUF, ONNX, sherpa-onnx, MLX done | v3 exported 2026-10-18: Q8_0 identical to PyTorch on 5 test clips, Q4_K_M and sherpa-onnx int8 off by one word. Phone test pending. |
 | 8. Release | v3 released, 2026-10-18 | The base model is CC-BY-4.0, so fine-tunes are published openly |
 
 ## Results
@@ -275,6 +279,7 @@ of them have only one or two takes, so recording is weighted toward those.
 
 Newest first. One line per milestone.
 
+- **2026-10-18**: v3 for Apple Silicon: [MLX build](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx) for parakeet-mlx and mlx-audio, the same WER as the `.nemo` on 10 held-out clips.
 - **2026-10-18**: Sentence bank grows from 9,735 to 10,277 prompts: an everyday-vocabulary pack (home repairs, parenting and gan, work, renting, produce, army reserves, the missing Hebrew months), whole Hebrew reactions and fillers (legamrei, rak rega, ein li musag), and the bank's first short utterances of 2 to 4 words.
 - **2026-10-18**: [Codeswitch Voice](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android) v0.1.0: a proof-of-concept Android voice keyboard (APK) that runs v3 on-device through sherpa-onnx, as the companion voice input for HeliBoard.
 - **2026-10-18**: **v3 released** (run `r3-en30`, 196 min of code-switching): code-switching WER 5.3% (stock v2 10.9%, v2 5.8%), Hebrew terms with recordings 66% correct (v2 60%), no loss of English. GGUF, ONNX and sherpa-onnx exports refreshed; the model card now carries `model-index` eval metadata. First on the public benchmark at 67.4% term recall.
