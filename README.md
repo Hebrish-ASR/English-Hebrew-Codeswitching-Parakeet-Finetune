@@ -275,6 +275,7 @@ of them have only one or two takes, so recording is weighted toward those.
 
 Newest first. One line per milestone.
 
+- **2026-10-18**: Sentence bank grows from 9,735 to 10,277 prompts: an everyday-vocabulary pack (home repairs, parenting and gan, work, renting, produce, army reserves, the missing Hebrew months), whole Hebrew reactions and fillers (legamrei, rak rega, ein li musag), and the bank's first short utterances of 2 to 4 words.
 - **2026-10-18**: [Codeswitch Voice](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android) v0.1.0: a proof-of-concept Android voice keyboard (APK) that runs v3 on-device through sherpa-onnx, as the companion voice input for HeliBoard.
 - **2026-10-18**: **v3 released** (run `r3-en30`, 196 min of code-switching): code-switching WER 5.3% (stock v2 10.9%, v2 5.8%), Hebrew terms with recordings 66% correct (v2 60%), no loss of English. GGUF, ONNX and sherpa-onnx exports refreshed; the model card now carries `model-index` eval metadata. First on the public benchmark at 67.4% term recall.
 - **2026-10-17**: Sentence bank grows from 9,443 to 9,735 prompts with a medical pack: health-fund admin words, medical terms, hospitals and 58 Israeli drug trade names (Acamol-family, Moxypen, Lorivan…), 292 sentences. Published takes gain a `prompt_origin` column (manual / dataset / generated).
