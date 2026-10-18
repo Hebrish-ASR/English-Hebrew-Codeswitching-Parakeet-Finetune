@@ -21,7 +21,8 @@ private repository.
 [![Download v4 GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download_v4-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
 [![Download v4 GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download_v4-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
 [![Get Offline Voice Input on Google Play](https://img.shields.io/badge/Android_app-Offline_Voice_Input-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=dev.notune.transcribe)
-[![Codeswitch Voice APK (POC)](https://img.shields.io/badge/Android_APK-Codeswitch_Voice_(POC)-2E7D6B?style=for-the-badge&logo=android&logoColor=white)](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android/releases/latest)
+[![Codeswitch Voice APK v0.4.0 (POC)](https://img.shields.io/badge/Android_APK-Codeswitch_Voice_v0.4.0_(POC)-2E7D6B?style=for-the-badge&logo=android&logoColor=white)](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android/releases/download/v0.4.0/CodeswitchVoice-v0.4.0.apk)
+[![Codeswitch Dictation .deb v0.1.0 (POC)](https://img.shields.io/badge/Ubuntu_.deb-Codeswitch_Dictation_v0.1.0_(POC)-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Dictation-Linux/releases/download/v0.1.0/codeswitch-dictation_0.1.0-1_amd64.deb)
 [![Try the demo](https://img.shields.io/badge/Try_it-Demo_Space-FF9D00?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo)
 [![Model card](https://img.shields.io/badge/Model-.nemo_·_2.47_GB-555555?style=for-the-badge&logo=nvidia&logoColor=76B900)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
@@ -35,6 +36,7 @@ release. v4 is not benchmarked yet; the latest measured results are v3's (see **
 | **Dictate on an Android phone** | **[Q8_0 GGUF](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)** (730 MB) | [Offline Voice Input](https://play.google.com/store/apps/details?id=dev.notune.transcribe) |
 | Dictate on an Android phone with little memory (≤ 4 GB RAM), or if Q8_0 is too slow | [Q4_K_M GGUF](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf) (475 MB) | Offline Voice Input |
 | **Dictate on a Linux desktop** | **[Q8_0 GGUF](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)** (730 MB) | [Handy](https://github.com/cjpais/Handy) |
+| Dictate on Android or Ubuntu with the project's own apps (proof of concept) | Nothing: the app downloads the model and updates it | [Codeswitch Voice APK](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android/releases/download/v0.4.0/CodeswitchVoice-v0.4.0.apk) · [Codeswitch Dictation .deb](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Dictation-Linux/releases/download/v0.1.0/codeswitch-dictation_0.1.0-1_amd64.deb) |
 | Transcribe in Python, on a GPU, or fine-tune further | [`.nemo`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching.nemo) (2.47 GB, full precision) | [NVIDIA NeMo](https://github.com/NVIDIA-NeMo/Speech) |
 
 **If unsure, take Q8_0.** It is the closest to full accuracy that still runs on a phone, and
@@ -63,18 +65,26 @@ held-out test clips, Q8_0 gave word-for-word the same transcripts as the PyTorch
 Q4_K_M differed on one word (v3, checked 2026-10-18).
 
 **Own app (proof of concept, 2026-10-18):** [Codeswitch Voice](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android) is a small voice
-keyboard for testing. It downloads the v3 sherpa-onnx int8 weights (about 660 MB, pinned to
-one HF revision, so it stays on v3 until the app is updated) and runs them on the phone through sherpa-onnx. It is meant as the
-companion voice input for **HeliBoard**: HeliBoard's mic key opens it, and you are returned
-to HeliBoard once the text is in. [APK download](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android/releases/latest). Not yet tested on a
-phone.
+keyboard for testing. It downloads the sherpa-onnx int8 weights (about 660 MB) and runs them
+on the phone through sherpa-onnx. Since v0.3.0 it checks this model's repo for newer weights,
+so a new fine-tune needs no new APK. It is meant as the companion voice input for
+**HeliBoard**: HeliBoard's mic key opens it, and you are returned to HeliBoard once the text
+is in. **[Download the APK (v0.4.0)](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android/releases/download/v0.4.0/CodeswitchVoice-v0.4.0.apk)**. Not yet tested on a phone.
 
 **Mac (Apple Silicon):** the [MLX build] (still v3; it is re-exported after the v4 benchmark)(https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx)
 runs with `pip install parakeet-mlx` and
 `parakeet-mlx audio.wav --model danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx`,
 or with mlx-audio. On 10 held-out clips the v3 MLX build scored the same WER as the v3 `.nemo`.
 
-**Linux:** [Handy](https://github.com/cjpais/Handy) loads the same GGUF. Copy it into
+**Linux, own app (proof of concept, 2026-10-18):** [Codeswitch Dictation](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Dictation-Linux) is a
+tray app for Ubuntu that runs only this model. It works with any hotkey or foot pedal: tap
+to start and stop, or hold for push-to-talk. It pastes at the cursor. It downloads the
+sherpa-onnx int8 weights on first launch and checks for newer versions on a schedule, using
+the same check as the Android app. **[Download the .deb (v0.1.0, Ubuntu 26.04 amd64)](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Dictation-Linux/releases/download/v0.1.0/codeswitch-dictation_0.1.0-1_amd64.deb)**,
+then run `sudo apt install ./codeswitch-dictation_0.1.0-1_amd64.deb`. It replaces the earlier
+multi-model [Parakeet-Type-Ubuntu](https://github.com/danielrosehill/Parakeet-Type-Ubuntu).
+
+**Linux, other apps:** [Handy](https://github.com/cjpais/Handy) loads the same GGUF. Copy it into
 `~/.local/share/com.pais.handy/models/` with its own file name; a name that matches a stock
 catalogue file is treated as the stock model.
 
@@ -146,7 +156,8 @@ Actual mix by duration: 70.8% code-switching, 19.1% own English, 10.1% replay (v
 | Base model | [`nvidia/parakeet-tdt-0.6b-v2`](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) | Upstream |
 | **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v4, 2026-10-18 (benchmark pending): `.nemo` plus GGUF Q8_0, Q4_K_M and F16; ONNX fp32/int8 and sherpa-onnx int8 in their own repos (MLX still v3). CC-BY-4.0, like the base model. v1 to v3 are in the repo history. |
 | Android app that loads it | [Offline Voice Input](https://play.google.com/store/apps/details?id=dev.notune.transcribe) ([source](https://github.com/notune/android_transcribe_app)) | Imports the GGUF; works as a voice keyboard and as the system voice input |
-| Own POC voice keyboard (Android APK) | [GitHub: `English-Hebrew-Codeswitching-Voice-Keyboard-Android`](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android) | v0.1.0, 2026-10-18. sherpa-onnx int8 v3, companion IME for HeliBoard |
+| Own POC voice keyboard (Android APK) | [GitHub: `English-Hebrew-Codeswitching-Voice-Keyboard-Android`](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android) · [APK v0.4.0](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Voice-Keyboard-Android/releases/download/v0.4.0/CodeswitchVoice-v0.4.0.apk) | v0.4.0, 2026-10-18. sherpa-onnx int8; updates the model from HF on its own (since v0.3.0); companion IME for HeliBoard |
+| Own POC desktop app (Ubuntu .deb) | [GitHub: `English-Hebrew-Codeswitching-Dictation-Linux`](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Dictation-Linux) · [.deb v0.1.0](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Dictation-Linux/releases/download/v0.1.0/codeswitch-dictation_0.1.0-1_amd64.deb) | v0.1.0, 2026-10-18. Tray app with hotkey/pedal, sherpa-onnx int8, first-run download and update checks |
 | **Training data**: code-switching takes | [`danielrosehill/English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Live, synced on every push |
 | **Project page**: every variant, results charts and a blog | [Space: `English-Hebrew-Codeswitching-Parakeet`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet) | Live, 2026-10-16. Also in the [HF collection](https://huggingface.co/collections/danielrosehill/parakeet-v2-english-hebrew-codeswitching-finetune-6ad26d79c70d28a49ed71c78) |
 | **Demo**: stock v2 vs the fine-tune, side by side | [Space: `English-Hebrew-Codeswitching-Parakeet-Demo`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) | Live (ZeroGPU) |
@@ -363,6 +374,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-10-18**: [Codeswitch Dictation](https://github.com/danielrosehill/English-Hebrew-Codeswitching-Dictation-Linux) v0.1.0: a proof-of-concept Ubuntu desktop app (.deb) that runs only this model through sherpa-onnx. It downloads the weights on first run and checks for new versions. It replaces Parakeet-Type-Ubuntu for this model.
 - **2026-10-18**: **v4 released** (run `r4-en30`, 269 min of code-switching, up from 196): the first run on the 70/20/10 mix target (70.8% / 19.1% / 10.1%), 20 epochs on one L40S. Published before its benchmark, so no test-set numbers yet; v3's remain the latest measured. `.nemo`, GGUF, ONNX and sherpa-onnx refreshed to v4, as are the demo and project Spaces; MLX stays v3 until the benchmark.
 
 - **2026-10-18**: Voice note of open questions and ideas ([audio and transcript](voice-notes/2026-10-18-project-notes/)), summarised under **Open questions and ideas**: messier recording conditions, more microphones and speakers, how many takes a word needs, and whether general fixes belong in every fine-tune.
