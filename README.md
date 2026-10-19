@@ -8,6 +8,8 @@ tomorrow"*. This repo records where the project stands and links to the datasets
 related tools and, once it is released, the model. The working code lives in a separate
 private repository.
 
+**Website: [hebrish.app](https://hebrish.app)**: get the Hebrish keyboard for Android and the desktop apps, see the results, and find every model, dataset and demo in one place.
+
 > **A real result:** the speaker recorded this in the [demo Space](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) (2026-10-15):
 >
 > | | Transcript |
@@ -18,6 +20,7 @@ private repository.
 > *Makolet* (מכולת) is the Israeli corner grocery shop. Stock v2 has never heard the word,
 > so it guesses an English-looking name; the fine-tune writes the word itself.
 
+[![Website: hebrish.app](https://img.shields.io/badge/Website-hebrish.app-1F6FEB?style=for-the-badge&logo=googlechrome&logoColor=white)](https://hebrish.app)
 [![Download v5 GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download_v5-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
 [![Download v5 GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download_v5-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
 [![Get Offline Voice Input on Google Play](https://img.shields.io/badge/Android_app-Offline_Voice_Input-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=dev.notune.transcribe)
@@ -154,6 +157,7 @@ Actual mix by duration: 70.2% code-switching, 19.7% own English, 10.1% replay (v
 
 | What | Link | Status |
 |---|---|---|
+| **Website**: the Hebrish keyboard and desktop apps, results, and every model, dataset and demo | [hebrish.app](https://hebrish.app) | Live, 2026-10-19 |
 | Base model | [`nvidia/parakeet-tdt-0.6b-v2`](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) | Upstream |
 | **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v5, 2026-10-18 (benchmark pending): `.nemo` plus GGUF Q8_0, Q4_K_M and F16; ONNX fp32/int8 and sherpa-onnx int8 in their own repos (MLX still v3). CC-BY-4.0, like the base model. v1 to v4 are in the repo history. |
 | Streaming fine-tune (experimental) | [`danielrosehill/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching) | 2026-10-18, not benchmarked: the same data and recipe as v5 on NVIDIA's streaming `nemotron-speech-streaming-en-0.6b`, to compare a second base model. `.nemo` only; NVIDIA Open Model License |
@@ -381,6 +385,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-10-19**: Project website **[hebrish.app](https://hebrish.app)** live: the Hebrish keyboard for Android and the desktop apps, the results, and links to every model, dataset and demo.
 - **2026-10-19**: The own apps are now **[Parlance](https://github.com/danielrosehill/Parlance-Dictation)** (Android v0.1.0, desktop v0.1.0 for Ubuntu and Windows), replacing Voice To Hebrish and Parakeet-Type-Ubuntu. Parlance offers a choice of model: stock Parakeet TDT 0.6B v2 or this fine-tune, with technical-vocabulary and personal-voice fine-tunes to follow.
 - **2026-10-18**: **v5 released** (run `r5-en30`, 294 min of code-switching, up from 269), trained early, before the 360-min checkpoint, and published before its benchmark, like v4. Validation WER 4.9% raw (v4: 5.0%, different validation sets). `.nemo`, GGUF, ONNX and sherpa-onnx refreshed; the apps pick it up from `sherpa-onnx/int8/`. Alongside it, the first **second base model**: the same data and recipe on NVIDIA's streaming [`nemotron-speech-streaming-en-0.6b`](https://huggingface.co/danielrosehill/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching) (validation WER 6.4%, not benchmarked; its point is live, streaming text).
 - **2026-10-18**: The two apps merge into one repo, Voice To Hebrish (a working title, and a gag; since 2026-10-19 [Parlance](https://github.com/danielrosehill/Parlance-Dictation)): Android v0.6.0 adds a no-setup **Try it** notepad and pads takes with silence, and desktop v0.2.0 moves to Qt, adds **Windows**, a Transcribe tab for long-form audio, and an About tab with these benchmarks.
