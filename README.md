@@ -10,6 +10,8 @@ private repository.
 
 **Website: [hebrish.app](https://hebrish.app)**: get the Hebrish keyboard for Android and the desktop apps, see the results, and find every model, dataset and demo in one place.
 
+**White paper:** how v1.0 was trained, exported and benchmarked: [Hebrish v1.0 white paper (PDF)](https://hebrish.app/whitepaper/hebrish-v1.0-whitepaper.pdf), 9 pages, 2026-10-19.
+
 > **A real result:** the speaker recorded this in the [demo Space](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) (2026-10-15):
 >
 > | | Transcript |
@@ -41,8 +43,8 @@ or to [info@hebrish.app](mailto:info@hebrish.app).
 ### Which file should I download?
 
 All links below are the **latest version, v1.0** (2026-10-19); they always point to the newest
-release. v1.0 is not benchmarked yet, nor are PoC-4 and PoC-5; the latest measured results are
-PoC-3's (see **Results**). Earlier checkpoints, with permanent links, are under **Version history**.
+release. v1.0 was benchmarked on 2026-10-19 (see **Results**); PoC-4 and PoC-5 are not
+benchmarked. Earlier checkpoints, with permanent links, are under **Version history**.
 
 | You want to… | Download | Run it with |
 |---|---|---|
@@ -103,7 +105,7 @@ Voice To Hebrish and Parakeet-Type-Ubuntu apps.
 `~/.local/share/com.pais.handy/models/` with its own file name; a name that matches a stock
 catalogue file is treated as the stock model.
 
-**Status (2026-10-19): v1.0 published** (339 min of code-switching), not benchmarked yet. Retraining pauses for a while; data collection continues toward v1.1 at about 450 min.
+**Status (2026-10-19): v1.0 published and benchmarked** (339 min of code-switching): 73.3% term recall on the public benchmark, 5.1% code-switching WER on its held-out split. Retraining pauses for a while; data collection continues toward v1.1 at about 450 min.
 Model: [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
 ## The problem
@@ -171,9 +173,10 @@ term-disjoint) and is never trained on.
 | What | Link | Status |
 |---|---|---|
 | **Website**: the Hebrish keyboard and desktop apps, results, and every model, dataset and demo | [hebrish.app](https://hebrish.app) | Live, 2026-10-19 |
+| **White paper**: v1.0 training pipeline and results | [hebrish-v1.0-whitepaper.pdf](https://hebrish.app/whitepaper/hebrish-v1.0-whitepaper.pdf) | 2026-10-19, 9 pages |
 | Base model | [`nvidia/parakeet-tdt-0.6b-v2`](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) | Upstream |
-| **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v1.0, 2026-10-19 (not benchmarked yet): `.nemo` plus GGUF Q8_0, Q4_K_M and F16; ONNX fp32/int8 and sherpa-onnx int8 in their own repos (MLX still PoC-3). CC-BY-4.0, like the base model. The proof-of-concept checkpoints PoC-1 to PoC-5 (published as v1 to v5) are in the repo history. |
-| Streaming fine-tune (experimental) | [`Hebrish/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching`](https://huggingface.co/Hebrish/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching) | Updated 2026-10-19 (run `r6-nemotron-en30`), not benchmarked: the same data and recipe as v1.0 on NVIDIA's streaming `nemotron-speech-streaming-en-0.6b`, to compare a second base model. Validation WER 6.3% raw, against 5.0% for v1.0 on the same validation set. `.nemo` only; NVIDIA Open Model License |
+| **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v1.0, 2026-10-19 (benchmarked 2026-10-19): `.nemo` plus GGUF Q8_0, Q4_K_M and F16; ONNX fp32/int8 and sherpa-onnx int8 in their own repos (MLX still PoC-3). CC-BY-4.0, like the base model. The proof-of-concept checkpoints PoC-1 to PoC-5 (published as v1 to v5) are in the repo history. |
+| Streaming fine-tune (experimental) | [`Hebrish/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching`](https://huggingface.co/Hebrish/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching) | Updated 2026-10-19 (run `r6-nemotron-en30`), benchmarked 2026-10-19 (62.2% term recall offline; 5.65% CS WER streaming at 560 ms, 5.81% offline): the same data and recipe as v1.0 on NVIDIA's streaming `nemotron-speech-streaming-en-0.6b`, to compare a second base model. Validation WER 6.3% raw, against 5.0% for v1.0 on the same validation set. `.nemo` only; NVIDIA Open Model License |
 | Android app that loads it | [Offline Voice Input](https://play.google.com/store/apps/details?id=dev.notune.transcribe) ([source](https://github.com/notune/android_transcribe_app)) | Imports the GGUF; works as a voice keyboard and as the system voice input |
 | Own app: Parlance (Android APK, Ubuntu .deb, Windows zip) | [GitHub: `Hebrish-Dictation`](https://github.com/Hebrish-ASR/Hebrish-Dictation) · [APK v0.1.0](https://github.com/Hebrish-ASR/Hebrish-Dictation/releases/download/android-v0.1.0/Parlance-v0.1.0.apk) · [.deb v0.1.0](https://github.com/Hebrish-ASR/Hebrish-Dictation/releases/download/desktop-v0.1.0/parlance_0.1.0-1_amd64.deb) · [Windows v0.1.0](https://github.com/Hebrish-ASR/Hebrish-Dictation/releases/download/desktop-v0.1.0/Parlance-v0.1.0-windows-x64.zip) | v0.1.0, 2026-10-19. sherpa-onnx int8; choice of stock Parakeet or this fine-tune; downloads and updates the model from HF on its own. Android: companion IME for HeliBoard. Desktop: Qt tray app with hotkey/pedal dictation and a Transcribe tab |
 | **Training data**: code-switching takes | [`danielrosehill/English-Hebrew-Codeswitching-Sentences`](https://huggingface.co/datasets/danielrosehill/English-Hebrew-Codeswitching-Sentences) | Live, synced on every push |
@@ -203,18 +206,29 @@ term-disjoint) and is never trained on.
 
 ## Results
 
-**v1.0** (run `r6-en30`, released 2026-10-19) is **not benchmarked yet**, and neither are
-PoC-4 and PoC-5: all three were published first and will be evaluated later, so the numbers
-below are still PoC-3's, the latest measured checkpoint. v1.0 was trained from stock v2 on 339
-min of code-switching, 95 min of the speaker's English and 49 min of LibriSpeech replay (20
-epochs, best epoch 18, 41 minutes on one L40S). Its only number so far is validation WER, 5.0%
-raw on a 218-clip validation set. That set differs from earlier ones, so the figure is not
-comparable with PoC-5's 4.9%, and it is not a benchmark. v1.0 will be scored on its own test
-split (387 code-switching clips, 362 held-out terms).
+**v1.0** (run `r6-en30`, released 2026-10-19) was **benchmarked on 2026-10-19**, together
+with stock v2, PoC-3 and the Nemotron run, all on v1.0's own test split (dataset revision
+`550bfcaa0f84`: 387 code-switching clips, 293 occurrences of held-out terms). The whole round,
+six GPU jobs on Modal, cost about US$0.50. Full write-up: [white paper (PDF)](https://hebrish.app/whitepaper/hebrish-v1.0-whitepaper.pdf);
+charts: [hebrish.app/benchmarks](https://hebrish.app/benchmarks).
 
-PoC-5 (published as v5, run `r5-en30`) was trained on 294 min of code-switching and PoC-4
-(published as v4, run `r4-en30`) on 269 min. Both will be scored with v1.0, on v1.0's test
-split.
+| Test set (revision `550bfcaa0f84`) | Stock v2 | PoC-3 | **v1.0** | Nemotron (offline) | Nemotron (streaming, 560 ms) |
+|---|---|---|---|---|---|
+| Code-switching, held-out test (WER) | 11.3% | 6.0% | **5.1%** | 5.8% | 5.65% |
+| Hebrew terms **never seen in training**: share correct | 25.9% | 45.7% | **47.8%** | 44.4% | 46.4% |
+| Test terms also seen in training: share correct | 27.7% | 63.3% | **72.7%** | 68.0% | 67.3% |
+| Speaker's plain English (WER) | 3.1% | 2.3% | **1.7%** | 3.3% | 3.4% |
+| LibriSpeech test-clean (WER) | 1.2% | **1.0%** | 1.2% | 2.0% | 2.1% |
+| Long form, ~3-minute files (WER) | 9.6% | 5.8% | **5.0%** | 5.8% | 5.85% |
+
+On the frozen [public benchmark](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard)
+(round 3), v1.0 is first at **73.3%** Hebrew term recall (70.1% on unseen terms, 3.3% WER,
+2.2% English control), ahead of PoC-3 at 67.4%, Nemotron at 62.2%, Whisper Large V3 at 45.9%
+and stock Parakeet v2 at 32.6%. No benchmark clip is in v1.0's training manifest. The gain over
+PoC-3 on held-out terms (+2.1 points, about 6 of 293) is within noise; the gain on seen terms
+is not. PoC-4 and PoC-5 are not benchmarked.
+
+The section below is PoC-3's original write-up, on its own (older, smaller) test split.
 
 **PoC-3** (published as v3, run `r3-en30`, 2026-10-18) was trained from stock v2 on 196 min of
 code-switching, 43 min of the speaker's English and 28 min of LibriSpeech replay. It took 29
@@ -405,6 +419,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-10-19**: **v1.0 benchmarked** for about US$0.50 of Modal GPU time: 73.3% term recall on the public benchmark (round 3), 5.1% CS WER on its held-out split (stock 11.3%, PoC-3 6.0%). Nemotron: 62.2% offline; streaming at 560 ms 5.65% CS WER, the same as offline (5.81%). [White paper (PDF)](https://hebrish.app/whitepaper/hebrish-v1.0-whitepaper.pdf) and [hebrish.app/benchmarks](https://hebrish.app/benchmarks).
 - **2026-10-19**: **v1.0 released** (run `r6-en30`, 339 min of code-switching, up from 294), the first release the project stands behind; the checkpoints published as v1 to v5 are renamed **PoC-1 to PoC-5**. Mix 70.2% / 19.7% / 10.0%, best epoch 18 of 20, 41 minutes on one L40S, validation WER 5.0% raw (new validation set, not comparable). Not benchmarked. `.nemo`, GGUF Q8_0/Q4_K_M/F16, ONNX fp32/int8 and sherpa-onnx int8 refreshed (MLX stays PoC-3); demo Space, project page and hebrish.app updated. The streaming [Nemotron fine-tune](https://huggingface.co/Hebrish/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching) is retrained on the same data (`r6-nemotron-en30`, validation WER 6.3% raw, not benchmarked). Retraining pauses for a while; next is v1.1 at about 450 min. Testers wanted.
 - **2026-10-19**: Sentence bank grows from 12,647 to 14,361 prompts: niche halakha terms, famous rabbis, all the weekly Torah portions and books, Jerusalem and Tel Aviv streets and neighbourhoods, greetings, Israeli brands and products, everyday words, Anglo residential buildings, car rental and sharing, and 67 names from 20 Times of Israel and Jerusalem Post stories of 18 and 19 October. Companion Hebrew words were spread over 700 less-used words to cut repetition. Written and reviewed by separate Claude subagents.
 - **2026-10-19**: Takes with Yiddish words are tagged `yiddish` and mirrored to **[Yiddish-Sentences](https://huggingface.co/datasets/Hebrish/Yiddish-Sentences)**. Words used in both Hebrew and Yiddish (freier, tachles) stay in the code-switching set as well. The training datasets are collected in one [HF collection](https://huggingface.co/collections/Hebrish/parakeet-v2-fine-tune-training-data-6ad63c739d300685a62edb3e).
