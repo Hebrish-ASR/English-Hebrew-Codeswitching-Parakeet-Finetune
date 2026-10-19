@@ -3,7 +3,7 @@
  "prompts": 11163,
  "code_switch": 6084,
  "licences": {
-  "english-hebrew-mixed-sentences": "MIT (danielrosehill/English-Hebrew-Mixed-Sentences)",
+  "english-hebrew-mixed-sentences": "MIT (Hebrish/English-Hebrew-Mixed-Sentences)",
   "tech-sentences-for-asr-training": "MIT (danielrosehill/Tech-Sentences-For-ASR-Training)",
   "tatoeba": "CC-BY 2.0 FR, https://tatoeba.org; source id per sentence",
   "generated": "Written for this dataset (model in `source`), reviewed by a second model; CC-BY-4.0 with the dataset",
