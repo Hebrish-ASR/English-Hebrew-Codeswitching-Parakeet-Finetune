@@ -387,6 +387,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-10-19**: Sentence bank grows from 12,647 to 14,361 prompts: niche halakha terms, famous rabbis, all the weekly Torah portions and books, Jerusalem and Tel Aviv streets and neighbourhoods, greetings, Israeli brands and products, everyday words, Anglo residential buildings, car rental and sharing, and 67 names from 20 Times of Israel and Jerusalem Post stories of 18 and 19 October. Companion Hebrew words were spread over 700 less-used words to cut repetition. Written and reviewed by separate Claude subagents.
 - **2026-10-19**: Takes with Yiddish words are tagged `yiddish` and mirrored to **[Yiddish-Sentences](https://huggingface.co/datasets/Hebrish/Yiddish-Sentences)**. Words used in both Hebrew and Yiddish (freier, tachles) stay in the code-switching set as well. The training datasets are collected in one [HF collection](https://huggingface.co/collections/Hebrish/parakeet-v2-fine-tune-training-data-6ad63c739d300685a62edb3e).
 - **2026-10-19**: Project website **[hebrish.app](https://hebrish.app)** live: the Hebrish keyboard for Android and the desktop apps, the results, and links to every model, dataset and demo.
 - **2026-10-19**: The own apps are now **[Parlance](https://github.com/Hebrish-ASR/Hebrish-Dictation)** (Android v0.1.0, desktop v0.1.0 for Ubuntu and Windows), replacing Voice To Hebrish and Parakeet-Type-Ubuntu. Parlance offers a choice of model: stock Parakeet TDT 0.6B v2 or this fine-tune, with technical-vocabulary and personal-voice fine-tunes to follow.

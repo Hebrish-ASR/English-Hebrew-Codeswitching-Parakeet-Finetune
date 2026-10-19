@@ -1,12 +1,13 @@
 {
- "built_at": "2026-10-18T20:11:46+00:00",
- "prompts": 11163,
- "code_switch": 6084,
+ "built_at": "2026-10-19T11:56:19+00:00",
+ "prompts": 14361,
+ "code_switch": 7735,
  "licences": {
   "english-hebrew-mixed-sentences": "MIT (Hebrish/English-Hebrew-Mixed-Sentences)",
   "tech-sentences-for-asr-training": "MIT (danielrosehill/Tech-Sentences-For-ASR-Training)",
   "tatoeba": "CC-BY 2.0 FR, https://tatoeba.org; source id per sentence",
   "generated": "Written for this dataset (model in `source`), reviewed by a second model; CC-BY-4.0 with the dataset",
+  "mined": "Mined from public HF text datasets (scripts/mine_tech_sentences.py; dataset id in `source`): hysts-bot-data/daily-papers CC0 compilation of arXiv abstracts, pszemraj/LocalLLaMA-posts ODC-BY, e1879/threads-english-tech-news-sft CC-BY-4.0; lightly edited for casing and digits",
   "manual": "Written by hand for this dataset (data/manual/); CC-BY-4.0 with the dataset",
   "enron": "Enron email corpus, FERC public release via CMU / corbt/enron-emails; licence status inferred (public record), never formally granted"
  }
