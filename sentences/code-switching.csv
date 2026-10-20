@@ -70,7 +70,7 @@ p_01ebd0579f,"Hi, I'm checking whether the room near the emergency ward at Sheba
 p_01f154b13c,Where is the nearest shtifat rechev that cleans the inside as well?,shtifat rechev,test
 p_01f825fd97,"Hi Dana, the tour group will meet at the tachanat otobus in Ma'alot at nine, so please tell everyone not to be late.",tachanat otobus; Ma'alot,train
 p_01f92a5fa8,"Apparently this year is a shmita year, so I want to find out how that affects the produce we buy.",shmita,train
-p_020ece1e0d,Where did my tallis bag end up after the move?,tallis,test
+p_020ece1e0d,Where did my tallis bag end up after the move?,tallis,train
 p_02127b96b8,The ulpan classes are held five mornings a week.,ulpan,train
 p_02172518fd,"We need to kasher the oven before Pesach, so please ask the neighbor whether he still has that blowtorch.",kasher; Pesach,train
 p_02199f013a,"Remember to ask whether the guy is an osek patur before we pay him, and I'll book a nesia to the market for tomorrow.",osek patur; nesia,train
@@ -327,7 +327,7 @@ p_0a71e27fa6,Call the lawyer about the yipui koach for my dad. He needs it signe
 p_0a7745adf8,"I'll be working from the café in Yemin Moshe this afternoon, so ping me there if the server alerts go off again.",Yemin Moshe,train
 p_0a7ab95780,We start Bereishis again right on Simchas Torah.,Bereishis,train
 p_0a85a8bfc1,"Savta asked if we can stop at Har Bental on the way back, because she remembers the view from years ago.",savta; Har Bental,test
-p_0a89c42bc9,Could you summarize parshas Chukas in a few simple paragraphs?,parshas,test
+p_0a89c42bc9,Could you summarize parshas Chukas in a few simple paragraphs?,parshas,train
 p_0a986b3f05,"My nephew just got posted to a new bsis near Beersheba, so I'm going to drive him down on Thursday morning and bring some food.",bsis,train
 p_0a989b5149,"Hi, please send me the form from Misrad Habriut by tomorrow. And no, this has nothing to do with the Mossad, I just heard that on the news.",Misrad Habriut; Mossad,train
 p_0aada6cbd5,He felt like a freier when he found out his friends got a better deal.,freier,test
@@ -521,7 +521,7 @@ p_104fa11a9e,I need to pick up a balon gaz and then meet you near the kikar afte
 p_1051de0c7b,"Hi, the kitchen tap is leaking again, and I'm sending the contact of an osek patur who can come and fix it this week.",osek patur,train
 p_10572805a7,"Itamar says ohel nefesh covers cooking for the holiday, but not shopping at the tzarchania.",ochel nefesh,train
 p_1059dcc963,"The Tadiran in the living room is leaking water again, so I need to call the technician tomorrow morning.",Tadiran,train
-p_105d50d00b,Please draft a short email inviting the neighbours to a Shabbos Kiddush after davening.,Shabbos,test
+p_105d50d00b,Please draft a short email inviting the neighbours to a Shabbos Kiddush after davening.,Shabbos,train
 p_1073e79972,He's due for his kalevet shot before the licence renewal.,kalevet,train
 p_107df45a08,Don't forget to call the baal habayit about the leaking pipe in the kitchen before we leave for the weekend.,baal habayit,train
 p_1082484ffc,"Hi Tamar, I'm heading to Misrad Hapnim next week and I'd love a recommendation for the best time to go so I avoid the long line.",Misrad Hapnim,train
@@ -620,7 +620,7 @@ p_1372bbf07a,"Herzliya Marina is only a few bus tachanot from your office, so we
 p_1374ab759d,"Smadar said the new place by the beach is total kef, so let's try it on Friday if you're free.",kef; Smadar,train
 p_1379bd4b3d,Can we move our meeting to Wednesday? The plumber is coming to fix the mitbach on Tuesday and I need to be home.,mitbach,train
 p_13861ac91c,"Thanks Akiva Ben-Haim, that's fine with me, just send the cheshbonit mas when you're ready and I'll pass it to accounting.",heshbonit mas; Akiva; Ben-Haim; cheshbonit,train
-p_1389760c5e,"A new maseches begins in Daf Yomi soon, and I'm already excited.",maseches,test
+p_1389760c5e,"A new maseches begins in Daf Yomi soon, and I'm already excited.",maseches,train
 p_138a9b5000,"Happy Sigd, and chag sameach to everyone celebrating.",Sigd; chag sameach,test
 p_1395b4d716,"My sister's madricha from Ben-Gurion University called about the dorm schedule, so I'll pass on the details tonight.",madricha; Ben-Gurion University,train
 p_13a0c153e6,"Hi, we are ordering arayes for the event, and I will ask the gabbai whether the synagogue kitchen can host us afterwards.",arayes; gabbai,train
@@ -917,7 +917,7 @@ p_1d21655325,"The pkida at the municipality said the form needs another stamp, s
 p_1d3d9d4b91,"I have to go to Misrad Hashikun on Sunday morning about the apartment papers, so don't schedule anything before ten.",Misrad Hashikun,train
 p_1d4ca87091,"I'm a miluimnik until the end of the month, so please send any urgent invoices to Dana and she'll handle them while I'm away.",miluimnik,train
 p_1d54a6bdc2,"Hi Ronit, the app keeps crashing when I log in from the Rehavia office, and it says my rishayon has expired even though I renewed it.",rishayon; Ronit; Rehavia,train
-p_1d6ac7e75f,Shabbos starts so early in winter that I barely get home from work in time.,Shabbos,test
+p_1d6ac7e75f,Shabbos starts so early in winter that I barely get home from work in time.,Shabbos,train
 p_1d6f741202,Are you free on Yom Sheni evening? I was thinking we could grab a beer and finally catch up.,Yom Sheni,train
 p_1d7f39c991,Should the metapelet be there during the ha'arachat tlut?,ha'arachat tlut; metapelet,train
 p_1d874fad10,"There was a chavis of olives outside the shop near David's Village, so I will pick some up.",David's Village,train
@@ -969,7 +969,7 @@ p_1f08629cdc,"Remember to sign Noam up for the maon this week, and then we can t
 p_1f1700fde1,I was daydreaming about the priestly garments in Tetzaveh and completely lost my place in the Amidah.,Tetzaveh,train
 p_1f1b5f4796,Need to find out if the Histadrut covers this at my workplace before I sign anything. I'll ask HR tomorrow.,Histadrut,train
 p_1f22793155,"Write a short summary of how an army hativa is organized, from the plugah up.",hativa; plugah,train
-p_1f23f1ac35,"Wishing you and the family a restful weekend, Netanel, and gut Shabbos to the new baby.",gut Shabbos,test
+p_1f23f1ac35,"Wishing you and the family a restful weekend, Netanel, and gut Shabbos to the new baby.",gut Shabbos,train
 p_1f26e8e19d,"We're thinking of renting a place in Pisgat Ze'ev, so I need to check how good the fiber internet options are there.",Pisgat Ze'ev,train
 p_1f2c65bcd9,"Is it efshar to return a Tel-O-Fun bike at any station, or only where I took it?",Tel-O-Fun,train
 p_1f32d37de9,"A mekom riali is a slot high enough to get into the Knesset, so mamash the number matters.",mekom riali; mamash,train
@@ -1029,7 +1029,7 @@ p_209eecd545,"Need to go to Rashut Ha'uchlusin on Sunday morning to renew my vis
 p_20a86a962e,I'm staying for Yizkor.,Yizkor,train
 p_20a945a80f,Is it mutar to charge my phone on Shabbat if I leave it plugged in from Yom Shishi?,mutar; yom; Yom Shishi,train
 p_20abab6f34,"We heard Megillas Esther twice, once at night and once the next morning.",Megillas Esther,train
-p_20b3c1630a,"Koheles is the book we read on Sukkos, and its mood suits the season.",Koheles,test
+p_20b3c1630a,"Koheles is the book we read on Sukkos, and its mood suits the season.",Koheles,train
 p_20cf61df73,"Thanks for asking, I did my sadir service in the signal corps, so I know a bit about radio equipment.",sadir,train
 p_20cfae4b3c,"Hi Dana, I finally got the heter from the municipality, so we can start work next week. Also, are you still bringing the marak on Friday?",heter; marak,train
 p_20e3087065,The Gold team confirmed that the bruto figure includes the stock options.,Gold; bruto,train
@@ -1392,7 +1392,7 @@ p_2c609266dd,"Achla, I'm glad the booking at Ein Gev worked out, so please send 
 p_2c611406e1,"Don't forget to check whether the Cibus balance carried over this month, because I want to use it for lunch near the office.",Cibus,train
 p_2c636ba3af,"Chazak, you got the Node-RED flow talking to the broker again! Can you also export it before you touch anything else, just in case?",chazak; Node-RED,train
 p_2c6cac764e,"The landlord wants an arev for the apartment, so I'm going to ask my brother if he'd be willing to sign as the guarantor.",arev,train
-p_2c6f59764e,"Are we eating at your place for Shabbos, or should we host and make the cholent?",Shabbos,test
+p_2c6f59764e,"Are we eating at your place for Shabbos, or should we host and make the cholent?",Shabbos,train
 p_2c763f49ce,"Reminder to self: my rishayon rechev expires next month, so I need to book the eye test and renew it at the office before then.",rishayon rechev,train
 p_2c87d9cb9c,"I'm planning to hike Nachal Sorek on Thursday, and afterwards I'll read that Maariv article you sent me.",Maariv; Nachal Sorek,train
 p_2c949e867b,Did the metapelet save the hatzala number in her phone?,hatzala; metapelet,train
@@ -1678,7 +1678,7 @@ p_3554b1c9e0,"The shmirot schedule for the weekend is attached, please swap amon
 p_35635c1cc0,"Yofi, so we'll all meet at Dizengoff after the shloshim, and Esti said she'll book the table.",shloshim; yofi; Esti; Dizengoff,test
 p_3567407e2b,Can you ask the mumche about the server migration? I'd rather get a real expert opinion before we move the database over.,mumche,train
 p_35696dea01,"Read up on bitul beshishim before lunch at the msabbaha, because we keep arguing about it.",bitul beshishim,train
-p_356ae17421,What time do selichos start on Saturday night at your shul?,selichos,test
+p_356ae17421,What time do selichos start on Saturday night at your shul?,selichos,train
 p_356cbe143b,Change the tachboshet tonight.,tachboshet,train
 p_3575be6ea2,The city hosts fireworks and concerts for Yom Haatzmaut.,Yom Haatzmaut,train
 p_35799e73c1,"We argued about the noar hagva'ot at dinner, and the beit mishpat ruling came up again.",noar hagva'ot; beit mishpat,train
@@ -2236,7 +2236,7 @@ p_45be7b0cbb,"Making msabbaha on Friday, so bring a bottle of Dalton white.",Dal
 p_45c0072651,"The whole login page is dafuk, and the emet is that nobody tested it before the release.",dafuk,train
 p_45c50ae90c,Yom Aliyah honors immigrants who made aliyah to Israel.,Yom Aliyah,train
 p_45c7cbe03f,"He is a true talmid chochom, humble and kind to everyone he meets.",talmid chochom,train
-p_45cb42bd4d,"Packing the car for Shabbos at my in-laws, since the whole family will be there.",Shabbos,test
+p_45cb42bd4d,"Packing the car for Shabbos at my in-laws, since the whole family will be there.",Shabbos,train
 p_45cf0f1148,"This might be a shaat hadchak situation, so let me check at the beit midrash before we decide.",shaat hadchak,test
 p_45d1abfd60,Is the haftorah for Acharei Mos the same one we had last year?,Acharei Mos,train
 p_45deb477a9,"Move a little closer to the screen, zuz, so you can see Sheikh Radwan, a neighborhood in northwestern Gaza City, on the map.",Sheikh Radwan,test
@@ -2678,7 +2678,7 @@ p_53b12e9333,I booked our flight to New York on El Al.,El Al,train
 p_53b67d336d,"What is the machlokes about, and does the Mishna decide either way?",machlokes,train
 p_53ba8194a9,"Our guests this week are asking about the Vayera theme of hospitality, so I'd like to print Birkat Hamazon booklets for the table.",Vayera,train
 p_53c8ed7c47,"Our mechina trip is during the week of Vayechi, and I'd like to prepare a short talk about Jacob's blessings.",Vayechi,train
-p_53ca88545a,"Which maseches teaches the laws of the sukkah, and how long is it?",maseches,test
+p_53ca88545a,"Which maseches teaches the laws of the sukkah, and how long is it?",maseches,train
 p_53d8002cfa,"Please check what the hishtatfut atzmit will be for the visit, and whether the chisun is covered by the kupa.",hishtatfut atzmit; chisun; kupa,train
 p_53ea444734,"The Tzofar app just went off twice in a row, so we all went into the safe room until it calmed down.",Tzofar,train
 p_53fa9736bd,"Reading about a ma'achaz in the West Bank, and the land registry details were hard to follow.",ma'achaz,train
@@ -2954,7 +2954,7 @@ p_5cba3d923d,"Need to buy a kartis zikaron for the camera, and then read that pa
 p_5cc027109a,"Her neshoma must have been so pure, everyone at the levaya said the same thing.",neshoma,train
 p_5cc71809aa,"Classic rosh katan, he did exactly what was written and nothing else.",rosh katan,train
 p_5cc747e2f1,"Hi Dana, please send me the updated invoice when you get a chance, and bevakasha add the correct company name this time.",bevakasha,train
-p_5ccec43793,Reading Koheles alone in the sukkah felt strangely perfect.,Koheles,test
+p_5ccec43793,Reading Koheles alone in the sukkah felt strangely perfect.,Koheles,train
 p_5cd5e016bb,"Before we sit down, check that the teudat kashrut is actually hanging on the wall, because last time I couldn't find it anywhere.",teudat kashrut,train
 p_5ce181d137,"My cousin just got accepted to a midrasha in the Old City and she starts right after the holidays, so we're all really excited.",midrasha,train
 p_5ce3f05239,"I'm still waiting to hear about the torim at Ma'ayanei Hayeshua, so I'll call them again tomorrow morning.",torim; Ma'ayanei Hayeshua,train
@@ -3137,7 +3137,7 @@ p_628c20ee09,Found a booklet about the Steipler at the shop where I bought our n
 p_628e7b6192,"I booked the first fizioterapia session for Tuesday morning, so please don't schedule anything for me before ten.",fizioterapia,train
 p_62abffad60,"Inbar is taking her ima to the clinic on Tuesday, so she'll be out for most of the morning.",Inbar; ima,train
 p_62b56c27ad,I picked up a six-pack of Shapira from the store for tonight.,Shapira,train
-p_62c5f8e897,"For this party, good kashrus comes first.",kashrus,test
+p_62c5f8e897,"For this party, good kashrus comes first.",kashrus,train
 p_62c70783fc,"Achi, I spoke to Turgeman this morning and he says the server migration can wait until next week.",achi; Turgeman,train
 p_62dbc2b856,"Remind me to ask the bank about the kartis chov before the nituach next week, because I think the limit is wrong.",kartis chov; nituach,test
 p_62e5606e32,"Please note that his family is dati, so when we study the Tanach together on Sunday, I'd suggest we start a bit later.",dati; Tanach,train
@@ -4751,7 +4751,7 @@ p_977eb97dd4,"Hi Dan, I'm usually davening at netz on Thursdays, so could we pus
 p_97901f47ac,"I'm taking a chufsha on Thursday, so please don't schedule anything that needs a CPU upgrade or a server reboot until I'm back.",chufsha; CPU,train
 p_9797e94d49,"Besha'a Tova to you both! We are so happy for you, and we can't wait to meet the little one.",besha'a tova,train
 p_97ad397d5d,"Hi Miriam, attached is the receipt for the fuel card charges from Paz. Could you please send it on to accounting before the end of the month?",Paz,train
-p_97ad97bb90,"Learning parshas Vaeschanan with the kids tonight, so bring your Chumash.",parshas,test
+p_97ad97bb90,"Learning parshas Vaeschanan with the kids tonight, so bring your Chumash.",parshas,train
 p_97b1b46a3c,"I'm practicing the trop for next week's reading, and my kid keeps correcting me from the next room.",trop,train
 p_97becea428,Is attendance at the tirgul mandatory?,tirgul,train
 p_97c130e771,"Shabbat starts at 4:22 this week, so let's have dinner at 5:30.",,test
@@ -5428,7 +5428,7 @@ p_ac91473f7d,"Need to ask at the machlaka whether my kartis nekudot still works,
 p_ac947bcfd0,"Whoever organised the hike, please remember that the whole plugah is meeting at the parking lot at seven, not eight.",plugah,train
 p_ac99706fb6,Update the phone number on the shvav.,shvav,test
 p_aca9f06367,The meyaledet said she was only four centimetres.,meyaledet,train
-p_acaf69fd28,"Next up is Ki Seitzei, and the Rosh yeshiva asked us all to prepare a question.",Ki Seitzei,test
+p_acaf69fd28,"Next up is Ki Seitzei, and the Rosh yeshiva asked us all to prepare a question.",Ki Seitzei,train
 p_acb79e8349,"Hi, I booked my bdikat dam for Sunday morning, and afterwards I'll meet you at Sarona for lunch. Please send me the address of the restaurant.",bdikat dam; Sarona,train
 p_acbe6bf1b6,"At the shloshim for my friend's father, someone gave a talk on Vayera about hospitality, and it fit perfectly.",Vayera,train
 p_acc24b881e,"Hi Rachel, just so you know, the salad greens from the market need bedikat tolaim before we serve them, so please allow extra time for prep on Thursday.",bedikat tolaim,train
@@ -5877,7 +5877,7 @@ p_bac848eb9f,"Hi Tzvi, could you send me a quote for the printing job? We'd like
 p_bada9acbf8,"The offer was quoted bruto, so please check the real number before we decide, and then send me the Gradio demo link.",bruto; Gradio,train
 p_bae3812aef,"Be careful driving south tomorrow, they're warning about a shitafon in the wadis near the Dead Sea, so check the forecast first.",shitafon,train
 p_baef677ac1,"Elchanan wants to know if safek derabanan lekula applies to the itriyot case, so give me a plain summary.",safek derabanan lekula,train
-p_baf83cd01c,"Bring my tallis, please.",tallis,test
+p_baf83cd01c,"Bring my tallis, please.",tallis,train
 p_bb02bb3837,"The school asked us to keep aruchat eser healthy: no chocolate, no Bamba, and no sweet drinks.",aruchat eser; Bamba,test
 p_bb030a69e7,Yerushalayim is beautiful in the spring.,Yerushalayim,train
 p_bb0883fd66,"We would be glad to join you for the brit mila on Thursday morning, and we'll come to Kabbalat Shabbat with you at the end of the week.",brit mila; Kabbalat Shabbat,train
@@ -6554,7 +6554,7 @@ p_d0c1ad2688,"Yair, as far as I know the bituach briut covers it, but I'd double
 p_d0cb5e5746,"Hi, I'm writing about the receipt from yesterday. I ordered a Gett to the airport, but the driver charged me more than the app showed.",Gett,train
 p_d0d7831d64,"He's an onen until the funeral, so don't expect him at minyan.",onen; minyan,train
 p_d0d9eb3119,Please look up how the Rebbe explained the neshoma in his talks and send me a summary.,neshoma,train
-p_d0e407041f,"Who is reading the haftorah on Shabbos morning, do you know?",haftorah,test
+p_d0e407041f,"Who is reading the haftorah on Shabbos morning, do you know?",haftorah,train
 p_d0e6e89485,"Remind me to ask the dentist whether my achuzei nechut changes anything about the shinayim treatment, because Bituach Leumi never explained it properly.",achuzei nechut; shinayim; Bituach Leumi,train
 p_d0e77fefcf,"In one sha'a I will have a break, and I will read about Elkana Federman then.",Elkana Federman,train
 p_d0ef97033b,"I had to go to the mishtara today to file a report, and then I drove up to Ariel University for the lecture.",mishtara; Ariel University,train
@@ -6572,7 +6572,7 @@ p_d1534b45b6,"Just so you know, Dana's giyur is finally approved, and they're pl
 p_d158d04a19,"Find me a reliable makor for the basic facts on Maglan, the IDF commando unit.",Maglan,train
 p_d1642c75a9,"Just so you know, my kaba was high enough that they offered me a spot in the intelligence course, but I turned it down.",kaba,train
 p_d1749fd2d5,"Don't forget to ask Noa which shevet her son is in, because the youth movement is opening registration for the summer camp this week.",shevet,train
-p_d178dad3d9,My boys set the Shabbos table while I finished the challah.,Shabbos,test
+p_d178dad3d9,My boys set the Shabbos table while I finished the challah.,Shabbos,train
 p_d17a6a3a3e,Can you check if we have a minyan on Shabbat? Someone has to read the Haftara and I'm not prepared.,minyan; Haftara,train
 p_d17f144f80,I listen to Kan Bet for the news updates throughout the day.,Kan,test
 p_d17fcba1d9,"Remind me to ask Neta if the yemei machala are still counted from last week, and buy lechem on the way home.",yemei machala; lechem; Neta,train
@@ -6623,7 +6623,7 @@ p_d2eba5157c,"Was anyone a nifga in the accident, or was it just the cars?",nifg
 p_d2fd291ee5,"Please remind me to buy a gift before the brit mila on Thursday morning, and ask Dani whether they need chairs.",brit mila,train
 p_d2fe60d428,The little ones sang Birkas Hamazon so sweetly that Grandma cried.,Birkas Hamazon,train
 p_d30137247a,Why are tachrichim made without knots?,tachrichim,train
-p_d302b22573,"The neighbor's little boy said gut Shabbos to me today, and he was so chamud.",gut Shabbos,test
+p_d302b22573,"The neighbor's little boy said gut Shabbos to me today, and he was so chamud.",gut Shabbos,train
 p_d30807dce7,"We started the shvil near Neve Ilan, and I think we will finish before it gets dark.",shvil; Neve Ilan,train
 p_d308a2edf4,"I just heard about the new baby, so mazal tov lecha from all of us.",mazal tov lecha,train
 p_d309b09d2a,"Please call the clinic and try to get a tor dachuf for tomorrow morning, because the pain is getting worse and I can't wait.",tor dachuf,train
@@ -6697,7 +6697,7 @@ p_d515e5b024,"Let's meet at Landwer on Emek Refaim at nine, I'll bring my laptop
 p_d51b26c31c,"Sounds good, I can do Tuesday. Our metapelet is coming in from Rishon LeZion that day, so the timing works well for us.",metapelet; Rishon LeZion,train
 p_d52242d8e5,"Please remind the cleaners to empty the pach zevel in the kitchen every evening, because it has been overflowing and starting to smell.",pach zevel,train
 p_d5285409da,"I booked a tor lerofe for Wednesday, so my wife will pick up the kids that day.",tor lerofe,train
-p_d5338837c5,Could you ask the mashgiach whether the new bakery's kashrus is reliable?,kashrus,test
+p_d5338837c5,Could you ask the mashgiach whether the new bakery's kashrus is reliable?,kashrus,train
 p_d548bfda8e,"Avner's kid is turning five next week, so I'm bringing a matana to the party on Sunday.",Avner; matana,train
 p_d549fb59a4,"Hi Miriam, I wanted to ask about plans for chofesh hagadol this year, because we need to sort out camps for the kids before the spots fill up.",chofesh hagadol,train
 p_d54c5674eb,Note: call Uri tonight and say mazal tov lecha on the engagement.,mazal tov lecha,train
@@ -6705,7 +6705,7 @@ p_d559b6b373,Make a big salat yerakot.,salat yerakot,train
 p_d56decdeb6,Note: try hilbeh at the Yemenite place and buy Primor juice on the way home.,Primor,train
 p_d5755ac7fd,Can you grab the kartis from the drawer before you go? I'm meeting someone near Bavli later and might head straight over from there.,kartis; Bavli,test
 p_d584682ec9,"Bediuk, the SSR setup is what slows the first page load, so let's check that before we blame the database.",bediuk; SSR,train
-p_d593b42c16,"Print the haftorah, large font.",haftorah,test
+p_d593b42c16,"Print the haftorah, large font.",haftorah,train
 p_d5a3721af5,There's a famous machlokes between Rashi and the Rambam on this point.,machlokes,train
 p_d5a7d9134e,"Note to self: ask the metapelet to put in tipot einayim for the kid at noon, his eyes are red again.",tipot einayim; metapelet,train
 p_d5ab142fef,Is there a pitzutzia near the bus station that sells Bamba?,pitzutzia; Bamba,test
@@ -6736,7 +6736,7 @@ p_d63dda835b,Our mayim bill was really high this quarter.,mayim,train
 p_d6543790f7,There's a big Sigd celebration at the Tayelet on Thursday.,Sigd; tayelet,test
 p_d6553c2d2b,"Three coins for machatzit hashekel, done.",machatzit hashekel,train
 p_d66b27fd1b,The demo data keeps showing Prigat as the default sponsor in the dashboard. Can you swap it for the placeholder brand before the client call?,Prigat,train
-p_d66d67e19c,"Set an alarm for the early selichos at the yeshiva, and make it a gentle one.",selichos,test
+p_d66d67e19c,"Set an alarm for the early selichos at the yeshiva, and make it a gentle one.",selichos,train
 p_d673a37488,"I finally received the tav toshav, so I can park near the chanut again.",tav toshav,train
 p_d6776efb08,"Thanks for hosting us on Friday, the limonana was amazing and the kids are still asking me how you made it.",limonana,train
 p_d682d5d8d6,"Hello, I'd like to ask whether the maon has any open spots for next month, and how I can book torim for a tour.",maon; torim,train
@@ -7147,7 +7147,7 @@ p_e32277c856,The miklat key is with Moshe.,miklat,train
 p_e3274598d4,"If the milga comes through, it should cover most of the tuition next year.",milga,test
 p_e32b9efea6,"My brother-in-law, a sgan aluf, pointed out Turmus Ayya on a map: a Palestinian village in the central West Bank.",Turmus Ayya,train
 p_e3332aede0,"I have a tisporet at four, so I'll be late for the call.",tisporet,train
-p_e338e6a277,"Ki Seitzei has more mitzvos than any other portion, so we'll be learning it carefully.",Ki Seitzei,test
+p_e338e6a277,"Ki Seitzei has more mitzvos than any other portion, so we'll be learning it carefully.",Ki Seitzei,train
 p_e34261d040,Stopping in Tel Baruch to get benzin made me hit traffic on the way back.,Tel Baruch,train
 p_e34ff95ce1,"Does the ovedet zara need separate bituach refui, or is she covered by the agency?",ovedet zara; bituach refui,train
 p_e356115620,"I need to stop by the beit mishpat on the way home to pick up a stamped form, and then grab some milk and bread from the makolet.",beit mishpat; makolet,train
