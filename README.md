@@ -333,8 +333,12 @@ raises. Nothing here is settled.
 - **More microphones.** Every capture-app take so far comes from one phone (OnePlus Nord 3
   5G). Desktop-microphone takes will follow once the desk is set up again after a move.
 - **Pronunciation variants.** Where a Hebrew word has two common pronunciations, such as the
-  Diaspora (Ashkenazi) and the Israeli *Rosh Hashanah*, takes are recorded in both, so that
-  the model writes one spelling for either.
+  Diaspora (Ashkenazi) and the Israeli *Rosh Hashanah*, takes are recorded in both. Where the
+  Ashkenazi form is also spelled differently in English (Shabbos for Shabbat, Tosfos for
+  Tosafot), the transcript keeps the spelling that was read, and each take records the pairing
+  (`variant_groups`), the spelling's tradition (`variant_spelling`) and how it was said
+  (`hebrew_pronunciation`). Since 2026-10-20 the sentence bank has the missing side of 76 such
+  pairs, mostly religious and Talmudic words.
 - **Other speakers, later.** All training takes are still the speaker's own. Wanted later:
   female voices; other English accents common in Israel (South African, Australian, British,
   American; an Irish accent is a small minority); and Sephardi as well as Ashkenazi
@@ -396,7 +400,7 @@ raises. Nothing here is settled.
 |---|---|
 | [`scripts/split_subsets.py`](scripts/split_subsets.py) | Builds category subsets (code-switching only, tech only, or any other category) from the main dataset, with the same layout, ids and train/test split. This is how the code-switching and tech datasets are derived. `--metadata-only` counts rows and minutes without downloading audio. |
 | [`voice-notes/`](voice-notes/) | The speaker's voice notes about the project, each with its audio and transcript. The 2026-10-18 note is the source of **Open questions and ideas**. |
-| [`sentences/`](sentences/) | The full prompt bank the speaker reads from: `sentences.jsonl` (all 5,667 prompts, with categories, target Hebrew terms, split and source) and `code-switching.csv` (the 2,745 code-switching prompts). Licences per source are in `manifest.json`; most sentences were written by an LLM for this project and are CC-BY-4.0. |
+| [`sentences/`](sentences/) | The full prompt bank the speaker reads from: `sentences.jsonl` (all 14,892 prompts, with categories, target Hebrew terms, Ashkenazi / Israeli `variant_groups` and the pronunciation `pron` a prompt is written for, split and source), `code-switching.csv` (the 8,066 code-switching prompts) and `jewish-religious-terminology.csv` (the 2,411 prompts tagged `religious`, a subset of the code-switching ones), as of 2026-10-20. Licences per source are in `manifest.json`; most sentences were written by an LLM for this project and are CC-BY-4.0. |
 
 ## Design decisions
 
@@ -419,6 +423,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-10-20**: Jewish religious terminology is bracketed as its own category, `religious` (2,411 prompts; 830 of the speaker's recorded takes, 96.5 min), always also code-switching, so it stays in the next version's training. Ashkenazi and Israeli forms of the same word are paired: 76 words with two English spellings (Shabbat / Shabbos, brit / bris, Tosafot / Tosfos, Bereishit / Bereishis) and 26 that differ only in stress (Torah, Pesach). A coverage check found the Ashkenazi form recorded for 7 of the 76 words, so the bank gains 295 sentences with the missing side, pre-tagged with the pronunciation to read. Written and reviewed by separate Claude subagents. The subset dataset is prepared but not yet published.
 - **2026-10-19**: **v1.0 benchmarked** for about US$0.50 of Modal GPU time: 73.3% term recall on the public benchmark (round 3), 5.1% CS WER on its held-out split (stock 11.3%, PoC-3 6.0%). Nemotron: 62.2% offline; streaming at 560 ms 5.65% CS WER, the same as offline (5.81%). [White paper (PDF)](https://hebrish.app/whitepaper/hebrish-v1.0-whitepaper.pdf) and [hebrish.app/benchmarks](https://hebrish.app/benchmarks).
 - **2026-10-19**: **v1.0 released** (run `r6-en30`, 339 min of code-switching, up from 294), the first release the project stands behind; the checkpoints published as v1 to v5 are renamed **PoC-1 to PoC-5**. Mix 70.2% / 19.7% / 10.0%, best epoch 18 of 20, 41 minutes on one L40S, validation WER 5.0% raw (new validation set, not comparable). Not benchmarked. `.nemo`, GGUF Q8_0/Q4_K_M/F16, ONNX fp32/int8 and sherpa-onnx int8 refreshed (MLX stays PoC-3); demo Space, project page and hebrish.app updated. The streaming [Nemotron fine-tune](https://huggingface.co/Hebrish/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching) is retrained on the same data (`r6-nemotron-en30`, validation WER 6.3% raw, not benchmarked). Retraining pauses for a while; next is v1.1 at about 450 min. Testers wanted.
 - **2026-10-19**: Sentence bank grows from 12,647 to 14,361 prompts: niche halakha terms, famous rabbis, all the weekly Torah portions and books, Jerusalem and Tel Aviv streets and neighbourhoods, greetings, Israeli brands and products, everyday words, Anglo residential buildings, car rental and sharing, and 67 names from 20 Times of Israel and Jerusalem Post stories of 18 and 19 October. Companion Hebrew words were spread over 700 less-used words to cut repetition. Written and reviewed by separate Claude subagents.
