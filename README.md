@@ -88,9 +88,9 @@ so a new fine-tune needs no new APK. It is meant as the companion voice input fo
 **HeliBoard**: HeliBoard's mic key opens it, and you are returned to HeliBoard once the text
 is in. **Try it now** on the app's main screen opens a notepad with a mic button, so you can test it without any keyboard setup. **[Download the APK (v0.1.0)](https://github.com/Hebrish-ASR/Hebrish-Dictation/releases/download/android-v0.1.0/Parlance-v0.1.0.apk)**. Not yet tested on a phone.
 
-**Mac (Apple Silicon):** the [MLX build](https://huggingface.co/Hebrish/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx) (still PoC-3, published as v3; it is re-exported after the next benchmark)
+**Mac (Apple Silicon):** the [MLX build](https://huggingface.co/Hebrish/Jachnun-MLX) (still PoC-3, published as v3; it is re-exported after the next benchmark)
 runs with `pip install parakeet-mlx` and
-`parakeet-mlx audio.wav --model Hebrish/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx`,
+`parakeet-mlx audio.wav --model Hebrish/Jachnun-MLX`,
 or with mlx-audio. On 10 held-out clips the PoC-3 MLX build scored the same WER as the PoC-3 `.nemo`.
 
 **Linux and Windows, own app, [Parlance](https://github.com/Hebrish-ASR/Hebrish-Dictation) (2026-10-19):** a
@@ -432,7 +432,7 @@ Newest first. One line per milestone.
 - **2026-10-18**: **v4 released** (run `r4-en30`, 269 min of code-switching, up from 196): the first run on the 70/20/10 mix target (70.8% / 19.1% / 10.1%), 20 epochs on one L40S. Published before its benchmark, so no test-set numbers yet; v3's remain the latest measured. `.nemo`, GGUF, ONNX and sherpa-onnx refreshed to v4, as are the demo and project Spaces; MLX stays v3 until the benchmark.
 
 - **2026-10-18**: Voice note of open questions and ideas ([audio and transcript](voice-notes/2026-10-18-project-notes/)), summarised under **Open questions and ideas**: messier recording conditions, more microphones and speakers, how many takes a word needs, and whether general fixes belong in every fine-tune.
-- **2026-10-18**: v3 for Apple Silicon: [MLX build](https://huggingface.co/Hebrish/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-mlx) for parakeet-mlx and mlx-audio, the same WER as the `.nemo` on 10 held-out clips.
+- **2026-10-18**: v3 for Apple Silicon: [MLX build](https://huggingface.co/Hebrish/Jachnun-MLX) for parakeet-mlx and mlx-audio, the same WER as the `.nemo` on 10 held-out clips.
 - **2026-10-18**: Sentence bank grows from 9,735 to 10,277 prompts: an everyday-vocabulary pack (home repairs, parenting and gan, work, renting, produce, army reserves, the missing Hebrew months), whole Hebrew reactions and fillers (legamrei, rak rega, ein li musag), and the bank's first short utterances of 2 to 4 words.
 - **2026-10-18**: Codeswitch Voice v0.1.0 (now [Parlance](https://github.com/Hebrish-ASR/Hebrish-Dictation/tree/main/android)): a proof-of-concept Android voice keyboard (APK) that runs v3 on-device through sherpa-onnx, as the companion voice input for HeliBoard.
 - **2026-10-18**: **v3 released** (run `r3-en30`, 196 min of code-switching): code-switching WER 5.3% (stock v2 10.9%, v2 5.8%), Hebrew terms with recordings 66% correct (v2 60%), no loss of English. GGUF, ONNX and sherpa-onnx exports refreshed; the model card now carries `model-index` eval metadata. First on the public benchmark at 67.4% term recall.
