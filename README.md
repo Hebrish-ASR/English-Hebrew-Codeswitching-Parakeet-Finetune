@@ -10,7 +10,7 @@ private repository.
 
 **Website: [hebrish.app](https://hebrish.app)**: get the Hebrish keyboard for Android and the desktop apps, see the results, and find every model, dataset and demo in one place.
 
-**White paper:** how v1.0 was trained, exported and benchmarked: [Hebrish v1.0 white paper (PDF)](https://hebrish.app/whitepaper/hebrish-v1.0-whitepaper.pdf), 9 pages, 2026-10-19.
+**White paper:** how Jachnun v1.0 and Sabich v1.0 were trained, exported and benchmarked: [Hebrish model release 1 white paper (PDF)](https://hebrish.app/whitepaper/hebrish-release-1-whitepaper.pdf), 13 pages, 2026-10-21 ([Hebrew](https://hebrish.app/whitepaper/hebrish-release-1-whitepaper-he.pdf)). It replaces the 2026-10-19 "Hebrish v1.0" edition, whose URL redirects to it.
 
 > **A real result:** the speaker recorded this in the [demo Space](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) (2026-10-15):
 >
@@ -173,7 +173,7 @@ term-disjoint) and is never trained on.
 | What | Link | Status |
 |---|---|---|
 | **Website**: the Hebrish keyboard and desktop apps, results, and every model, dataset and demo | [hebrish.app](https://hebrish.app) | Live, 2026-10-19 |
-| **White paper**: v1.0 training pipeline and results | [hebrish-v1.0-whitepaper.pdf](https://hebrish.app/whitepaper/hebrish-v1.0-whitepaper.pdf) | 2026-10-19, 9 pages |
+| **White paper**: model release 1 (Jachnun v1.0, Sabich v1.0) training pipeline and results | [hebrish-release-1-whitepaper.pdf](https://hebrish.app/whitepaper/hebrish-release-1-whitepaper.pdf) | 2026-10-21, 13 pages |
 | Base model | [`nvidia/parakeet-tdt-0.6b-v2`](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) | Upstream |
 | **Fine-tuned model** | [`danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching`](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching) | v1.0, 2026-10-19 (benchmarked 2026-10-19): `.nemo` plus GGUF Q8_0, Q4_K_M and F16; ONNX fp32/int8 and sherpa-onnx int8 in their own repos (MLX still PoC-3). CC-BY-4.0, like the base model. The proof-of-concept checkpoints PoC-1 to PoC-5 (published as v1 to v5) are in the repo history. |
 | Streaming fine-tune (experimental) | [`Hebrish/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching`](https://huggingface.co/Hebrish/Nemotron-Speech-Streaming-EN-0.6B-English-Hebrew-Codeswitching) | Updated 2026-10-19 (run `r6-nemotron-en30`), benchmarked 2026-10-19 (62.2% term recall offline; 5.65% CS WER streaming at 560 ms, 5.81% offline): the same data and recipe as v1.0 on NVIDIA's streaming `nemotron-speech-streaming-en-0.6b`, to compare a second base model. Validation WER 6.3% raw, against 5.0% for v1.0 on the same validation set. `.nemo` only; NVIDIA Open Model License |
@@ -211,7 +211,7 @@ term-disjoint) and is never trained on.
 **v1.0** (run `r6-en30`, released 2026-10-19) was **benchmarked on 2026-10-19**, together
 with stock v2, PoC-3 and the Nemotron run, all on v1.0's own test split (dataset revision
 `550bfcaa0f84`: 387 code-switching clips, 293 occurrences of held-out terms). The whole round,
-six GPU jobs on Modal, cost about US$0.50. Full write-up: [white paper (PDF)](https://hebrish.app/whitepaper/hebrish-v1.0-whitepaper.pdf);
+six GPU jobs on Modal, cost about US$0.50. Full write-up: [white paper (PDF)](https://hebrish.app/whitepaper/hebrish-release-1-whitepaper.pdf);
 charts: [hebrish.app/benchmarks](https://hebrish.app/benchmarks).
 
 | Test set (revision `550bfcaa0f84`) | Stock v2 | PoC-3 | **v1.0** | Nemotron (offline) | Nemotron (streaming, 560 ms) |
