@@ -172,6 +172,7 @@ p_11ad3e1138,"My cousin is starting the giyur process next month, so could you a
 p_11bffe4de5,"See you soon, b'ezras Hashem.",b'ezras Hashem,beezrat-hashem,ashkenazi,train
 p_11cccfea67,"Someone left the cup for mayim acharonim on the table again, so I wiped it down.",mayim acharonim,,,train
 p_11e2a778f8,Draft a short email inviting the cousins to the hakamat matzeva for my saba.,hakamat matzeva; saba,,,train
+p_11ff5e361b,"Tzav usually falls right before Pesach, so the shiur this week is about the chametz.",Tzav,pesach,,train
 p_1206e00839,There's a dati leumi high school nearby.,dati leumi,,,train
 p_1207f3d8e2,Could you summarize what Rashi says at the start of Vaeschanan?,Vaeschanan,vaetchanan,ashkenazi,train
 p_12293b4376,"Gmar chatima Tova to you and the whole family, and I hope the fast goes easy this year!",gmar chatima tova,,,train
@@ -652,6 +653,7 @@ p_431ca53d66,"Hi Dana, just letting you know we'll be doing bedikat chametz on T
 p_433daa758b,"Hi Yossi, I left my black kippa in your car after the wedding, so could you please hang onto it until I see you?",kippa,,,test
 p_433f7a79a9,Pick up the printed megillah with the Rut text from the synagogue before the festival begins.,Rut,megillah; rut,,train
 p_4395ce01e3,"Our friend is saying birchat hagomel tomorrow after returning safely from a long hospital stay, and we're all invited.",birchat hagomel,birkat,,train
+p_439de08e6e,Could you send me the dvar Torah you wrote on Tzav before Friday afternoon?,Tzav,torah,,train
 p_43a73512e0,Pick up the Vayishlach study sheets from the kollel before nine.,Vayishlach,,,train
 p_43ca5a1ad8,"Learning a new masechet with Avi this week, and then we're all going to Yoni's upsherin on Sunday, so I need to buy a gift.",masechet; upsherin; Yoni,masechet,,train
 p_43d470165f,Read the section on tza'ar baalei chaim before choosing a dog from the shelter.,tza'ar baalei chaim,,,train
@@ -885,6 +887,7 @@ p_5a9ea5b965,"We would love for you to join us at the vort on Thursday evening, 
 p_5aa2d04a6a,"The mechina students will present on Vayetzei at the end of the term, and I'm helping with the slides.",Vayetzei,,,train
 p_5ac275d3a5,What's the meitzav with the Mishlei class? I heard it moved to Tuesday.,Mishlei,,,train
 p_5afddef66c,"The teacher said the older kitot are learning about the Rif this term, which sounds ambitious.",Rif,,,train
+p_5b342459d5,Could you send the dvar Torah on Pinchas to the shul list before Thursday night?,Pinchas,torah,,train
 p_5b40fc515e,"Our nephew is the chosson, and we're all travelling up for the wedding.",chosson,chatan,ashkenazi,train
 p_5b49344626,We stayed after Maariv to hear the Rosh yeshiva give a short shiur.,Maariv,maariv,ashkenazi,train
 p_5b499a5aed,A seudas mitzvah is a good reason to invite everyone from the kollel.,seudas mitzvah,mitzva; seudat,ashkenazi,train
@@ -1132,6 +1135,7 @@ p_748be3c48a,Pesach commemorates the exodus from Egypt and lasts eight days.,Pes
 p_749b51611a,We're giving tzedakah le'ilui nishmat my grandmother this month.,le'ilui nishmat; tzedakah,,,test
 p_74ba824142,"Thanks for the invitation, we would love to come to you for seudat Shabbat, and we can bring wine and a dessert.",seudat Shabbat,seudat; shabbat,,train
 p_74e80daf83,Who is organising the seudat havra'a after the levaya?,seudat havra'a; levaya,seudat,,train
+p_74e9fb8b51,"We read Pinchas this week, and the shiur after Kiddush was about zeal and when it goes too far.",Pinchas,kiddush,,train
 p_74f1c2f73f,"My chiloni cousin is joining our Shabbat table and wants to hear about the Mishna, so please pick a short passage we can read together.",chiloni; Mishna,mishna; shabbat,,train
 p_750022d3fc,"I'll patch the Ubuntu box before erev chag, so please don't push anything to the server tonight, because everyone will be offline tomorrow.",erev chag; Ubuntu,,,test
 p_75253e2117,Rosh Chodesh is celebrated as a minor holiday in Jewish tradition.,Rosh Chodesh,rosh-chodesh,,train
@@ -2254,6 +2258,7 @@ p_ec1f0f79b9,"Our guests avoid gebrokts at Pesach, so no dunking matza in the sh
 p_ec341c123b,"Worth grabbing a bottle of Acamoli before Shabbat, the fever is climbing and the closest pharmacy is shut tomorrow.",Acamoli,shabbat,,train
 p_ec3dfbb32a,"Dear all, the levaya will be tomorrow at eleven, and everyone is saying Tehillim for her at home tonight.",levaya; Tehillim,tehillim,,train
 p_ec75fcfda8,"I cleared the cache on the phone and now the app loads fine, but I still need to grab some cash before Shabbat.",cache; cash,shabbat,,train
+p_eca100e402,"We're reading Tzav this Shabbat, so the bar mitzvah boy gets the section about the korbanot.",Tzav,bar-mitzva; shabbat,,train
 p_eccedf6a32,"Someone was selling a book by Rav Mordechai Eliyahu at the lulav stand this morning, and I almost bought it.",Rav Mordechai Eliyahu,,,train
 p_ed0cf31b75,During Yizkor they also say El Malei Rachamim for the fallen.,El Malei Rachamim; Yizkor,,,train
 p_ed4a3efbea,"I'm leaving Kfar Chabad achshav, so I should reach you in about twenty minutes if the road is clear.",achshav; Kfar Chabad,,,train
@@ -2310,6 +2315,7 @@ p_f3809b9f30,Open the halacha book to techum Shabbat before planning Saturday's 
 p_f3aab3d2af,"Shavua Tov! Anyone from the Anglo shul want to come to my place Thursday? I'm frying levivot, so bring a friend.",levivot; Anglo; Shavua Tov,,,train
 p_f3d8cfec8f,"Just wanted to say chag sameach to you and the whole family, hope you have a really relaxed few days together!",chag sameach,,,train
 p_f3df6fb20b,"We're thinking about a masorti synagogue for the High Holidays this year, because we want something traditional but with men and women sitting together.",masorti,,,train
+p_f3fb2f6221,"My nephew's bar mitzvah is on Shabbat Pinchas, so he's been practising the haftarah all month.",Pinchas,bar-mitzva; haftarah; shabbat,,train
 p_f428be55f0,"Please SSH into the home server and check how the reverse proxy is set up for the recipe app. Then get a certificate from Let's Encrypt for the new subdomain and set up automatic renewal. I want the dessert page to load over HTTPS, since people keep asking whether the cake is parve. After that, restart the proxy, confirm the certificate is valid, and send me a short summary of exactly what you changed on the server.",parve; SSH; Let's Encrypt,,,train
 p_f440e591de,"Is the fryer for the sufganiyot a kli rishon, or does that only apply to pots on the stove?",kli rishon,,,train
 p_f455fb2a57,"We need to decide who's hosting for Sukkot this year, and somebody has to order the schach before the shops run out.",Sukkot; schach,sukkot,,train

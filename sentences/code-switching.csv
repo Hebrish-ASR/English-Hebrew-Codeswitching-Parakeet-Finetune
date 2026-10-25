@@ -564,6 +564,7 @@ p_11d0dc59b1,Can you update the smart home dashboard so it shows when the Neviot
 p_11db73e5da,The bet knesset opens early for morning prayers.,bet knesset,train
 p_11e2a778f8,Draft a short email inviting the cousins to the hakamat matzeva for my saba.,hakamat matzeva; saba,train
 p_11f25fea93,Summarize what a heskem mamon usually covers and whether it needs a notary or a court.,heskem mamon,train
+p_11ff5e361b,"Tzav usually falls right before Pesach, so the shiur this week is about the chametz.",Tzav,train
 p_11ffe4f157,Suggest a gift for my doda who loves Egozi chocolate but is watching her sugar.,Egozi,train
 p_1204227051,Tell saba the Hapoel Yerushalayim game starts after dinner.,Hapoel Yerushalayim; saba,train
 p_1206e00839,There's a dati leumi high school nearby.,dati leumi,train
@@ -2159,6 +2160,7 @@ p_43716dcd2f,"Hello, to finish the address update at Misrad Hapnim I need to bri
 p_4375343633,"Hi Rina, I paid for the private ginekolog visit out of pocket, so can you help me file the hechzer with the kupa?",hechzer; ginekolog; kupa,train
 p_438e7cf098,"Don't forget to ask Bituach Leumi when the dmei leida will actually arrive, because we still haven't seen anything in the account.",dmei leida; Bituach Leumi,train
 p_4395ce01e3,"Our friend is saying birchat hagomel tomorrow after returning safely from a long hospital stay, and we're all invited.",birchat hagomel,train
+p_439de08e6e,Could you send me the dvar Torah you wrote on Tzav before Friday afternoon?,Tzav,train
 p_43a73512e0,Pick up the Vayishlach study sheets from the kollel before nine.,Vayishlach,train
 p_43aedf76f6,"Noa, the gerer is stuck in a pkak on the way, so it'll be a while.",gerer; pkak,test
 p_43b35551a9,We installed a new dud shemesh on the roof last month.,dud shemesh,train
@@ -2900,6 +2902,7 @@ p_5af6f93c90,"The matana from Avigail arrived this morning, and the kids are obs
 p_5af772c4f6,"Hi Dana, I finally booked the appointment for hamarat rishayon next Tuesday, so I need to know which documents the office actually wants me to bring.",hamarat rishayon,train
 p_5afddef66c,"The teacher said the older kitot are learning about the Rif this term, which sounds ambitious.",Rif,train
 p_5b2e71f01c,"We finally found a flat in Har Nof, so can you come see it with me tomorrow morning before the landlord changes his mind?",Har Nof,test
+p_5b342459d5,Could you send the dvar Torah on Pinchas to the shul list before Thursday night?,Pinchas,train
 p_5b3cf89b60,My daughter has so many shiurei bayit this week that I'm pretty sure I'll end up doing half of them myself.,shiurei bayit,test
 p_5b40fc515e,"Our nephew is the chosson, and we're all travelling up for the wedding.",chosson,train
 p_5b49344626,We stayed after Maariv to hear the Rosh yeshiva give a short shiur.,Maariv,train
@@ -3695,6 +3698,7 @@ p_74ba824142,"Thanks for the invitation, we would love to come to you for seudat
 p_74d13af7a0,"Reading about Misrad Habitachon talks with Ashaf today, and honestly I can't tell what is actually on the table, so let's talk tonight.",Misrad Habitachon; Ashaf,train
 p_74e80daf83,Who is organising the seudat havra'a after the levaya?,seudat havra'a; levaya,train
 p_74e998b88b,"We got stuck at the machsom for almost an hour, so I called the moked to say we'll be late for dinner.",moked; machsom,train
+p_74e9fb8b51,"We read Pinchas this week, and the shiur after Kiddush was about zeal and when it goes too far.",Pinchas,train
 p_74f1c2f73f,"My chiloni cousin is joining our Shabbat table and wants to hear about the Mishna, so please pick a short passage we can read together.",chiloni; Mishna,train
 p_74f81df40c,"Hi, I dropped off the blood sample at the ma'abada this morning. Please send the results by doar mahir, not by regular mail.",ma'abada; doar mahir,train
 p_750022d3fc,"I'll patch the Ubuntu box before erev chag, so please don't push anything to the server tonight, because everyone will be offline tomorrow.",erev chag; Ubuntu,test
@@ -7460,6 +7464,7 @@ p_ec94433fa2,"Try the zhug at the small place on Hess, near Mamilla, because it'
 p_ec97d1c9d6,"Stay home, possible pigu'a.",pigu'a,train
 p_ec9c732bba,"Since the milchama started, our whole team has been working remotely, so please send me anything urgent by email rather than waiting for the office to reopen.",milchama,train
 p_ec9d7491ca,Call Mekorot about the pressure.,Mekorot,train
+p_eca100e402,"We're reading Tzav this Shabbat, so the bar mitzvah boy gets the section about the korbanot.",Tzav,train
 p_eca80f1a20,"After she broke her wrist, they put on a gevs, and now her achot has to help her with everything at home.",gevs; achot,train
 p_ecccbfee88,My daughter is doing sherut leumi instead of joining the army.,sherut leumi,train
 p_eccedf6a32,"Someone was selling a book by Rav Mordechai Eliyahu at the lulav stand this morning, and I almost bought it.",Rav Mordechai Eliyahu,train
@@ -7673,6 +7678,7 @@ p_f3da15ece3,"Ask the wine shop tachles, no long chat, which Recanati goes best 
 p_f3df6fb20b,"We're thinking about a masorti synagogue for the High Holidays this year, because we want something traditional but with men and women sitting together.",masorti,train
 p_f3e3d36192,"Meeting a friend in Ramat Shlomo later, and then we're getting msabbaha for lunch. I'll message you when I'm heading back.",msabbaha; Ramat Shlomo,train
 p_f3eb5dc607,After the lecture in Afeka we found a grill that serves meurav yerushalmi.,Afeka,train
+p_f3fb2f6221,"My nephew's bar mitzvah is on Shabbat Pinchas, so he's been practising the haftarah all month.",Pinchas,train
 p_f417ce80a8,"Hi, the pricha on my arm is still there after a week, so I wanted to ask if I should see a dermatologist.",pricha,train
 p_f421f02473,The Osher Ad near us is always crowded on Thursday afternoons.,Osher Ad,train
 p_f428be55f0,"Please SSH into the home server and check how the reverse proxy is set up for the recipe app. Then get a certificate from Let's Encrypt for the new subdomain and set up automatic renewal. I want the dessert page to load over HTTPS, since people keep asking whether the cake is parve. After that, restart the proxy, confirm the certificate is valid, and send me a short summary of exactly what you changed on the server.",parve; SSH; Let's Encrypt,train
