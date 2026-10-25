@@ -12,7 +12,7 @@ private repository.
 
 **White paper:** how Jachnun v1.0 and Sabich v1.0 were trained, exported and benchmarked: [Hebrish model release 1 white paper (PDF)](https://hebrish.app/whitepaper/hebrish-release-1-whitepaper.pdf), 13 pages, 2026-10-21 ([Hebrew](https://hebrish.app/whitepaper/hebrish-release-1-whitepaper-he.pdf)). It replaces the 2026-10-19 "Hebrish v1.0" edition, whose URL redirects to it.
 
-> **A real result:** the speaker recorded this in the [demo Space](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) (2026-10-15):
+> **A real result:** the speaker recorded this in the first demo Space (2026-10-15; since retired, the current one is [Jachnun-Demo](https://huggingface.co/spaces/Hebrish/Jachnun-Demo)):
 >
 > | | Transcript |
 > |---|---|
@@ -37,7 +37,7 @@ or to [info@hebrish.app](mailto:info@hebrish.app).
 [![Parlance APK v0.1.0](https://img.shields.io/badge/Android_APK-Parlance_v0.1.0-2E7D6B?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Hebrish-ASR/Hebrish-App/releases/download/android-v0.1.0/Parlance-v0.1.0.apk)
 [![Parlance .deb v0.1.0](https://img.shields.io/badge/Ubuntu_.deb-Parlance_v0.1.0-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://github.com/Hebrish-ASR/Hebrish-App/releases/download/desktop-v0.1.0/parlance_0.1.0-1_amd64.deb)
 [![Parlance for Windows v0.1.0](https://img.shields.io/badge/Windows-Parlance_v0.1.0-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/Hebrish-ASR/Hebrish-App/releases/download/desktop-v0.1.0/Parlance-v0.1.0-windows-x64.zip)
-[![Try the demo](https://img.shields.io/badge/Try_it-Demo_Space-FF9D00?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo)
+[![Try the demo](https://img.shields.io/badge/Try_it-Demo_Space-FF9D00?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/spaces/Hebrish/Jachnun-Demo)
 [![Model card](https://img.shields.io/badge/Model-.nemo_·_2.47_GB-555555?style=for-the-badge&logo=nvidia&logoColor=76B900)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching)
 
 ### Which file should I download?
@@ -186,7 +186,7 @@ term-disjoint) and is never trained on.
 | Training data: takes with Jewish religious terminology, Ashkenazi and Israeli forms paired, inside the code-switching set | [`Hebrish/Jewish-Religious-Terminology-Sentences`](https://huggingface.co/datasets/Hebrish/Jewish-Religious-Terminology-Sentences) | Live, 2026-10-20 |
 | Every training dataset in one place | [HF collection: Parakeet V2 Fine-Tune - Training Data](https://huggingface.co/collections/Hebrish/parakeet-v2-fine-tune-training-data-6ad63c739d300685a62edb3e) | 2026-10-19 |
 | **Project page**: every variant, results charts and a blog | [Space: `English-Hebrew-Codeswitching-Parakeet`](https://huggingface.co/spaces/Hebrish/English-Hebrew-Codeswitching-Parakeet) | Live, 2026-10-16. Also in the [HF collection](https://huggingface.co/collections/danielrosehill/parakeet-v2-english-hebrew-codeswitching-finetune-6ad26d79c70d28a49ed71c78) |
-| **Demo**: stock v2 vs the fine-tune, side by side | [Space: `English-Hebrew-Codeswitching-Parakeet-Demo`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo) | Live (ZeroGPU) |
+| **Demo**: record or upload and the model transcribes it in your browser | [Space: `Hebrish/Sabich-Demo`](https://huggingface.co/spaces/Hebrish/Sabich-Demo) (Sabich v2.1) and [Space: `Hebrish/Jachnun-Demo`](https://huggingface.co/spaces/Hebrish/Jachnun-Demo) (Jachnun v1.0) | Live, 2026-10-25 and 2026-10-20. Replaced the server-side side-by-side `English-Hebrew-Codeswitching-Parakeet-Demo` (ZeroGPU), deleted 2026-10-25 |
 | **Benchmark**: this model against stock Parakeet and Whisper on a frozen code-switching test set | [Space: `English-Hebrew-Codeswitching-ASR-Leaderboard`](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard) ([test set](https://huggingface.co/datasets/Hebrish/English-Hebrew-Codeswitching-ASR-Benchmark), [runner](https://github.com/Hebrish/English-Hebrew-Codeswitching-ASR-Benchmark)) | Live, v1 (2026-10-15). Headline metric is Hebrew term recall |
 | Browser for the training data | [Space: `English-Hebrew-Codeswitching-Browser`](https://huggingface.co/spaces/Hebrish/English-Hebrew-Codeswitching-Browser) | Live |
 | **Dataset Blender**: pick datasets from the training-data collection, filter, hold out val/test (term-disjoint if wanted), set each source's share, download NeMo manifests and a reproducible recipe | [Space: `ASR-Dataset-Blender`](https://huggingface.co/spaces/danielrosehill/ASR-Dataset-Blender) ([GitHub](https://github.com/Hebrish-ASR/ASR-Dataset-Blender)) | Live, 2026-10-20. Gated datasets need sign-in and granted access |
@@ -429,6 +429,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-10-25**: **Sabich demo** live: [`Hebrish/Sabich-Demo`](https://huggingface.co/spaces/Hebrish/Sabich-Demo) runs Sabich v2.1 in the browser (record or upload, nothing leaves the device), like [`Hebrish/Jachnun-Demo`](https://huggingface.co/spaces/Hebrish/Jachnun-Demo). The old side-by-side demo Space, `danielrosehill/English-Hebrew-Codeswitching-Parakeet-Demo`, was retired and its links repointed.
 - **2026-10-25**: **Sabich v2.1** published ([`Hebrish/Sabich`](https://huggingface.co/Hebrish/Sabich), run `r10-all`, CC-BY-NC-4.0): v2.0's recipe on dataset revision `2cec2ebc`, with 848.4 min in the mix (722.9 min of the speaker's own takes, 449.2 of them code-switching, up from 642.3 and 412.4). New: no more `<unk>` in the output, extra weight on the words the speaker's own dictation got wrong, paragraphs left out, and code-switching and tech kept in separate sentences. Not benchmarked at release. Its exact training blend and composition are on [hebrish.app/lexicon](https://hebrish.app/lexicon). The public benchmark dataset is now ungated.
 - **2026-10-25**: Error prediction started: [`Hebrish/ASR-Error-Prediction`](https://huggingface.co/datasets/Hebrish/ASR-Error-Prediction) holds the 87 confirmed error-list words as training data and 4,746 candidate words (3,634 code-switching, 1,112 tech), each split by segment. A first Claude Haiku pass (`haiku-r1`) scored every candidate's chance of being mistranscribed and proposed 107 more, extrapolating from the confirmed errors. The scores are rankings to check against the real model before anything is recorded. [Plan](https://github.com/danielrosehill/ASR-Mistranscription-Predictor).
 - **2026-10-25**: All 54 weekly Torah portions (parshiot) are now in the sentence bank: Tzav and Pinchas were the last two, 3 sentences each. The capture app has a Parshiot task that serves only those sentences (165).
