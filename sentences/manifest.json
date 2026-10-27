@@ -1,8 +1,8 @@
 {
  "built_at": "2026-10-19T11:56:19+00:00",
- "prompts": 18507,
- "code_switch": 8128,
- "religious": 2421,
+ "prompts": 18681,
+ "code_switch": 8158,
+ "religious": 2423,
  "licences": {
   "english-hebrew-mixed-sentences": "MIT (Hebrish/English-Hebrew-Mixed-Sentences)",
   "tech-sentences-for-asr-training": "MIT (danielrosehill/Tech-Sentences-For-ASR-Training)",

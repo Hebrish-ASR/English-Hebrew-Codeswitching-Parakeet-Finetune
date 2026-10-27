@@ -1760,6 +1760,7 @@ p_b5ce518b3d,My son is learning the words of Krias Shema by heart.,Krias Shema,k
 p_b6135c2147,"Thanks so much for the lovely note, Rivka. Your bracha for the new baby meant a great deal to us.",bracha,bracha,,train
 p_b62d279168,The chosson looked nervous but beaming as everyone danced around him.,chosson,chatan,ashkenazi,train
 p_b63d03eb34,"Our beit knesset is organising seats for Rosh Hashana, so please tell me by Thursday how many people from your family are coming.",beit knesset; Rosh Hashana,rosh-hashana,,train
+p_b641e7bb16,"We need rimonim for the seder on Rosh Hashana, the big red ones if they have them.",rimonim,rosh-hashana,,train
 p_b662adfc5d,"Be'ezrat Hashem the minyan will be full tomorrow, so please remind the shamash to unlock the shul early.",be'ezrat Hashem; shamash; minyan,beezrat-hashem; minyan,,test
 p_b6a3ae54e2,Can you check whether the new chalavi menu component is typed properly in TypeScript? I keep getting a weird error on the props.,chalavi; TypeScript,,,train
 p_b6b0bd1f13,"Make me a reading plan that starts with Vayikra and ends before Tisha Bav, one chapter a day.",Vayikra,tisha-bav,,test
@@ -2093,6 +2094,7 @@ p_d944e96744,"Tonight lo ba li to cook, so let's order something basari from the
 p_d947f429ef,"Our synagogue is holding an evening on the agunah issue after the ketubah workshop, if you'd like to come.",agunah; ketubah,ketubah,,train
 p_d96e13f398,I made potato latkes for Chanukah.,Chanukah,chanuka,,train
 p_d9bbe6b67d,"Reminder to self: finish packing the kids' bags and get to shul on time for Kabbalat Shabbat, and leave the laptop closed tonight.",Kabbalat Shabbat,kabbalat,,train
+p_d9f2cabd78,Can you find me a simple recipe for a petel and chocolate cake for Shabbat?,petel,shabbat,,train
 p_da029ab7a7,"Let's meet near Azrieli for lunch, but check the place first, because I want somewhere that's Shomer Shabbat.",Azrieli; Shomer Shabbat,shabbat,,train
 p_da1bb58fb2,"Yair is hosting a Motzash get-together and wants a five-minute talk on Vayechi, so write one.",Vayechi,,,train
 p_da2345cf29,Mail the card to my grandparents with a freilichen Purim written inside.,a freilichen Purim,purim,,train
