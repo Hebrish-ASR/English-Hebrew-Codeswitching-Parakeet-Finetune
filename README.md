@@ -209,7 +209,7 @@ term-disjoint) and is never trained on.
 | 6. Retrains | v1.0 done, 2026-10-19 | Proof of concept: PoC-2 at 120 min, PoC-3 at 196 min, PoC-4 at 269 min, PoC-5 at 294 min (published as v2 to v5). Then v1.0 at 339 min, the first release the project stands behind. ~30% English each; PoC-4 the first on the 70/20/10 target. PoC-4, PoC-5 and v1.0 benchmarks pending. Retraining pauses for a while; next: v1.1 at about 450 min. |
 | 7. On-device export | GGUF, ONNX, sherpa-onnx done for v1.0; MLX at PoC-3 | v1.0 exported 2026-10-19 (GGUF Q8_0/Q4_K_M/F16, ONNX fp32/int8, sherpa-onnx int8). MLX follows the next benchmark. v1.0 check against fp32 ONNX on 5 clips: Q8_0 and F16 5/5, Q4_K_M, ONNX int8 and sherpa-onnx int8 4/5. Phone test pending. |
 | 8. Release | v1.0 released, 2026-10-19 | Published before its benchmark, as PoC-4 and PoC-5 were. The base model is CC-BY-4.0, so fine-tunes are published openly |
-| 9. Batch releases | Release v2, 2026-10-22 | The models kept current are retrained together as one numbered release, no benchmark: Sabich v2.0, Shakshuka v2.0 and Meorav v2.1 in v2. Jachnun (this repo's code-switching-only line) stays at v1.0 until it is next retrained. [hebrish.app/releases](https://hebrish.app/releases) |
+| 9. Batch releases | Sabich v2.2, 2026-10-28 (release v2: 2026-10-22) | The models kept current are retrained as numbered releases: Sabich v2.0, Shakshuka v2.0 and Meorav v2.1 in v2 (no benchmark); Sabich v2.1 followed on 2026-10-25 and **Sabich v2.2** on 2026-10-28, benchmarked on the public test set v2 (4.91% code-switching WER, 70.1% term recall). Next checkpoint: 720 min of code-switching training audio (471.4 min now), forecast mid-to-late November 2026. Jachnun (this repo's code-switching-only line) stays at v1.0 until it is next retrained. [hebrish.app/releases](https://hebrish.app/releases) |
 
 ## Results
 
@@ -312,18 +312,17 @@ audio alone does not help new words. Full per-utterance results: `evals/r3-*.jso
 [model repo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/tree/main/evals);
 the scores are also in the model card's `model-index` metadata.
 
-### Data so far (2026-10-19, revision used for v1.0)
+### Data so far (2026-10-28, revision `main`, used for Sabich v2.2)
 
-Code-switching takes, from the `metadata.jsonl` files on Hugging Face:
+Training split of the corpus (from the retrain-readiness check, 2026-10-28):
 
-| Split | Clips | Audio | Of which from the capture app |
-|---|---|---|---|
-| train | 3,224 | 339 min | 312 min |
-| test | 387 | 44 min | |
+| | Clips | Audio |
+|---|---|---|
+| train, all | 7,638 | 800.7 min |
+| of which code-switching | 4,512 | 471.4 min (444.6 min from the capture app) |
+| of which the speaker's own English | 2,800 | 295.9 min |
 
-The rest came from the earlier desktop-mic round. The same revision has 95.3 min of the
-speaker's own monolingual English. Retraining pauses for a while after v1.0; the next retrain
-(v1.1) is planned at about 450 min of code-switching.
+The code-switching test split has 615 clips. Sabich v2.2 trained on 899.7 min of the speaker's own takes plus 100.1 min of LibriSpeech-PC replay. The next retrain is planned at 720 min of code-switching audio, 248.6 min away. The figures further up this page for v1.0 (revision `550bfcaa0f84`, 339 min) are historical.
 
 ## Open questions and ideas
 
@@ -430,6 +429,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-10-28**: **Sabich v2.2** published ([`Hebrish/Sabich`](https://huggingface.co/Hebrish/Sabich), run `r12-all`; builds sherpa-onnx int8, GGUF F16, ONNX): 471.4 min of code-switching and 899.7 min of the speaker's own takes plus 100.1 min of LibriSpeech-PC replay (1,079 min, 10,272 clips; v2.1 had 449.2 and 722.9). New: speed perturbation (0.9/1.0/1.1); averaging the last five checkpoints was tried and the best single epoch kept (validation 4.88% vs 4.96%). On the public benchmark, test set v2 (129 clean clips), v2.2 vs v2.1 vs stock Parakeet v2: code-switching WER 4.91% / 5.21% / 13.72%, Hebrew term recall 70.1% / 65.6% / 19.9%, unseen terms 62.0% / 56.2% / 16.1%, seen 83.3% / 81.0% / 26.2%, English control WER 2.12% / 2.42% / 2.73%, tech WER 2.76% / 3.02% / 7.54%. The [leaderboard](https://huggingface.co/spaces/danielrosehill/English-Hebrew-Codeswitching-ASR-Leaderboard) is now split into code-switching fine-tunes and stock models. Apps pick up v2.2 automatically; [Sabich-Demo](https://huggingface.co/spaces/Hebrish/Sabich-Demo) runs it. Next retrain at 720 min of code-switching audio (1.5x the last release, rounded up to the hour), forecast mid-to-late November 2026 ([plan](https://hebrish.app/roadmap#training-plan)).
 - **2026-10-27**: Ten more Israeli foods in the sentence bank (pasiflora, afarsek, shesek, petel, rimonim, kishuim, mafrum, frena, artik, tropit), 30 code-switching sentences.
 - **2026-10-27**: 48 new sentences for Jerusalem city politics and a local parcel pickup point: Parcel Home, Yossi Havilio, Hitorerut, the council lists (Ha'ichud Hayerushalmi, Yerushalayim Achat, Mafdal, Bnei Torah) and their leaders, and moetzet ha'ir. Sentences with the held-out word Hitorerut go to the test split. The bank is now 18,507 sentences.
 - **2026-10-26**: **[Hebrish-Ideas](https://huggingface.co/datasets/Hebrish/Hebrish-Ideas)** created: voice notes of ideas and incremental-improvement notes for the project and its recording app, each with its audio and a cleaned transcript. Not training data — the notes record what to improve and why (a retrospective annotation layer over the collected audio for noise, background conversation and music; noisy-speech robustness including a cross-lingual background-speech test; and inference-time speaker verification). The plan, from the first note, is for the recording app's new Ideas page to push these straight to the dataset and transcribe them with a Flash model. First three notes are in it.
