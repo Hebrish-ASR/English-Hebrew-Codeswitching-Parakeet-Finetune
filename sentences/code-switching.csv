@@ -1180,6 +1180,7 @@ p_2478ccda69,"There is a broken ramzor near the junction, so I am late, and I am
 p_2488baf273,"Pinchas, the chamin is in the fridge, so heat it on low for about an hour before serving.",Pinchas; chamin,train
 p_2496ab4884,"Before booking anything, check the kivun of the trail. I want to start at the bottom of Har Tavor and finish at the top.",kivun; Har Tavor,train
 p_249b817524,"Hi Sigal, thanks for asking. The parsha is not something I know much about, but I can ask my father-in-law, who reads it every week.",parsha; Sigal,train
+p_24a264cfa9,My mother-in-law's asado with potatoes is the best basari meal of the week.,asado,train
 p_24acacef66,"Hila wants a madaf for her books, so suggest a few options that fit a narrow wall.",madaf,train
 p_24b1f88518,"I'm waiting at the tachanat otobus in Gan Yavne, and the bus is late again, so start the meeting without me.",tachanat otobus; Gan Yavne,train
 p_24b7caf199,"Hi everyone, the office minyan will move to the small meeting room tonight, so please come a bit early if you plan to join Maariv.",Maariv; minyan,train
@@ -3757,6 +3758,7 @@ p_715d2e1de3,"Hi, my son is deciding between sherut leumi and the army, and he's
 p_71789ee985,"After the siyum everyone stayed for Birkat Hamazon together, and honestly it was the nicest part of the evening, so thanks for organizing it!",siyum; Birkat Hamazon,train
 p_718bd21c21,Mazal tov on getting the Synology migrated! Can you send me the new share names once the volumes finish syncing?,mazal tov; Synology,train
 p_718bf38c2e,"Slicha, I only just saw this! Are you still driving through the Shfela later, or did you already go?",slicha; Shfela,train
+p_718dce0c4e,"Ask the butcher for two kilos of asado on the bone, cut thick.",asado,train
 p_71981bff90,"Yalla, I'm leaving now, so meet me in Tzur Yigal in about twenty minutes and bring the keys to the car.",yalla; Tzur Yigal,train
 p_71adb831f2,"The madbir will spray the stairwell on Monday, so please keep windows closed until the evening.",madbir,train
 p_71aef6b9ec,The challah from the bakery on the corner is amazing.,challah,train
@@ -4577,6 +4579,7 @@ p_8b32267601,Can you grab two cartons of milk and some cottage cheese from Tnuva
 p_8b36726d38,"The azkara for Dan's father is on Thursday afternoon, so please remind me to leave work early and bring a kippah.",azkara,train
 p_8b4d47b978,"Add Tapuchips to the shopping list, the paprika ones, and also remind me to buy sparkling water for the weekend.",Tapuchips,train
 p_8b50836ab5,Find me a matkonet for a wheat salad to serve at lunch on Shabbat Shira.,Shabbat Shira,test
+p_8b58ad268d,We did asado on the mangal for Yom Haatzmaut and it was mamash perfect.,asado,train
 p_8b69b0bfd8,We're visiting a kibbutz near the Jordan Valley next week.,,train
 p_8b6dd33057,"Once the hafuga starts, traffic to the news site will probably drop, so let's scale the server down a bit and save some money.",hafuga,train
 p_8b70e0e792,"Hi Ron, please forward me the latest hanchayot you got, because I want to update the alert setup in the smart home system.",hanchayot,train
@@ -4971,6 +4974,7 @@ p_97d11f276a,"Is Shagrir included with our insurance, or do we pay for it separa
 p_97ded85131,"Bought a new sidur today, and read about Nishmat, a Jerusalem center of advanced Torah learning for women.",Nishmat,train
 p_97e19b93f6,"The tena'im are next Tuesday evening at her parents' place in Jerusalem, so I need to find a decent shirt before then.",tena'im,train
 p_97e21deb3f,"Can you check the choze avoda before we send it? Also, Gboard keeps autocorrecting the client's name in my dictation, so please double check it.",chozeh avoda; Gboard,train
+p_97e7d98c7f,Can you pick up asado from the butcher on the way home? It's for the chamin.,asado,train
 p_97f4775dc1,Need to sort out kviat tor with my rofe mishpacha before the kupa runs out of slots for next week.,kviat tor; rofe mishpacha; kupa,train
 p_97ffc96517,"I need to leave early for the rofe yeladim, so can you take over the deployment check and ping me if anything breaks?",rofe yeladim,train
 p_9800a07a86,"Behatzlacha with the interview today! You know this stuff cold, so just stay calm and explain how you set up the Docker containers.",behatzlacha,train
@@ -7116,6 +7120,7 @@ p_d89959b12b,"Hi Avi, just so you know, the catering place is treif, so we'll ne
 p_d89c5d2e7b,"That coffee cost me 22 sheks, and it wasn't even a big one.",sheks,train
 p_d8aa80cc1f,"Dr. Gamliel ordered a tzilum raentgen for my knee, so I'll go on Thursday.",Gamliel,train
 p_d8b276f65c,Give me a kala explanation of what Shaul Meridor did as the Finance Ministry budget chief.,Shaul Meridor,train
+p_d8c600b634,I'm putting the asado in the oven tonight so it cooks slowly until Shabbat lunch.,asado,train
 p_d8d5a04d48,They gave me a cheshbonit mas kabala for the laptop I bought for work.,cheshbonit; kabala,train
 p_d8dff0f6db,"Yocheved's saba, my neighbour, says the lift in our building is broken again.",Yocheved; saba,train
 p_d8e4787e38,"We're planning to spend Chol Hamoed up north, so I'd like to book a morning at Banias before the crowds arrive.",Chol Hamoed; Banias,train
@@ -8349,6 +8354,7 @@ p_fd9c911e04,Mrs. Avitan explained the mas shevach payment to us before we sold 
 p_fd9eff46ee,Compare the prices at Machsanei Hashuk with the stalls in Wadi Nisnas.,Wadi Nisnas,train
 p_fda0d1bf80,Motzei Shabbat is a popular time for social events in Israel.,Motzei Shabbat,train
 p_fda2464899,"Please remind the guests that it is asur to use phones or turn on lights during Shabbat, so we avoid any awkward moments at dinner.",asur,train
+p_fdac64d91b,The asado here has a lot more fat than American short ribs.,asado,train
 p_fdb3e1c806,Can you check whether the AudioWorklet is dropping frames on the old laptop? It's a sharav today so I'll be working from home.,sharav; AudioWorklet,train
 p_fdbe95ca13,"Please bring the nechadim over on Friday, the kids keep asking about them and honestly chaval al hazman that we only see them once a month.",nechadim; chaval al hazman,train
 p_fdc23bda17,"My grandfather always voted Mafdal, even in the elections for the iriya.",Mafdal,train
