@@ -316,6 +316,107 @@ the scores are also in the model card's `model-index` metadata.
 
 Sabich v2.3 trained on 1,074.3 min of the speaker's own takes, 522.8 min of them code-switching, plus 119.4 min of LibriSpeech-PC replay (1,296.3 min in all). The corpus is stored as Parquet since 2026-10-30 (the take datasets were converted that day). The next retrain is planned at 720 min of code-switching audio, 197.2 min away. The figures further up this page for v1.0 (revision `550bfcaa0f84`, 339 min) and v2.2 (471.4 min) are historical.
 
+## Open questions and ideas
+
+On 2026-10-18 the speaker recorded an 18-minute voice note of open questions and ideas for
+the project ([audio](voice-notes/2026-10-18-project-notes/voice-note.mp3), [transcript](voice-notes/2026-10-18-project-notes/transcript.md)). This section is what it
+raises. Nothing here is settled.
+
+**Data to collect**
+
+- **Messier acoustic conditions.** Most takes so far were recorded at home, but real
+  dictation happens elsewhere: in the street with traffic and construction drilling, in cafés,
+  at the shuk, with a baby crying nearby. A few takes with a crying baby are already
+  recorded. More takes outside the home are wanted, even with no new vocabulary in them.
+- **More microphones.** Every capture-app take so far comes from one phone (OnePlus Nord 3
+  5G). Desktop-microphone takes will follow once the desk is set up again after a move.
+- **Pronunciation variants.** Where a Hebrew word has two common pronunciations, such as the
+  Diaspora (Ashkenazi) and the Israeli *Rosh Hashanah*, takes are recorded in both. Where the
+  Ashkenazi form is also spelled differently in English (Shabbos for Shabbat, Tosfos for
+  Tosafot), the transcript keeps the spelling that was read, and each take records the pairing
+  (`variant_groups`), the spelling's tradition (`variant_spelling`) and how it was said
+  (`hebrew_pronunciation`). Since 2026-10-20 the sentence bank has the missing side of 76 such
+  pairs, mostly religious and Talmudic words.
+- **Other speakers, later.** All training takes are still the speaker's own. Wanted later:
+  female voices; other English accents common in Israel (South African, Australian, British,
+  American; an Irish accent is a small minority); and Sephardi as well as Ashkenazi
+  pronunciations of Hebrew. A contributor login for the capture app could follow once the
+  project has some momentum.
+- **Vocabulary from other people's blind spots.** Ask dictation users from other walks of
+  life, for example more religious friends, which words their tools always get wrong. Gaps
+  being filled now: smaller towns, moshavim and kibbutzim, street names in Jerusalem and Tel
+  Aviv, public figures, politicians and new party names.
+- **TTS errors as a vocabulary signal.** When a text-to-speech voice mispronounces an
+  Israeli name (seen with a new political party in the speaker's AI-generated podcast), the
+  word is missing from common lexicons, so it is a candidate for the sentence bank.
+
+**Tooling**
+
+- **Tagging after the fact.** Recording conditions (noise, crying, speaker) are tagged on the
+  phone, which is awkward and often skipped. Ideas: a web tool to correct the tags
+  afterwards, and an audio classifier that learns from a few tagged clips (a child crying,
+  say) and finds the untagged ones.
+
+**Open questions**
+
+1. **How many takes does a word need?** *Hafnaya* (a medical referral) comes up all the
+   time. Are 6 sentences with it enough, or 12? Should take counts be weighted by how often a
+   word is actually used, so that everyday words get more takes than once-a-year ones?
+2. **Should the general fixes go into every fine-tune?** Numbers written as digits and
+   homophones target general weaknesses of stock v2, not code-switching. Should those
+   sentences join the code-switching and tech training mixes, or would they dilute them?
+3. **Speech that is not the speaker's.** In a café or the street there are often other
+   conversations nearby, in Israel frequently in several languages at once. Can a fine-tune
+   learn to ignore them, from loudness for example, or does that need diarization or a
+   separate target-speaker model? Not a code-switching target, but a real one.
+4. **Language of origin.** Some words used in English in Israel are Yiddish rather than
+   Hebrew (*mamish* beside the Hebrew *mamash*), and many Hebrew words come from other
+   languages. For now they are not told apart: this is a dictation tool, and its users mix
+   words from several languages of origin.
+
+**Direction**
+
+- **Separate, targeted fine-tunes** rather than one that covers everything: code-switching
+  first (the core of the project), then tech vocabulary and accent, possibly a third for
+  general fixes. Training a model on a domain it does not need risks overfitting and
+  forgetting for no gain. The main dataset stays one growing clip library that each
+  fine-tune draws its own mix from.
+- **Slower, steady updates.** PoC-1 to PoC-5 (published as v1 to v5) were the proof of concept; v1.0 is the first release. From here, about 20 to
+  30 minutes of recording a week, and daily use on the phone as the real test.
+- **Use cases beyond dictation:** Israeli place names spoken into navigation apps (Waze) in
+  the car, medical words for patients rather than doctors, notes to self.
+- **Audience:** English speakers living in Israel who already dictate and notice that every
+  model, Whisper included, fails on Hebrew words, rather than local-AI specialists. Once it
+  holds up in daily use, share it with immigrant organisations such as Nefesh B'Nefesh.
+- **Collaboration** with the Israeli Hebrew NLP community (for example Dicta), who work on
+  Hebrew LLMs, TTS and ASR. First contact has been made.
+- **Apple Silicon:** done, as the MLX build (2026-10-18).
+
+## In this repo
+
+| Path | What |
+|---|---|
+| [`scripts/split_subsets.py`](scripts/split_subsets.py) | Builds category subsets (code-switching only, tech only, or any other category) from the main dataset, with the same layout, ids and train/test split. This is how the code-switching and tech datasets are derived. `--metadata-only` counts rows and minutes without downloading audio. |
+| [`voice-notes/`](voice-notes/) | The speaker's voice notes about the project, each with its audio and transcript. The 2026-10-18 note is the source of **Open questions and ideas**. |
+| [`sentences/`](sentences/) | The full prompt bank the speaker reads from: `sentences.jsonl` (all 14,892 prompts, with categories, target Hebrew terms, Ashkenazi / Israeli `variant_groups` and the pronunciation `pron` a prompt is written for, split and source), `code-switching.csv` (the 8,066 code-switching prompts) and `jewish-religious-terminology.csv` (the 2,411 prompts tagged `religious`, a subset of the code-switching ones), as of 2026-10-20. Licences per source are in `manifest.json`; most sentences were written by an LLM for this project and are CC-BY-4.0. |
+
+## Design decisions
+
+- **v2, not v3.** In the speaker's own use, v2 was more accurate than v3 for English
+  dictation. v3 adds 25 languages and gives up some English accuracy.
+- **Recorded on the phone that will run the model**: same microphone, rooms and posture as
+  real dictation.
+- **One romanized spelling per Hebrew word**, from the Hebrew-Latin-Token-Classifier
+  lexicon. Variant spellings are rewritten to the canonical one, and terms are matched by
+  word boundary, never by substring.
+- **Transcripts are punctuated and cased**, matching v2's output style. Hebrew proper nouns
+  are capitalised (Yerushalayim, Bituach Leumi).
+- **The evaluation split is term-disjoint.** Held-out Hebrew terms appear only in test, so
+  evaluation measures generalisation to unseen words, not memorised sentences. Per-term
+  error is scored only on the held-out terms.
+- **Every take is reviewed on the phone** (play, retake, delete or save) before it is
+  published.
+
 ## Log
 
 Newest first. One line per milestone.
