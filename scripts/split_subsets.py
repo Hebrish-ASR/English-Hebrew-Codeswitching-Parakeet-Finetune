@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Derive category subsets from the main dataset, e.g. code-switching only or tech only.
 
-The main dataset, danielrosehill/Read-Aloud-Voice-Sentences, holds every take. Each row has
+The main dataset, danielrosehill/Read-Aloud-Voice-Sentences, holds every take (Parquet on `main` since
+2026-10-30; this reads either that or an older audiofolder revision and writes audiofolders). Each row has
 a `categories` list (code_switch, tech, names, email, message, general, homophone, long), and
 a row can have several. This script copies the rows whose categories include the one you
 ask for into a separate dataset folder with the same layout, ids, columns and train/test
@@ -34,9 +35,42 @@ MAIN = "danielrosehill/Read-Aloud-Voice-Sentences"
 SPLITS = ("train", "test")
 
 
+INDEX_KEYS = ("shard", "audio_path", "audio_offset", "audio_length")
+
+
 def rows(split, revision):
-    p = hf_hub_download(MAIN, f"data/{split}/metadata.jsonl", repo_type="dataset", revision=revision)
-    return [json.loads(l) for l in open(p, encoding="utf-8") if l.strip()]
+    """Metadata rows of a split. The dataset is Parquet since 2026-10-30: its index meta/<split>.jsonl has
+    the old metadata.jsonl rows with `audio_path` in place of `file_name`, plus `shard` and the audio file's
+    byte range in it. An older revision is an audiofolder (data/<split>/metadata.jsonl)."""
+    from huggingface_hub.errors import EntryNotFoundError
+    try:
+        p = hf_hub_download(MAIN, f"meta/{split}.jsonl", repo_type="dataset", revision=revision)
+    except EntryNotFoundError:
+        p = hf_hub_download(MAIN, f"data/{split}/metadata.jsonl", repo_type="dataset", revision=revision)
+    out = [json.loads(l) for l in open(p, encoding="utf-8") if l.strip()]
+    for r in out:
+        if "audio_path" in r:
+            r["file_name"] = r["audio_path"]
+    return out
+
+
+def fetch_audio(split, sel, d, revision):
+    """Write each selected take's audio to d/<file_name>, skipping files already there. Parquet: download
+    only the shards that hold a missing take and cut each file out by its byte range (it is stored verbatim).
+    Audiofolder: one download per file."""
+    missing = [r for r in sel if not (d / r["file_name"]).exists()]
+    shards = {}
+    for r in missing:
+        if "shard" in r:
+            shards.setdefault(r["shard"], []).append(r)
+        else:
+            src = hf_hub_download(MAIN, f"data/{split}/{r['file_name']}", repo_type="dataset", revision=revision)
+            (d / r["file_name"]).write_bytes(Path(src).read_bytes())
+    for shard, rs in shards.items():
+        with open(hf_hub_download(MAIN, shard, repo_type="dataset", revision=revision), "rb") as f:
+            for r in rs:
+                f.seek(r["audio_offset"])
+                (d / r["file_name"]).write_bytes(f.read(r["audio_length"]))
 
 
 def wanted(r, cat, include_imports):
@@ -56,6 +90,7 @@ def main():
     if a.push and len(cats) != 1:
         ap.error("--push takes exactly one --category")
 
+    a.revision = HfApi().dataset_info(MAIN, revision=a.revision).sha  # one commit: index and shards agree
     data = {s: rows(s, a.revision) for s in SPLITS}
     summary = {}
     for cat in cats:
@@ -66,13 +101,11 @@ def main():
             d = root / "data" / split
             (d / "audio").mkdir(parents=True, exist_ok=True)
             with open(d / "metadata.jsonl", "w", encoding="utf-8") as f:
-                f.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in sel)
+                f.writelines(json.dumps({"file_name": r["file_name"], **{k: v for k, v in r.items() if k not in INDEX_KEYS}},
+                                        ensure_ascii=False) + "\n"
+                             for r in sel)
             if not a.metadata_only:
-                for r in sel:
-                    dst = d / r["file_name"]
-                    if not dst.exists():
-                        src = hf_hub_download(MAIN, f"data/{split}/{r['file_name']}", repo_type="dataset", revision=a.revision)
-                        dst.write_bytes(Path(src).read_bytes())
+                fetch_audio(split, sel, d, a.revision)
             summary[cat][split] = {"rows": len(sel), "minutes": round(sum(r["duration_s"] for r in sel) / 60, 1)}
         if a.push:
             api = HfApi()
