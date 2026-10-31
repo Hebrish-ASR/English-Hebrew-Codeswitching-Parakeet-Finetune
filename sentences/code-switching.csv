@@ -350,7 +350,7 @@ p_0ae37ffefe,"After all the chaos this month, I'm just hoping we get back to som
 p_0af00cc6f8,The Kol Nidre service was very moving this year.,Kol Nidre,train
 p_0b02702cbe,Can you grab a bakbuk of water from the shop on the way home? We're completely out and the kids are thirsty.,bakbuk,train
 p_0b0334a67f,"Yonatan is preparing the eruv tavshilin now, so cooking for Shabbat on the holiday will be allowed.",eruv tavshilin,train
-p_0b04d5f8b2,"Okay, so I want you to look at the ingestion service in this repo. Eize kef, the new async worker is already running, but it's writing every batch to Qdrant one point at a time. Please batch the upserts, keep the concurrency limit configurable, and add a retry with backoff if Qdrant times out. Run the tests when you're done, and tell me exactly what changed before you commit anything.",eize kef; async; Qdrant,test
+p_0b04d5f8b2,"Okay, so I want you to look at the ingestion service in this repo. Eize kef, the new async worker is already running, but it's writing every batch to Qdrant one point at a time. Please batch the upserts, keep the concurrency limit configurable, and add a retry with backoff if Qdrant times out. Run the tests when you're done, and tell me exactly what changed before you commit anything.",eize kef; async; Qdrant,train
 p_0b2050ed51,"We're short on koach adam this Friday, so please ask around the Anglo community and see who can come help set up.",koach adam; Anglo,train
 p_0b3715c8fb,"Thanks for getting back to me. I wanted to let you know that we're collecting donations for Ezer Mizion this month, so please pass it along to anyone who might want to help.",Ezer Mizion,train
 p_0b3a605ae3,"Dov, the Tur has a nice passage on the etrog, and I'll send you the page after dinner.",Tur,train
@@ -5572,7 +5572,7 @@ p_a9c440b9f0,"Noam won't be at the meeting on Thursday because he's coming home 
 p_a9c9ef525d,"Heading to the cemetery Sunday for the matzeiva unveiling, and I'm going to say a tefillah for Dad at the grave.",matzeiva; tefillah,train
 p_a9cbe9866e,"Remind me to call the rabbi tomorrow morning about the giyur paperwork, because they need the documents before the end of the week.",giyur,train
 p_a9d4e8dab3,"Total sharav today, so we're skipping the hike and just sitting in the shade at Neve Ativ with cold drinks.",sharav; Neve Ativ,train
-p_a9f83a7aba,"Reminder for the weekend: we are doing a mangal at the park on Friday, so I need to buy charcoal and meat. Before that, I want to finish the voice demo. I'm running Chatterbox on the VPS, and the browser connects with a WebSocket so the audio streams back live. The latency is still a bit high. Next week I'll look into fine-tuning the voice on my own recordings, but first I need the streaming to be stable.",mangal; Chatterbox; WebSocket; fine-tuning; VPS,test
+p_a9f83a7aba,"Reminder for the weekend: we are doing a mangal at the park on Friday, so I need to buy charcoal and meat. Before that, I want to finish the voice demo. I'm running Chatterbox on the VPS, and the browser connects with a WebSocket so the audio streams back live. The latency is still a bit high. Next week I'll look into fine-tuning the voice on my own recordings, but first I need the streaming to be stable.",mangal; Chatterbox; WebSocket; fine-tuning; VPS,train
 p_a9fb0fbdf4,"Note to self: after Nanuchka, just marak itriyot and an early night.",Nanuchka,train
 p_aa04bc3a8c,"If you need anything else for the file, bevadai let me know.",bevadai,train
 p_aa0a480d6f,"Hi Michael, I'll be in chutz la'aretz for the first two weeks of May, so please send the contract before I fly out.",chutz la'aretz,train
@@ -7796,7 +7796,7 @@ p_ec391c07ee,The tagmul miluim finally arrived from Bituach Leumi.,tagmul miluim
 p_ec3cb05034,Can you push the map update before lunch? The new GPS pins for Har Hamenuchot are still pointing at the wrong entrance on the staging build.,Har Hamenuchot,train
 p_ec3dfbb32a,"Dear all, the levaya will be tomorrow at eleven, and everyone is saying Tehillim for her at home tonight.",levaya; Tehillim,train
 p_ec6cc8fe51,"Hi Michal, I'm writing to ask which yechida my son has been assigned to, because he hasn't received any details about his service yet.",yechida,train
-p_ec75fcfda8,"I cleared the cache on the phone and now the app loads fine, but I still need to grab some cash before Shabbat.",cache; cash,train
+p_ec75fcfda8,"I cleared the cache on the phone and now the app loads fine, but I still need to grab some cash before Shabbat.",cache; cash,test
 p_ec7d8b44a5,"Ofer reports that the renovation is moving fast, kinehora, and we expect to finish before the holidays.",kinehora,train
 p_ec897f3afc,"Don't forget to bring the choze sechirut to the bank, and grab something matok for the kids on the way back.",choze sechirut; matok,train
 p_ec8f264d60,"The Zaguri family rented us the upstairs flat, and the chatzer is shared with the neighbors.",Zaguri,train
