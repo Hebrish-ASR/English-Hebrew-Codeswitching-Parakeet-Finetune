@@ -421,6 +421,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-11-01**: Sentence export refreshed (23,336 prompts): names from this week's Israel news (78 sentences): incoming Knesset members and election officials, Iranian officials named throughout the war coverage (Mojtaba Khamenei, Abbas Araghchi, Mohsen Rezaei), Gaza and West Bank place names (Nuseirat, Bureij, Nur al-Shams), and the words Nukhba and hamula.
 - **2026-11-01**: Sentence export refreshed (23,258 prompts): Talmud and rabbinic vocabulary (429 sentences): every tractate of Shas the set lacked, with Ashkenazi forms such as Berachos and Bava Basra, rabbis from the geonim to modern Ashkenazi and Sephardi poskim, major sefarim, Gemara words such as teiku, kashya and braisa, and honorifics such as zechuto yagen aleinu.
 - **2026-11-01**: Sentence export refreshed (22,829 prompts): Jewish honorifics (aleha hashalom, zichronah livracha, harav hagaon, shlita, zatzal, Hashem yikom damam, yimach shemo, lehavdil, ad me'ah ve'esrim and others, 39 sentences).
 - **2026-11-01**: Sentence export refreshed (22,790 prompts): new Aliyah vocabulary (40 terms, 117 sentences: status, mortgage tracks, land registry, national service, absorption bureaucracy) and Jewish religious vocabulary (90 terms, 270 sentences: Gemara terms such as hava amina and nafka mina, masechtot, rishonim and acharonim, prayers, life-cycle), both written from terms found on Aliyah guide and Torah sites, not copied text; plus tech prompts for audio, video and architecture software, batteries and brands.
