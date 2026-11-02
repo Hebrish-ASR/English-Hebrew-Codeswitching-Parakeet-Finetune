@@ -196,6 +196,7 @@ term-disjoint) and is never trained on.
 | **Error prediction**: words the speaker's dictation showed failing, candidate words split by segment (code-switching, tech, names, general English), and LLM-predicted failure scores to probe before recording | [`Hebrish/ASR-Error-Prediction`](https://huggingface.co/datasets/Hebrish/ASR-Error-Prediction) ([plan and scripts](https://github.com/danielrosehill/ASR-Mistranscription-Predictor)) | First run `haiku-r1`, 2026-10-25; predictions not yet probed |
 | All takes from the capture sessions: code-switching, the speaker's monolingual English, and out-of-scope categories | [`danielrosehill/Read-Aloud-Voice-Sentences`](https://huggingface.co/datasets/danielrosehill/Read-Aloud-Voice-Sentences) | Live; source of the ~20% own-English share. The code-switching dataset above is its subset. |
 | **Improvement notes**: voice notes of ideas and incremental-improvement notes for the project and its recording app (not training data) | [`Hebrish/Hebrish-Ideas`](https://huggingface.co/datasets/Hebrish/Hebrish-Ideas) | Live, 2026-10-26. Audio plus cleaned transcript per note |
+| **Community voice contributions**: anyone can add recordings of their own voice by opening a pull request (one folder per Hugging Face username) | [`Hebrish/Community-Voice-Contributions`](https://huggingface.co/datasets/Hebrish/Community-Voice-Contributions) | Placeholder, 2026-11-02: one example row (`is_test: true`); accepted PRs are integrated into the datasets |
 
 ## Lifecycle
 
@@ -421,6 +422,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-11-02**: Community contributions dataset opened ([Hebrish/Community-Voice-Contributions](https://huggingface.co/datasets/Hebrish/Community-Voice-Contributions)): other speakers add their own voice by pull request; it holds one example row so far.
 - **2026-11-02**: **Sabich (Rolling) r1** released ([Hebrish/Sabich-Rolling](https://huggingface.co/Hebrish/Sabich-Rolling), gated). It is Sabich v2.4 trained further, from its own weights, on all recordings so far (6 epochs, about 1 hour). Checked internally against v2.4 before release. It is now the default model in the Hebrish apps while it is tested, and Sabich stays available.
 - **2026-11-02**: First continued-training run started: **Sabich (Rolling) r1**, fine-tuned onward from Sabich v2.4's weights (lower learning rate, 6 epochs, the whole dataset again) instead of from stock Parakeet v2, on about 2% more data. Experimental and for internal QA only; Sabich v2.4 stays the released model. Its benchmark decides whether future Sabich releases are trained this way.
 
