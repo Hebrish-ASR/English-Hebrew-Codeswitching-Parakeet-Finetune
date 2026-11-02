@@ -421,6 +421,8 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-11-02**: First continued-training run started: **Sabich (Rolling) r1**, fine-tuned onward from Sabich v2.4's weights (lower learning rate, 6 epochs, the whole dataset again) instead of from stock Parakeet v2, on about 2% more data. Experimental and for internal QA only; Sabich v2.4 stays the released model. Its benchmark decides whether future Sabich releases are trained this way.
+
 - **2026-11-01**: Sentence export refreshed (23,336 prompts): names from this week's Israel news (78 sentences): incoming Knesset members and election officials, Iranian officials named throughout the war coverage (Mojtaba Khamenei, Abbas Araghchi, Mohsen Rezaei), Gaza and West Bank place names (Nuseirat, Bureij, Nur al-Shams), and the words Nukhba and hamula.
 - **2026-11-01**: Sentence export refreshed (23,258 prompts): Talmud and rabbinic vocabulary (429 sentences): every tractate of Shas the set lacked, with Ashkenazi forms such as Berachos and Bava Basra, rabbis from the geonim to modern Ashkenazi and Sephardi poskim, major sefarim, Gemara words such as teiku, kashya and braisa, and honorifics such as zechuto yagen aleinu.
 - **2026-11-01**: Sentence export refreshed (22,829 prompts): Jewish honorifics (aleha hashalom, zichronah livracha, harav hagaon, shlita, zatzal, Hashem yikom damam, yimach shemo, lehavdil, ad me'ah ve'esrim and others, 39 sentences).
