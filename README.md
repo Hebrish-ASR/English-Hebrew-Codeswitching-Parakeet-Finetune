@@ -422,9 +422,9 @@ raises. Nothing here is settled.
 
 ## Log
 
-- **2026-11-06**: [October 7 Memorial Sentence Bank](https://huggingface.co/datasets/Hebrish/October-7-Memorial-Sentence-Bank) published: sentences about the lives of 1,229 people, read in their memory.
 Newest first. One line per milestone.
 
+- **2026-11-06**: [October 7 Memorial Sentence Bank](https://huggingface.co/datasets/Hebrish/October-7-Memorial-Sentence-Bank) published: sentences about the lives of 1,229 people, read in their memory.
 - **2026-11-03**: New public dataset [Hebrish/Judaica-Sentences](https://huggingface.co/datasets/Hebrish/Judaica-Sentences): real sentences from traditional Jewish works (Tanach, Mishnah, Talmud, Rashi, Ramban, Chafetz Chaim and more) from open-licence Sefaria editions, about 4,200 prompts to read. Recording continues at about 60 minutes a day.
 - **2026-11-03**: New public dataset [Hebrish/Model-Checks](https://huggingface.co/datasets/Hebrish/Model-Checks): every take the recording app checks against the newest Sabich (Rolling), with the speaker's verdict and Claude's. The app's Test page now reads a queue of new sentences written from the day's news and tech sites first. The failures feed the next vocabulary round and rolling update.
 - **2026-11-02**: Validation set v1.0 recorded ([Hebrish/Hebrish-Validation](https://huggingface.co/datasets/Hebrish/Hebrish-Validation)): 12 one-minute read-aloud scripts (code-switching, tech, mixed) read on the phone, plus a long-form config joining them into 3 to 10 minute files. It is never trained on and sits alongside the short-sentence benchmark test set.
