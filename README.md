@@ -422,6 +422,7 @@ raises. Nothing here is settled.
 
 ## Log
 
+- **2026-11-06**: [October 7 Memorial Sentence Bank](https://huggingface.co/datasets/Hebrish/October-7-Memorial-Sentence-Bank) published: sentences about the lives of 1,229 people, read in their memory.
 Newest first. One line per milestone.
 
 - **2026-11-03**: New public dataset [Hebrish/Judaica-Sentences](https://huggingface.co/datasets/Hebrish/Judaica-Sentences): real sentences from traditional Jewish works (Tanach, Mishnah, Talmud, Rashi, Ramban, Chafetz Chaim and more) from open-licence Sefaria editions, about 4,200 prompts to read. Recording continues at about 60 minutes a day.
