@@ -315,9 +315,9 @@ audio alone does not help new words. Full per-utterance results: `evals/r3-*.jso
 [model repo](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/tree/main/evals);
 the scores are also in the model card's `model-index` metadata.
 
-### Data so far (2026-10-30, revision `ca08e06b`, used for Sabich v2.3)
+### Data so far (2026-11-10, revision `b87b8df`, used for Sabich v4.0)
 
-Sabich v2.3 trained on 1,074.3 min of the speaker's own takes, 522.8 min of them code-switching, plus 119.4 min of LibriSpeech-PC replay (1,296.3 min in all). The corpus is stored as Parquet since 2026-10-30 (the take datasets were converted that day). The next retrain is planned at 720 min of code-switching audio, 197.2 min away. The figures further up this page for v1.0 (revision `550bfcaa0f84`, 339 min) and v2.2 (471.4 min) are historical.
+Sabich v4.0 trained from scratch on 2,753.9 min (about 45.9 hours, 29,099 clips) of unique audio: 2,536.0 min of the speaker's own phone takes, 26.6 min of an earlier imported set and 191.3 min of LibriSpeech-PC replay. 1,105.7 min of it is code-switching. Priority-word clips are repeated three times, so the training set was 32,619 rows (3,029.2 min). The transcripts were standardised the day before (one convention for times, units, numbers and spellings, applied to every published take). The full breakdown by category is on the [model card](https://huggingface.co/Hebrish/Sabich-Rolling).
 
 ## Open questions and ideas
 
@@ -424,6 +424,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-11-10**: **Sabich v4.0** released ([Hebrish/Sabich-Rolling](https://huggingface.co/Hebrish/Sabich-Rolling), gated). Unlike every update since v2.4 (v2.5 to v3.4 each continued from the previous weights), it was trained **from scratch** from stock Parakeet TDT 0.6B v2, on the whole dataset after a standardisation pass (one transcript convention for times, units, numbers and spellings; every topic in one dataset format). Trained on [Nebius](https://nebius.com) (one H100, 20 epochs, 192 min), the first Hebrish model trained there. Held-out validation WER 4.82% (not comparable with earlier validation sets). It is the new baseline later updates continue from.
 - **2026-11-06**: [October 7 Memorial Sentence Bank](https://huggingface.co/datasets/Hebrish/October-7-Memorial-Sentence-Bank) published: sentences about the lives of 1,229 people, read in their memory.
 - **2026-11-03**: New public dataset [Hebrish/Judaica-Sentences](https://huggingface.co/datasets/Hebrish/Judaica-Sentences): real sentences from traditional Jewish works (Tanach, Mishnah, Talmud, Rashi, Ramban, Chafetz Chaim and more) from open-licence Sefaria editions, about 4,200 prompts to read. Recording continues at about 60 minutes a day.
 - **2026-11-03**: New public dataset [Hebrish/Model-Checks](https://huggingface.co/datasets/Hebrish/Model-Checks): every take the recording app checks against the newest Sabich (Rolling), with the speaker's verdict and Claude's. The app's Test page now reads a queue of new sentences written from the day's news and tech sites first. The failures feed the next vocabulary round and rolling update.
