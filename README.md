@@ -31,6 +31,7 @@ for a while, and send what it gets wrong, or right, through [hebrish.app](https:
 or to [info@hebrish.app](mailto:info@hebrish.app).
 
 [![Website: hebrish.app](https://img.shields.io/badge/Website-hebrish.app-1F6FEB?style=for-the-badge&logo=googlechrome&logoColor=white)](https://hebrish.app)
+[![YouTube: Hebrish](https://img.shields.io/badge/YouTube-Hebrish-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@hebrishasr)
 [![Download v1.0 GGUF Q8_0 (730 MB)](https://img.shields.io/badge/⬇_Download_v1.0-GGUF_Q8__0_·_730_MB_·_recommended-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q8_0.gguf)
 [![Download v1.0 GGUF Q4_K_M (475 MB)](https://img.shields.io/badge/⬇_Download_v1.0-GGUF_Q4__K__M_·_475_MB-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/danielrosehill/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching/resolve/main/gguf/Parakeet-TDT-0.6B-v2-English-Hebrew-Codeswitching-Q4_K_M.gguf)
 [![Get Offline Voice Input on Google Play](https://img.shields.io/badge/Android_app-Offline_Voice_Input-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=dev.notune.transcribe)
