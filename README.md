@@ -150,6 +150,12 @@ Sources: [Liu et al. 2025](https://arxiv.org/abs/2509.24310),
 [Pekarek Rosin & Siegert 2023](https://arxiv.org/abs/2307.07280),
 [CS ASR systematic review 2025](https://arxiv.org/abs/2507.07741).
 
+## Watch: how the training data is recorded
+
+[![How I Record Training Data for My Own Speech-to-Text Model](https://i.ytimg.com/vi/RWTDqKSKOQE/hqdefault.jpg)](https://www.youtube.com/watch?v=RWTDqKSKOQE)
+
+Daniel on camera: how the takes the models are trained on are recorded ([YouTube](https://www.youtube.com/watch?v=RWTDqKSKOQE); more videos at [hebrish.app/updates/videos](https://hebrish.app/updates/videos)).
+
 ## Training data (v1.0)
 
 Everything v1.0 was trained on, by dataset. The training job pins one revision of
@@ -425,6 +431,7 @@ raises. Nothing here is settled.
 
 Newest first. One line per milestone.
 
+- **2026-11-13**: Video: [How I Record Training Data for My Own Speech-to-Text Model](https://www.youtube.com/watch?v=RWTDqKSKOQE), now also on [hebrish.app/updates/videos](https://hebrish.app/updates/videos).
 - **2026-11-12**: Background-conversations test set started ([Hebrish/Background-Conversations](https://huggingface.co/datasets/Hebrish/Background-Conversations)): phone dictation with other people talking in the room, transcribed as the foreground speaker only, for checking speaker isolation. One clip so far; never trained on.
 - **2026-11-10**: **Sabich v4.0** released ([Hebrish/Sabich-Rolling](https://huggingface.co/Hebrish/Sabich-Rolling), gated). Unlike every update since v2.4 (v2.5 to v3.4 each continued from the previous weights), it was trained **from scratch** from stock Parakeet TDT 0.6B v2, on the whole dataset after a standardisation pass (one transcript convention for times, units, numbers and spellings; every topic in one dataset format). Trained on [Nebius](https://nebius.com) (one H100, 20 epochs, 192 min), the first Hebrish model trained there. Held-out validation WER 4.82% (not comparable with earlier validation sets). It is the new baseline later updates continue from.
 - **2026-11-06**: [October 7 Memorial Sentence Bank](https://huggingface.co/datasets/Hebrish/October-7-Memorial-Sentence-Bank) published: sentences about the lives of 1,229 people, read in their memory.
